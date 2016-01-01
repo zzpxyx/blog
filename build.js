@@ -1,8 +1,10 @@
-var Metalsmith=require('metalsmith'),
-    Markdown=require('metalsmith-markdown-remarkable');
+var metalsmith=require('metalsmith'),
+    markdown=require('metalsmith-markdown-remarkable'),
+    permalinks=require('metalsmith-permalinks');
 
-Metalsmith(__dirname)
-    .use(Markdown())
+metalsmith(__dirname)
+    .use(markdown())
+    .use(permalinks())
     .build(function(err){
         if (err) throw err;
     });

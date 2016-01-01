@@ -2,7 +2,8 @@ var metalsmith=require('metalsmith'),
     markdown=require('metalsmith-markdown-remarkable'),
     permalinks=require('metalsmith-permalinks'),
     collections=require('metalsmith-collections'),
-    layouts=require('metalsmith-layouts');
+    layouts=require('metalsmith-layouts'),
+    excerpts=require('metalsmith-excerpts');
 
 metalsmith(__dirname)
     .use(collections({
@@ -13,8 +14,9 @@ metalsmith(__dirname)
         }
     }))
     .use(markdown())
-    .use(layouts('handlebars'))
+    .use(excerpts())
     .use(permalinks())
+    .use(layouts('handlebars'))
     .build(function(err){
         if (err) throw err;
     });

@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <head>
+    </head>
+    <body>
+        <ul>
+            {{#each collections.posts}}
+                <li>
+                    <h3>{{title}}</h3>
+                    {{&contents}}
+                </li>
+            {{/each}}
+        </ul>
+    </body>
+</html>

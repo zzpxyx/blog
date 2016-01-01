@@ -17,7 +17,10 @@
   },
   "homepage": "https://github.com/zzpxyx/blog#readme",
   "devDependencies": {
+    "handlebars": "^4.0.5",
     "metalsmith": "^2.1.0",
+    "metalsmith-collections": "^0.7.0",
+    "metalsmith-layouts": "^1.4.2",
     "metalsmith-markdown-remarkable": "^0.1.1",
     "metalsmith-permalinks": "^0.4.1"
   }

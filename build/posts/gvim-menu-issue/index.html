@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <head>
+        <title>gVim Menu Issue Solved</title>
+    </head>
+    <body>
+        <p>Something has been wrong with my gVim's menus for quite some time. Finally, I found a workaround yesterday.</p>
+<p>I'm not sure when and how the problem occurred, but one day I found that most of my gVim's menus were &quot;missing&quot;. Technically they were there, but all characters in the menu captions and items were missing. There were two strange things though. One was that the Solarized theme menu was displaying correctly. The other was that all menu items were showing the corresponding gVim commands correctly.</p>
+<p>After searching around on the Internet and some trial and error, I finally found a workaround. Let's take a step back and rethink about those two strange things. Actually they were saying that only <em>some</em> characters in menu captions and items were missing. In my case, all those Chinese characters were not showing up. Now it's more clear that something might be wrong with the menu language. After manually setting the menu language to Chinese using the following line in my .vimrc, the problem was solved.</p>
+<p><code>set langmenu=zh_CN.UTF-8</code></p>
+<p>I call this a workaround since I'm still not sure what caused this issue.</p>
+<p>By the way, I'm using Arch Linux with Xfce. It seems that this gVim menu issue only happens in certain cases, like mine.</p>
+
+    </body>
+</html>

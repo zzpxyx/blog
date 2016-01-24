@@ -1,0 +1,66 @@
+html,
+body,
+header,
+nav,
+section,
+article,
+footer,
+h1,
+h2,
+p,
+ul,
+li,
+a {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    width: 700px;
+    margin: auto;
+    background: #FAFAFA;
+    font-family: "Roboto", sans-serif;
+}
+
+header {
+    margin: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-variant: small-caps;
+}
+
+nav>ul {
+    display: flex;
+}
+
+nav>ul>li {
+    margin-left: 1em;
+    font-variant: small-caps;
+}
+
+article {
+    margin: 50px 0;
+    font-size: 20px;
+    line-height: 150%;
+}
+
+article>h2 {
+    font-size: 200%;
+    line-height: 150%;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FF8000;
+}

@@ -3,7 +3,11 @@ var metalsmith=require('metalsmith'),
     permalinks=require('metalsmith-permalinks'),
     collections=require('metalsmith-collections'),
     layouts=require('metalsmith-layouts'),
-    excerpts=require('metalsmith-excerpts');
+    excerpts=require('metalsmith-excerpts'),
+    fs=require('fs'),
+    handlebars=require('handlebars');
+
+handlebars.registerPartial('header',fs.readFileSync(__dirname+'/layouts/partials/header.hbs').toString());
 
 metalsmith(__dirname)
     .use(collections({

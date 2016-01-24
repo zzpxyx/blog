@@ -1,15 +1,19 @@
 <!doctype html>
 <html>
-    <head>
-    </head>
-    <body>
-        <ul>
-            {{#each collections.posts}}
-                <li>
-                    <h3><a href={{path}}>{{title}}</a></h3>
-                    {{&excerpt}}
-                </li>
-            {{/each}}
-        </ul>
-    </body>
+
+<head>
+    <link href="styles/index.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    {{>header}}
+    {{#each collections.posts}}
+    <article>
+        <h2><a href={{path}}>{{title}}</a></h2>
+        {{&excerpt}}
+    </article>
+    {{/each}}
+</body>
+
 </html>

@@ -7,7 +7,10 @@ article,
 footer,
 h1,
 h2,
+h6,
 p,
+em,
+code,
 ul,
 li,
 a {
@@ -36,24 +39,38 @@ header {
     font-variant: small-caps;
 }
 
+header>h1>a {
+    color: #808080;
+}
+
 nav>ul {
     display: flex;
 }
 
 nav>ul>li {
     margin-left: 1em;
-    font-variant: small-caps;
+}
+
+nav>ul>li>a {
+    color: #808080;
 }
 
 article {
     margin: 50px 0;
     font-size: 20px;
-    line-height: 150%;
+    line-height: 1.5em;
 }
 
 article>h2 {
-    font-size: 200%;
-    line-height: 150%;
+    font-size: 2em;
+    line-height: 1.5em;
+}
+
+article>h6 {
+    margin-bottom: 1em;
+    font-size: 0.7em;
+    line-height: 1.5em;
+    color: #808080;
 }
 
 a {
@@ -63,4 +80,12 @@ a {
 
 a:hover {
     color: #FF8000;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+code {
+    font-family: "Roboto Mono", monospace;
 }

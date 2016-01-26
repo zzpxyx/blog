@@ -1,26 +1,32 @@
-var metalsmith=require('metalsmith'),
-    markdown=require('metalsmith-markdown-remarkable'),
-    permalinks=require('metalsmith-permalinks'),
-    collections=require('metalsmith-collections'),
-    layouts=require('metalsmith-layouts'),
-    excerpts=require('metalsmith-excerpts'),
-    fs=require('fs'),
-    handlebars=require('handlebars');
+var metalsmith = require('metalsmith'),
+    markdown = require('metalsmith-markdown-remarkable'),
+    permalinks = require('metalsmith-permalinks'),
+    collections = require('metalsmith-collections'),
+    layouts = require('metalsmith-layouts'),
+    excerpts = require('metalsmith-excerpts'),
+    highlight = require('metalsmith-code-highlight'),
+    handlebars = require('handlebars'),
+    moment = require('moment');
 
-handlebars.registerPartial('header',fs.readFileSync(__dirname+'/layouts/partials/header.hbs').toString());
+handlebars.registerHelper('formatDate', function(date) {
+    return moment.utc(date).format('YYYY-MM-DD');
+});
 
 metalsmith(__dirname)
     .use(collections({
-        posts:{
-            pattern:'posts/*.md',
-            sortBy:'publishDate',
-            reverse:true
+        posts: {
+            pattern: 'posts/*.md',
+            sortBy: 'publishDate',
+            reverse: true
         }
     }))
     .use(markdown())
     .use(excerpts())
     .use(permalinks())
-    .use(layouts('handlebars'))
-    .build(function(err){
+    .use(layouts({
+        'engine': 'handlebars',
+        'partials': 'layouts/partials'
+    }))
+    .build(function(err) {
         if (err) throw err;
     });

@@ -10,7 +10,9 @@ I'm not sure when and how the problem occurred, but one day I found that most of
 
 After searching around on the Internet and some trial and error, I finally found a workaround. Let's take a step back and rethink about those two strange things. Actually they were saying that only *some* characters in menu captions and items were missing. In my case, all those Chinese characters were not showing up. Now it's more clear that something might be wrong with the menu language. After manually setting the menu language to Chinese using the following line in my .vimrc, the problem was solved.
 
-`set langmenu=zh_CN.UTF-8`
+``` vim
+set langmenu="zh_CN.UTF-8"
+```
 
 I call this a workaround since I'm still not sure what caused this issue.
 

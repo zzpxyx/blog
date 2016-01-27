@@ -4,7 +4,6 @@ var metalsmith = require('metalsmith'),
     collections = require('metalsmith-collections'),
     layouts = require('metalsmith-layouts'),
     excerpts = require('metalsmith-excerpts'),
-    highlight = require('metalsmith-code-highlight'),
     handlebars = require('handlebars'),
     moment = require('moment');
 

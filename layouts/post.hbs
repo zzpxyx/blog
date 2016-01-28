@@ -14,12 +14,13 @@
 <body>
     {{>header}}
     <article>
-        <h2>{{title}}</h2>
+        <h2><a href="/">{{title}}</a></h2>
         <h6>
             Published <time pubdate>{{formatDate publishDate}}</time>
             {{#if modifyDate}}
             | Updated <time>{{formatDate modifyDate}}</time>
             {{/if}}
+            | <a href="/">Go Back</a>
         </h6>
         {{&contents}}
     </article>

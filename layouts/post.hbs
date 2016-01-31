@@ -8,7 +8,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/solarized_light.min.css" rel="stylesheet" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/languages/vim.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
 </head>
 
 <body>
@@ -21,8 +23,7 @@
             | Updated <time>{{formatDate modifyDate}}</time>
             {{/if}}
             | <a href="/">Go Back</a>
-        </h6>
-        {{&contents}}
+        </h6> {{&contents}}
     </article>
 </body>
 

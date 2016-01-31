@@ -8,7 +8,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/solarized_light.min.css" rel="stylesheet" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/languages/vim.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
 </head>
 
 <body>
@@ -25,8 +27,7 @@
         <h6>
             Published <time pubdate>2016-01-26</time>
             | <a href="/">Go Back</a>
-        </h6>
-        <p><a href="https://highlightjs.org/">Highlight.js</a> is a popular library for syntax highlighting. I just figured out how to use its CDN version.</p>
+        </h6> <p><a href="https://highlightjs.org/">Highlight.js</a> is a popular library for syntax highlighting. I just figured out how to use its CDN version.</p>
 <p>According to the <a href="https://highlightjs.org/download/">download instructions</a>, there is a hosted version of highlight.js. It is a prebuilt version with 23 commonly used languages. I was trying to highlight Vim script, which was not included. After searching on the Internet, I found it on <a href="https://cdnjs.com/libraries/highlight.js/">cdnjs</a>. Every supporting language was listed, so I downloaded the one for Vim script (languages/vim.min.js) immediately and started testing. It was not working because &quot;hljs&quot; was not defined.</p>
 <p>It took me a while to realize the structure of those js files. The one I downloaded for Vim script was merely an addon. In other words, I still needed the file highlight.min.js as a base. After referencing both of them, Vim script highlighting finally worked.</p>
 

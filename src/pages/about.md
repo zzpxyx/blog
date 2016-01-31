@@ -7,6 +7,7 @@ layout: about.hbs
 - Static site generator: [Metalsmith](http://www.metalsmith.io/)
 - Code highlighting: [highlight.js](https://highlightjs.org/)
 - Google Fonts: [Roboto](https://www.google.com/fonts/specimen/Roboto) and [Roboto Mono](https://www.google.com/fonts/specimen/Roboto+Mono)
+- Mail hide: [reCAPTCHA](https://www.google.com/recaptcha/admin#mailhide)
 - Hosting: [Github Pages](https://pages.github.com/)
 
 ### Licenses

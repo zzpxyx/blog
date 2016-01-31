@@ -92,6 +92,10 @@ li>a {
     text-decoration: underline;
 }
 
+em {
+    font-style: italic;
+}
+
 code {
     font-family: "Roboto Mono", monospace;
     font-size: 0.7em;

@@ -4,6 +4,7 @@ var metalsmith = require('metalsmith'),
     collections = require('metalsmith-collections'),
     layouts = require('metalsmith-layouts'),
     excerpts = require('metalsmith-excerpts'),
+    feed = require('metalsmith-feed'),
     handlebars = require('handlebars'),
     moment = require('moment');
 
@@ -12,6 +13,12 @@ handlebars.registerHelper('formatDate', function(date) {
 });
 
 metalsmith(__dirname)
+    .metadata({
+        site: {
+            title: 'zzpxyx',
+            url: 'www.zzpxyx.com'
+        }
+    })
     .use(collections({
         posts: {
             pattern: 'posts/*.md',
@@ -20,8 +27,11 @@ metalsmith(__dirname)
         }
     }))
     .use(markdown())
-    .use(excerpts())
     .use(permalinks())
+    .use(feed({
+        collection: 'posts'
+    }))
+    .use(excerpts())
     .use(layouts({
         'engine': 'handlebars',
         'partials': 'layouts/partials'

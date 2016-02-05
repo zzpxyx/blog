@@ -141,6 +141,7 @@ code {
 a {
     color: #000000;
     text-decoration: none;
+    transition: color 0.2s ease-in-out;
 }
 
 a:hover {

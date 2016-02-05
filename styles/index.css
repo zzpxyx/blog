@@ -36,12 +36,46 @@ header {
     font-size: 20px;
 }
 
-header>h1>a,
 nav>ul>li>a {
     color: #808080;
     text-decoration: none;
     display: block;
     line-height: 3em;
+}
+
+header>h1>svg {
+    width: auto;
+    height: 3em;
+    display: block;
+}
+
+header>h1>svg>a path {
+    fill: #969696;
+    transition: fill 0.2s ease-in-out;
+}
+
+header>h1>svg>a ellipse {
+    fill: #FAFAFA;
+    transition: fill 0.2s ease-in-out;
+}
+
+header>h1>svg>a+g ellipse {
+    fill: #FAFAFA;
+    opacity: 0;
+    transition: fill 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+header>h1>svg>a:hover path {
+    fill: #FAFAFA;
+}
+
+header>h1>svg>a:hover ellipse {
+    fill: #FF8000;
+}
+
+header>h1>svg>a:hover+g ellipse {
+    fill: #FF8000;
+    opacity: 1;
 }
 
 nav>ul {
@@ -111,14 +145,4 @@ a {
 
 a:hover {
     color: #FF8000;
-}
-
-svg {
-    width: 3em;
-    height: auto;
-    display: block;
-}
-
-svg:hover path {
-    fill: #FF8000;
 }

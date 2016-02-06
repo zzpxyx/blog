@@ -7,7 +7,7 @@ function initOnLoad() {
         iframe.width = '700px';
         iframe.height = '350px';
         iframe.name = 'show_email';
-        iframe.style = 'border: none; display: none;';
+        iframe.style = 'display: none;';
         document.body.appendChild(iframe);
         lastAnchor.target = iframe.name;
         lastAnchor.addEventListener('click', function() {

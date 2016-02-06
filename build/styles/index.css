@@ -2,9 +2,7 @@ html,
 body,
 header,
 nav,
-section,
 article,
-footer,
 h1,
 h2,
 h3,
@@ -15,7 +13,8 @@ code,
 ul,
 li,
 a,
-svg {
+svg,
+iframe {
     margin: 0;
     border: 0;
     padding: 0;

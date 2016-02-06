@@ -44,7 +44,7 @@ nav>ul>li>a {
 }
 
 header>h1>svg {
-    width: auto;
+    width: 7em;
     height: 3em;
     display: block;
 }
@@ -141,6 +141,7 @@ code {
 a {
     color: #000000;
     text-decoration: none;
+    transition: color 0.2s ease-in-out;
 }
 
 a:hover {

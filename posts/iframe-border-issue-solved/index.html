@@ -2,9 +2,15 @@
 <html>
 
 <head>
-    <title>zzpxyx</title>
+    <title>iframe Border Issue Solved | zzpxyx</title>
     <link href="/styles/index.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/solarized_light.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/languages/vim.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
 </head>
 
 <body>
@@ -20,28 +26,14 @@
         </nav>
     </header>
     <article>
-        <h2><a href=posts/iframe-border-issue-solved>iframe Border Issue Solved</a></h2>
+        <h2><a href="/">iframe Border Issue Solved</a></h2>
         <h6>
             Published <time pubdate>2016-02-05</time>
-            | <a href=posts/iframe-border-issue-solved>Read More</a>
-        </h6>
-        <p>iOS Safari renders the iframe tag with an old-fashioned border even though I set the display property to &quot;none&quot; on that iframe tag. It took me a while to realize what was missing.</p>
-    </article>
-    <article>
-        <h2><a href=posts/highlightjs-on-cdn>highlight.js on CDN</a></h2>
-        <h6>
-            Published <time pubdate>2016-01-26</time>
-            | <a href=posts/highlightjs-on-cdn>Read More</a>
-        </h6>
-        <p><a href="https://highlightjs.org/">Highlight.js</a> is a popular library for syntax highlighting. I just figured out how to use its CDN version.</p>
-    </article>
-    <article>
-        <h2><a href=posts/gvim-menu-issue-solved>gVim Menu Issue Solved</a></h2>
-        <h6>
-            Published <time pubdate>2016-01-20</time>
-            | <a href=posts/gvim-menu-issue-solved>Read More</a>
-        </h6>
-        <p>Something has been wrong with my gVim's menus for quite some time. Finally, I found a workaround yesterday.</p>
+            | <a href="/">Go Back</a>
+        </h6> <p>iOS Safari renders the iframe tag with an old-fashioned border even though I set the display property to &quot;none&quot; on that iframe tag. It took me a while to realize what was missing.</p>
+<p>I was using the CSS reset technique to make browsers render my pages as consistent as possible. I was just resetting the properties margin, border, padding, and font for all the tags I used. Guess what. I forgot the iframe tag there. The border disappeared immediately after resetting the iframe tag.</p>
+<p>I'm not sure the internal mechanisms though. Maybe my case was special and I didn't realize other contributing factors. Nonetheless, you could try this if you run out of ideas in dealing with similar issues.</p>
+
     </article>
 </body>
 

@@ -2,9 +2,11 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <meta name="description" content="A blog of technical memos for weird issues">
     <title>{{site.title}}</title>
     <link href="/styles/index.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto%7CRoboto+Mono" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -13,7 +15,7 @@
     <article>
         <h2><a href={{path}}>{{title}}</a></h2>
         <h6>
-            Published <time pubdate>{{formatDate publishDate}}</time>
+            Published <time>{{formatDate publishDate}}</time>
             {{#if modifyDate}}
             | Updated <time>{{formatDate modifyDate}}</time>
             {{/if}}

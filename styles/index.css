@@ -3,7 +3,6 @@ body,
 header,
 nav,
 article,
-h1,
 h2,
 h3,
 h6,
@@ -42,37 +41,37 @@ nav>ul>li>a {
     line-height: 3em;
 }
 
-header>h1>svg {
+header>svg {
     width: 7em;
     height: 3em;
     display: block;
 }
 
-header>h1>svg>a path {
+header>svg>a path {
     fill: #969696;
     transition: fill 0.2s ease-in-out;
 }
 
-header>h1>svg>a ellipse {
+header>svg>a ellipse {
     fill: #FAFAFA;
     transition: fill 0.2s ease-in-out;
 }
 
-header>h1>svg>a+g ellipse {
+header>svg>a+g ellipse {
     fill: #FAFAFA;
     opacity: 0;
     transition: fill 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 
-header>h1>svg>a:hover path {
+header>svg>a:hover path {
     fill: #FAFAFA;
 }
 
-header>h1>svg>a:hover ellipse {
+header>svg>a:hover ellipse {
     fill: #FF8000;
 }
 
-header>h1>svg>a:hover+g ellipse {
+header>svg>a:hover+g ellipse {
     fill: #FF8000;
     opacity: 1;
 }

@@ -21,24 +21,20 @@ iframe {
 }
 
 body {
-    width: 700px;
-    margin: auto;
     background: #FAFAFA;
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto Slab", serif;
+    font-size: 20px;
+    line-height: 1.5em;
+    width: 700px;
+    padding: 0 25px;
+    margin: auto;
 }
 
 header {
+    font-family: "Roboto", sans-serif;
     margin: 2em 0 2em;
     display: flex;
     justify-content: space-between;
-    font-size: 20px;
-}
-
-nav>ul>li>a {
-    color: #808080;
-    text-decoration: none;
-    display: block;
-    line-height: 3em;
 }
 
 header>svg {
@@ -77,36 +73,40 @@ header>svg>a:hover+g ellipse {
 }
 
 nav>ul {
-    display: flex;
     list-style: none;
+    display: flex;
 }
 
 nav>ul>li {
     margin-left: 1em;
 }
 
-article {
-    font-size: 20px;
-    line-height: 1.5em;
+nav>ul>li>a {
+    color: #808080;
+    line-height: 3em;
+    text-decoration: none;
+    display: block;
 }
 
 article>h2 {
-    margin-top: 1em;
-    font-size: 2em;
+    font-size: 40px;
     line-height: 1.5em;
+    margin-top: 1em;
 }
 
 article>h3 {
-    margin-top: 1em;
-    font-size: 1.4em;
+    font-family: "Roboto Slab", serif;
+    font-size: 28px;
     line-height: 1.5em;
+    margin-top: 1em;
 }
 
 article>h6 {
-    margin-bottom: 1em;
-    font-size: 0.7em;
-    line-height: 1.5em;
     color: #808080;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 1.5em;
+    margin-bottom: 1em;
 }
 
 article>h6>a {
@@ -133,11 +133,12 @@ em {
 
 code {
     font-family: "Roboto Mono", monospace;
-    font-size: 0.7em;
+    font-size: 14px;
 }
 
 a {
     color: #000000;
+    font-family: "Roboto", sans-serif;
     text-decoration: none;
     transition: color 0.2s ease-in-out;
 }

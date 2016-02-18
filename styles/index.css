@@ -17,21 +17,21 @@ iframe {
     margin: 0;
     border: 0;
     padding: 0;
-    font: inherit;
 }
 
 body {
     background: #FAFAFA;
-    font-family: "Roboto Slab", serif;
-    font-size: 20px;
-    line-height: 1.5em;
     width: 700px;
-    padding: 0 25px;
     margin: auto;
+    padding: 0 25px;
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures;
 }
 
 header {
     font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
     margin: 2em 0 2em;
     display: flex;
     justify-content: space-between;
@@ -73,6 +73,11 @@ header>svg>a:hover+g ellipse {
 }
 
 nav>ul {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 3em;
+    margin: 0;
     list-style: none;
     display: flex;
 }
@@ -83,7 +88,6 @@ nav>ul>li {
 
 nav>ul>li>a {
     color: #808080;
-    line-height: 3em;
     text-decoration: none;
     display: block;
 }
@@ -91,6 +95,7 @@ nav>ul>li>a {
 article>h2 {
     font-family: "Roboto", sans-serif;
     font-size: 40px;
+    font-weight: 500;
     line-height: 1.5em;
     margin-top: 1em;
 }
@@ -98,6 +103,7 @@ article>h2 {
 article>h3 {
     font-family: "Roboto Slab", serif;
     font-size: 28px;
+    font-weight: 400;
     line-height: 1.5em;
     margin-top: 1em;
 }
@@ -106,6 +112,7 @@ article>h6 {
     color: #808080;
     font-family: "Roboto", sans-serif;
     font-size: 14px;
+    font-weight: 400;
     line-height: 1.5em;
     margin-bottom: 1em;
 }
@@ -118,7 +125,13 @@ article>ul {
     padding-left: 2em;
 }
 
-p {
+p,
+ul {
+    font-family: "Roboto Slab", serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5em;
+    text-align: justify;
     margin-bottom: 1em;
 }
 
@@ -135,6 +148,7 @@ em {
 code {
     font-family: "Roboto Mono", monospace;
     font-size: 14px;
+    font-weight: 400;
 }
 
 a {
@@ -145,4 +159,59 @@ a {
 
 a:hover {
     color: #FF8000;
+}
+
+
+/* typeset.js */
+
+.pull-double {
+    margin-left: -0.32em
+}
+
+.push-double {
+    margin-right: 0.32em
+}
+
+.pull-single {
+    margin-left: -0.15em
+}
+
+.push-single {
+    margin-right: 0.15em
+}
+
+.pull-T,
+.pull-V,
+.pull-W,
+.pull-Y {
+    margin-left: -0.07em
+}
+
+.push-T,
+.push-V,
+.push-W,
+.push-Y {
+    margin-right: 0.07em
+}
+
+.pull-O,
+.pull-C,
+.pull-o,
+.pull-c {
+    margin-left: -0.05em
+}
+
+.push-O,
+.push-C,
+.push-o,
+.push-c {
+    margin-right: 0.05em
+}
+
+.pull-A {
+    margin-left: -0.03em
+}
+
+.push-A {
+    margin-right: 0.03em
 }

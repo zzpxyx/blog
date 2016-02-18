@@ -1,10 +1,11 @@
 var metalsmith = require('metalsmith'),
-    markdown = require('metalsmith-markdown-remarkable'),
+    markdown = require('metalsmith-markdownit'),
     permalinks = require('metalsmith-permalinks'),
     collections = require('metalsmith-collections'),
     layouts = require('metalsmith-layouts'),
     excerpts = require('metalsmith-excerpts'),
     feed = require('metalsmith-feed'),
+    typeset = require('metalsmith-typeset'),
     handlebars = require('handlebars'),
     moment = require('moment');
 
@@ -27,6 +28,9 @@ metalsmith(__dirname)
         }
     }))
     .use(markdown())
+    .use(typeset({
+        disable: ['ligatures']
+    }))
     .use(permalinks())
     .use(feed({
         collection: 'posts'

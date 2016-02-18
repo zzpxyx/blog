@@ -31,5 +31,5 @@ function initOnLoad() {
                 lastAnchor.target = iframe.name;
             }
         });
-    })
+    });
 }

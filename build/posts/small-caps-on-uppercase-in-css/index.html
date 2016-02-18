@@ -4,10 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0">
-    <meta name="description" content="A blog of technical memos for weird issues">
-    <title>zzpxyx</title>
+    <title>Small Caps on Uppercase in CSS | zzpxyx</title>
     <link href="/styles/index.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500%7CRoboto+Slab%7CRoboto+Mono" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/solarized_light.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/languages/vim.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
 </head>
 
 <body>
@@ -22,44 +27,24 @@
         </nav>
     </header>
     <article>
-        <h2><a href=posts/small-caps-on-uppercase-in-css>Small Caps on Uppercase in CSS</a></h2>
+        <h2><a href="/">Small Caps on Uppercase in CSS</a></h2>
         <h6>
             Published <time>2016-02-17</time>
-            | <a href=posts/small-caps-on-uppercase-in-css>Read More</a>
-        </h6>
-        <p>I just found<span class="push-o"></span> <span class="pull-o">o</span>ut how to ap­ply small<span class="push-c"></span> <span class="pull-c">c</span>aps to up­per­case let­ters us­ing <span class="small-caps">CSS</span>.</p>
-    </article>
-    <article>
-        <h2><a href=posts/inline-svg-with-flex-layout>Inline SVG with Flex Layout</a></h2>
-        <h6>
-            Published <time>2016-02-08</time>
-            | <a href=posts/inline-svg-with-flex-layout>Read More</a>
-        </h6>
-        <p>Be<span class="push-c"></span> <span class="pull-c">c</span>are­ful in set­ting the<span class="push-w"></span> <span class="pull-w">w</span>idth<span class="push-o"></span> <span class="pull-o">o</span>r height to<span class="push-double"></span> <span class="pull-double">“</span>auto”<span class="push-w"></span> <span class="pull-w">w</span>hen us­ing in­line <span class="small-caps">SVG</span> in <span class="small-caps">HTML</span>.</p>
-    </article>
-    <article>
-        <h2><a href=posts/iframe-border-issue-solved>iframe Border Issue Solved</a></h2>
-        <h6>
-            Published <time>2016-02-05</time>
-            | <a href=posts/iframe-border-issue-solved>Read More</a>
-        </h6>
-        <p>iOS Safari ren­ders the iframe tag<span class="push-w"></span> <span class="pull-w">w</span>ith an<span class="push-o"></span> <span class="pull-o">o</span>ld-fash­ioned bor­der even though I set the dis­play prop­erty to<span class="push-double"></span> <span class="pull-double">“</span>none”<span class="push-o"></span> <span class="pull-o">o</span>n that iframe tag. It took me a<span class="push-w"></span> <span class="pull-w">w</span>hile to re­al­ize<span class="push-w"></span> <span class="pull-w">w</span>hat<span class="push-w"></span> <span class="pull-w">w</span>as miss­ing.</p>
-    </article>
-    <article>
-        <h2><a href=posts/highlightjs-on-cdn>highlight.js on CDN</a></h2>
-        <h6>
-            Published <time>2016-01-26</time>
-            | <a href=posts/highlightjs-on-cdn>Read More</a>
-        </h6>
-        <p><a href="https://highlightjs.org/">Highlight.js</a> is a pop­u­lar li­brary for syn­tax high­light­ing. I just fig­ured<span class="push-o"></span> <span class="pull-o">o</span>ut how to use its <span class="small-caps">CDN</span> <span class="push-v"></span><span class="pull-v">v</span>er­sion.</p>
-    </article>
-    <article>
-        <h2><a href=posts/gvim-menu-issue-solved>gVim Menu Issue Solved</a></h2>
-        <h6>
-            Published <time>2016-01-20</time>
-            | <a href=posts/gvim-menu-issue-solved>Read More</a>
-        </h6>
-        <p>Something has been<span class="push-w"></span> <span class="pull-w">w</span>rong<span class="push-w"></span> <span class="pull-w">w</span>ith my gVim’s menus for quite some time. Finally, I found a<span class="push-w"></span> <span class="pull-w">w</span>orkaround yes­ter­day.</p>
+            | <a href="/">Go Back</a>
+        </h6> <p>I just found<span class="push-o"></span> <span class="pull-o">o</span>ut how to ap­ply small<span class="push-c"></span> <span class="pull-c">c</span>aps to up­per­case let­ters us­ing <span class="small-caps">CSS</span>.</p>
+<p><span class="pull-A">A</span>s a new­bie in<span class="push-w"></span> <span class="pull-w">w</span>eb de­sign and ty­pog­ra­phy, I<span class="push-w"></span> <span class="pull-w">w</span>as try­ing to ap­ply small<span class="push-c"></span> <span class="pull-c">c</span>aps to ab­bre­vi­a­tions in the texts. I knew the fol­low­ing<span class="push-c"></span> <span class="pull-c">c</span>ode:</p>
+<pre><code class="language-CSS">.small-caps {
+    font-variant: small-caps;
+}
+</code></pre>
+<p>However, it did­n’t<span class="push-w"></span> <span class="pull-w">w</span>ork for the ab­bre­vi­a­tions<span class="push-w"></span> <span class="pull-w">w</span>hich are all up­per­case let­ters. I thought it<span class="push-w"></span> <span class="pull-w">w</span>as<span class="push-c"></span> <span class="pull-c">c</span>aused by the font since I<span class="push-c"></span> <span class="pull-c">c</span>ould ap­ply small<span class="push-c"></span> <span class="pull-c">c</span>aps to the nav­i­ga­tion bar, but<span class="push-c"></span> <span class="pull-c">c</span>hang­ing the font for the texts<span class="push-w"></span> <span class="pull-w">w</span>as not help­ful.<span class="push-A"></span> <span class="pull-A">A</span>fter some dig­ging around I found that I need to trans­form the up­per­case let­ters into low­er­case first. In<span class="push-o"></span> <span class="pull-o">o</span>ther<span class="push-w"></span> <span class="pull-w">w</span>ords, I need:</p>
+<pre><code class="language-CSS">.small-caps {
+    text-transform: lowercase;
+    font-variant: small-caps;
+}
+</code></pre>
+<p>By the<span class="push-w"></span> <span class="pull-w">w</span>ay, I did­n’t use small<span class="push-c"></span> <span class="pull-c">c</span>aps<span class="push-o"></span> <span class="pull-o">o</span>n ab­bre­vi­a­tions in the end. It felt un­nat­ural. I think the best<span class="push-o"></span> <span class="pull-o">o</span>p­tion<span class="push-w"></span> <span class="pull-w">w</span>ould be us­ing a na­tive small<span class="push-c"></span> <span class="pull-c">c</span>aps font in­stead, but a match­ing<span class="push-o"></span> <span class="pull-o">o</span>ne has to be found first.</p>
+
     </article>
 </body>
 

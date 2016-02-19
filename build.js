@@ -6,6 +6,7 @@ var metalsmith = require('metalsmith'),
     excerpts = require('metalsmith-excerpts'),
     feed = require('metalsmith-feed'),
     typeset = require('metalsmith-typeset'),
+    archive = require('metalsmith-archive'),
     handlebars = require('handlebars'),
     moment = require('moment');
 
@@ -32,6 +33,7 @@ metalsmith(__dirname)
         disable: ['ligatures']
     }))
     .use(permalinks())
+    .use(archive())
     .use(feed({
         collection: 'posts'
     }))

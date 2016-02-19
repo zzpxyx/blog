@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+
+<head>
+    {{> meta}}
+    <meta name="description" content="A blog of technical memos for weird issues">
+    <title>Archive | {{site.title}}</title>
+    {{> css}}
+</head>
+
+<body>
+    {{> header}}
+    <article>
+        {{#each archive}}
+        <h3>{{year}}</h3>
+        <ul class="plain">
+            {{#each data}}
+            <li><a href="/{{path}}">{{title}}</a></li>
+            {{/each}}
+        </ul>
+        {{/each}}
+    </article>
+</body>
+
+</html>

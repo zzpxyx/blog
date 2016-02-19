@@ -132,13 +132,21 @@ ul {
     font-weight: 400;
     line-height: 1.5em;
     text-align: justify;
+    list-style: circle;
     margin-bottom: 1em;
+}
+
+ul.plain {
+    list-style: none;
 }
 
 p>a,
 li>a {
-    color: #000000;
     text-decoration: underline;
+}
+
+ul.plain>li>a {
+    text-decoration: none;
 }
 
 em {

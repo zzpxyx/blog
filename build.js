@@ -8,8 +8,11 @@ var metalsmith = require('metalsmith'),
     typeset = require('metalsmith-typeset'),
     archive = require('metalsmith-archive'),
     pagination = require('metalsmith-pagination'),
+    filemetadata = require('metalsmith-filemetadata'),
+    pagetitles = require('metalsmith-page-titles'),
     handlebars = require('handlebars'),
-    moment = require('moment');
+    moment = require('moment'),
+    hljs = require('highlight.js');
 
 handlebars.registerHelper('formatDate', function(date) {
     return moment.utc(date).format('YYYY-MM-DD');
@@ -27,6 +30,13 @@ metalsmith(__dirname)
             url: 'www.zzpxyx.com'
         }
     })
+    .use(filemetadata([{
+        pattern: 'posts/*.md',
+        metadata: {
+            'layout': 'post.hbs'
+        }
+    }]))
+    .use(pagetitles())
     .use(collections({
         posts: {
             pattern: 'posts/*.md',
@@ -34,7 +44,11 @@ metalsmith(__dirname)
             reverse: true
         }
     }))
-    .use(markdown())
+    .use(markdown({
+        highlight: function(str, lang) {
+            return '<pre><code class="hljs">' + hljs.highlight(lang, str, true).value + '</code></pre>';
+        }
+    }))
     .use(typeset({
         disable: ['ligatures']
     }))

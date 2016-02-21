@@ -1,7 +1,6 @@
 ---
 title: Small Caps on Uppercase in CSS
 publishDate: 2016-02-17
-layout: post.hbs
 ---
 
 I just found out how to apply small caps to uppercase letters using CSS.

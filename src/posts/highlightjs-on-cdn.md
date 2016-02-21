@@ -1,7 +1,6 @@
 ---
 title: highlight.js on CDN
 publishDate: 2016-01-26
-layout: post.hbs
 ---
 
 [highlight.js](https://highlightjs.org/) is a popular library for syntax highlighting. I just figured out how to use its CDN version.

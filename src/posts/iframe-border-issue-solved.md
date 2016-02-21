@@ -1,7 +1,6 @@
 ---
 title: iframe Border Issue Solved
 publishDate: 2016-02-05
-layout: post.hbs
 ---
 
 iOS Safari renders the iframe tag with an old-fashioned border even though I set the display property to "none" on that iframe tag. It took me a while to realize what was missing.

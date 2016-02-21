@@ -1,7 +1,6 @@
 ---
 title: Inline SVG with Flex Layout
 publishDate: 2016-02-08
-layout: post.hbs
 ---
 
 Be careful in setting the width or height to "auto" when using inline SVG in HTML.

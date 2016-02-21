@@ -1,7 +1,6 @@
 ---
 title: gVim Menu Issue Solved
 publishDate: 2016-01-20
-layout: post.hbs
 ---
 
 Something has been wrong with my gVim's menus for quite some time. Finally, I found a workaround yesterday.

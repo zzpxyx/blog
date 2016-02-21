@@ -20,17 +20,6 @@ handlebars.registerHelper('shortenPath', function(path) {
     return path.substring(0, pos);
 });
 
-handlebars.registerHelper('getPageNumber', function(post) {
-    function getPageIndex(post) {
-        if (post.previous) {
-            return getPageIndex(post.previous) + 1;
-        } else {
-            return 0;
-        }
-    }
-    return Math.floor(getPageIndex(post) / 4) + 1;
-});
-
 metalsmith(__dirname)
     .metadata({
         site: {

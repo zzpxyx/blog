@@ -13,9 +13,9 @@
     <article>
         {{#each archive}}
         <h3>{{year}}</h3>
-        <ul class="plain">
+        <ul class="archive">
             {{#each data}}
-            <li><a href="/{{path}}">{{title}}</a></li>
+            <li><time>{{formatDate publishDate}}</time><a href="/{{path}}">{{title}}</a></li>
             {{/each}}
         </ul>
         {{/each}}

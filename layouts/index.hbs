@@ -25,10 +25,10 @@
     {{/each}}
     <footer>
         {{#if pagination.previous}}
-        <div><a href="/{{shortenPath pagination.previous.path}}" class="float-left">&laquo; Prev Page</a></div>
+        <div class="float-left"><a href="/{{shortenPath pagination.previous.path}}">&laquo; Prev Page</a></div>
         {{/if}}
         {{#if pagination.next}}
-        <div><a href="/{{shortenPath pagination.next.path}}" class="float-right">Next Page &raquo;</a></div>
+        <div class="float-right"><a href="/{{shortenPath pagination.next.path}}">Next Page &raquo;</a></div>
         {{/if}}
     </footer>
 </body>

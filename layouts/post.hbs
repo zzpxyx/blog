@@ -23,10 +23,10 @@
     </article>
     <footer>
         {{#if previous}}
-        <div><a href="/{{previous.path}}" class="float-left">&laquo; {{previous.title}}</a></div>
+        <div class="float-left"><a href="/{{previous.path}}">&laquo; {{previous.title}}</a></div>
         {{/if}}
         {{#if next}}
-        <div><a href="/{{next.path}}" class="float-right">{{next.title}} &raquo;</a></div>
+        <div class="float-right"><a href="/{{next.path}}">{{next.title}} &raquo;</a></div>
         {{/if}}
     </footer>
 </body>

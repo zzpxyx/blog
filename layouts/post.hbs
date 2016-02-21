@@ -16,15 +16,24 @@
 <body>
     {{> header}}
     <article>
-        <h2><a href="/">{{title}}</a></h2>
+        <h2>{{title}}</h2>
         <h6>
             Published <time>{{formatDate publishDate}}</time>
             {{#if modifyDate}}
             | Updated <time>{{formatDate modifyDate}}</time>
             {{/if}}
-            | <a href="/">Go Back</a>
-        </h6> {{&contents}}
+            | <a href="javascript:history.back()">Go Back</a>
+        </h6>
+        {{&contents}}
     </article>
+    <footer>
+        {{#if previous}}
+        <div><a href="/{{previous.path}}" class="float-left">&laquo; {{previous.title}}</a></div>
+        {{/if}}
+        {{#if next}}
+        <div><a href="/{{next.path}}" class="float-right">{{next.title}} &raquo;</a></div>
+        {{/if}}
+    </footer>
 </body>
 
 </html>

@@ -10,7 +10,7 @@
 
 <body>
     {{> header}}
-    {{#each collections.posts}}
+    {{#each pagination.files}}
     <article>
         <h2><a href="/{{path}}">{{title}}</a></h2>
         <h6>
@@ -23,6 +23,14 @@
         {{&excerpt}}
     </article>
     {{/each}}
+    <footer>
+        {{#if pagination.previous}}
+        <div><a href="/{{shortenPath pagination.previous.path}}" class="float-left">&laquo; Prev Page</a></div>
+        {{/if}}
+        {{#if pagination.next}}
+        <div><a href="/{{shortenPath pagination.next.path}}" class="float-right">Next Page &raquo;</a></div>
+        {{/if}}
+    </footer>
 </body>
 
 </html>

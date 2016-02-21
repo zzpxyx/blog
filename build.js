@@ -7,11 +7,28 @@ var metalsmith = require('metalsmith'),
     feed = require('metalsmith-feed'),
     typeset = require('metalsmith-typeset'),
     archive = require('metalsmith-archive'),
+    pagination = require('metalsmith-pagination'),
     handlebars = require('handlebars'),
     moment = require('moment');
 
 handlebars.registerHelper('formatDate', function(date) {
     return moment.utc(date).format('YYYY-MM-DD');
+});
+
+handlebars.registerHelper('shortenPath', function(path) {
+    var pos = path.lastIndexOf('index.html');
+    return path.substring(0, pos);
+});
+
+handlebars.registerHelper('getPageNumber', function(post) {
+    function getPageIndex(post) {
+        if (post.previous) {
+            return getPageIndex(post.previous) + 1;
+        } else {
+            return 0;
+        }
+    }
+    return Math.floor(getPageIndex(post) / 4) + 1;
 });
 
 metalsmith(__dirname)
@@ -32,12 +49,22 @@ metalsmith(__dirname)
     .use(typeset({
         disable: ['ligatures']
     }))
-    .use(permalinks())
+    .use(permalinks({
+        relative: false
+    }))
     .use(archive())
     .use(feed({
         collection: 'posts'
     }))
     .use(excerpts())
+    .use(pagination({
+        'collections.posts': {
+            perPage: 4,
+            layout: 'index.hbs',
+            first: 'index.html',
+            path: 'page/:num/index.html'
+        }
+    }))
     .use(layouts({
         'engine': 'handlebars',
         'partials': 'layouts/partials'

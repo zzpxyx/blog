@@ -8,11 +8,6 @@
     <link href="/styles/index.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500%7CRoboto+Slab%7CRoboto+Mono" rel="stylesheet" type="text/css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/solarized_light.min.css" rel="stylesheet" type="text/css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/languages/vim.min.js"></script>
-    <script>
-        hljs.initHighlightingOnLoad();
-    </script>
 </head>
 
 <body>
@@ -35,14 +30,14 @@
         </h6>
         <p>I just found<span class="push-o"></span> <span class="pull-o">o</span>ut how to ap­ply small<span class="push-c"></span> <span class="pull-c">c</span>aps to up­per­case let­ters us­ing <span class="small-caps">CSS</span>.</p>
 <p><span class="pull-A">A</span>s a new­bie in<span class="push-w"></span> <span class="pull-w">w</span>eb de­sign and ty­pog­ra­phy, I<span class="push-w"></span> <span class="pull-w">w</span>as try­ing to ap­ply small<span class="push-c"></span> <span class="pull-c">c</span>aps to ab­bre­vi­a­tions in the texts. I knew the fol­low­ing<span class="push-c"></span> <span class="pull-c">c</span>ode:</p>
-<pre><code class="language-CSS">.small-caps {
-    font-variant: small-caps;
+<pre><code class="hljs"><span class="hljs-selector-class">.small-caps</span> {
+    <span class="hljs-attribute">font-variant</span>: small-caps;
 }
 </code></pre>
 <p>However, it did­n’t<span class="push-w"></span> <span class="pull-w">w</span>ork for the ab­bre­vi­a­tions<span class="push-w"></span> <span class="pull-w">w</span>hich are all up­per­case let­ters. I thought it<span class="push-w"></span> <span class="pull-w">w</span>as<span class="push-c"></span> <span class="pull-c">c</span>aused by the font since I<span class="push-c"></span> <span class="pull-c">c</span>ould ap­ply small<span class="push-c"></span> <span class="pull-c">c</span>aps to the nav­i­ga­tion bar, but<span class="push-c"></span> <span class="pull-c">c</span>hang­ing the font for the texts<span class="push-w"></span> <span class="pull-w">w</span>as not help­ful.<span class="push-A"></span> <span class="pull-A">A</span>fter some dig­ging around I found that I need to trans­form the up­per­case let­ters into low­er­case first. In<span class="push-o"></span> <span class="pull-o">o</span>ther<span class="push-w"></span> <span class="pull-w">w</span>ords, I need:</p>
-<pre><code class="language-CSS">.small-caps {
-    text-transform: lowercase;
-    font-variant: small-caps;
+<pre><code class="hljs"><span class="hljs-selector-class">.small-caps</span> {
+    <span class="hljs-attribute">text-transform</span>: lowercase;
+    <span class="hljs-attribute">font-variant</span>: small-caps;
 }
 </code></pre>
 <p>By the<span class="push-w"></span> <span class="pull-w">w</span>ay, I did­n’t use small<span class="push-c"></span> <span class="pull-c">c</span>aps<span class="push-o"></span> <span class="pull-o">o</span>n ab­bre­vi­a­tions in the end. It felt un­nat­ural. I think the best<span class="push-o"></span> <span class="pull-o">o</span>p­tion<span class="push-w"></span> <span class="pull-w">w</span>ould be us­ing a na­tive small<span class="push-c"></span> <span class="pull-c">c</span>aps font in­stead, but a match­ing<span class="push-o"></span> <span class="pull-o">o</span>ne has to be found first.</p>

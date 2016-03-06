@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0">
-    <meta name="description" content="A blog of technical memos for weird issues">
-    <title>zzpxyx</title>
+    <title>Unzipping Chinese Filenames | zzpxyx</title>
     <link href="/styles/index.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500%7CRoboto+Slab%7CRoboto+Mono" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/solarized_light.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -23,39 +23,18 @@
         </nav>
     </header>
     <article>
-        <h2><a href="/posts/unzipping-chinese-filenames">Unzipping Chinese Filenames</a></h2>
+        <h2>Unzipping Chinese Filenames</h2>
         <h6>
             Published <time>2016-03-06</time>
-            | <a href="/posts/unzipping-chinese-filenames">Read More</a>
+            | <a href="javascript:history.back()">Go Back</a>
         </h6>
         <p>Unzipping a zip archive that has<span class="push-C"></span> <span class="pull-C">C</span>hinese file­names in­side is tricky. I haven’t been able to find a per­fect so­lu­tion for quite a long time. Instead, I have to use a<span class="push-w"></span> <span class="pull-w">w</span>orkaround. Recently, I<span class="push-c"></span> <span class="pull-c">c</span>ame<span class="push-c"></span> <span class="pull-c">c</span>ross <a href="https://linuxtoy.org/archives/wrong-handling-of-chinese-coded-filename-in-fileroller-unzip.html">this post</a> <span class="push-w"></span><span class="pull-w">w</span>hich<span class="push-c"></span> <span class="pull-c">c</span>on­firms my find­ings.</p>
-    </article>
-    <article>
-        <h2><a href="/posts/inflight-texting-issue-solved">In-flight Texting Issue Solved</a></h2>
-        <h6>
-            Published <time>2016-02-28</time>
-            | <a href="/posts/inflight-texting-issue-solved">Read More</a>
-        </h6>
-        <p>I just found a tiny<span class="push-c"></span> <span class="pull-c">c</span>atch in send­ing in-flight<span class="push-W"></span> <span class="pull-W">W</span>i-Fi mes­sages, and luck­ily I fig­ured<span class="push-o"></span> <span class="pull-o">o</span>ut<span class="push-w"></span> <span class="pull-w">w</span>hat<span class="push-w"></span> <span class="pull-w">w</span>as<span class="push-w"></span> <span class="pull-w">w</span>rong.</p>
-    </article>
-    <article>
-        <h2><a href="/posts/small-caps-on-uppercase-in-css">Small Caps on Uppercase in CSS</a></h2>
-        <h6>
-            Published <time>2016-02-17</time>
-            | <a href="/posts/small-caps-on-uppercase-in-css">Read More</a>
-        </h6>
-        <p>I just found<span class="push-o"></span> <span class="pull-o">o</span>ut how to ap­ply small<span class="push-c"></span> <span class="pull-c">c</span>aps to up­per­case let­ters us­ing <span class="small-caps">CSS</span>.</p>
-    </article>
-    <article>
-        <h2><a href="/posts/inline-svg-with-flex-layout">Inline SVG with Flex Layout</a></h2>
-        <h6>
-            Published <time>2016-02-08</time>
-            | <a href="/posts/inline-svg-with-flex-layout">Read More</a>
-        </h6>
-        <p>Be<span class="push-c"></span> <span class="pull-c">c</span>are­ful in set­ting the<span class="push-w"></span> <span class="pull-w">w</span>idth<span class="push-o"></span> <span class="pull-o">o</span>r height to<span class="push-double"></span> <span class="pull-double">“</span>auto”<span class="push-w"></span> <span class="pull-w">w</span>hen us­ing in­line <span class="small-caps">SVG</span> in <span class="small-caps">HTML</span>.</p>
+<p>Let’s talk about the is­sue first. Suppose I<span class="push-c"></span> <span class="pull-c">c</span>om­press a file<span class="push-w"></span> <span class="pull-w">w</span>ith a<span class="push-C"></span> <span class="pull-C">C</span>hinese file­name into a zip archive<span class="push-o"></span> <span class="pull-o">o</span>n the<span class="push-W"></span> <span class="pull-W">W</span>indows plat­form. Now I<span class="push-w"></span> <span class="pull-w">w</span>ant to ex­tract that file<span class="push-o"></span> <span class="pull-o">o</span>n Linux.<span class="push-T"></span> <span class="pull-T">T</span>he <code>unzip</code> tool used to<span class="push-w"></span> <span class="pull-w">w</span>ork per­fectly<span class="push-w"></span> <span class="pull-w">w</span>ith the <code>-O</code> <span class="push-o"></span><span class="pull-o">o</span>p­tion, but<span class="push-o"></span> <span class="pull-o">o</span>ne day I found that the<span class="push-o"></span> <span class="pull-o">o</span>p­tion<span class="push-w"></span> <span class="pull-w">w</span>as gone.<span class="push-W"></span> <span class="pull-W">W</span>ithout that<span class="push-o"></span> <span class="pull-o">o</span>p­tion, the ex­tracted file<span class="push-w"></span> <span class="pull-w">w</span>ill have a hu­man un­read­able file­name.</p>
+<p><span class="pull-T">T</span>he is­sue is<span class="push-c"></span> <span class="pull-c">c</span>aused by en­cod­ing for sure.<span class="push-T"></span> <span class="pull-T">T</span>he<span class="push-w"></span> <span class="pull-w">w</span>orkaround is sim­ple. Just find any un­zip­ping util­ity that sup­ports spec­i­fy­ing en­cod­ing.<span class="push-T"></span> <span class="pull-T">T</span>o me, the best<span class="push-w"></span> <span class="pull-w">w</span>orkaround<span class="push-w"></span> <span class="pull-w">w</span>ould be <a href="http://unarchiver.c3.cx/commandline">Unarchiver (unar)</a> <span class="push-w"></span><span class="pull-w">w</span>hich I found in <span class="small-caps">AUR</span> pre­vi­ously. It<span class="push-w"></span> <span class="pull-w">w</span>orked<span class="push-w"></span> <span class="pull-w">w</span>ell even<span class="push-w"></span> <span class="pull-w">w</span>ith­out spec­i­fy­ing en­cod­ing.<span class="push-T"></span> <span class="pull-T">T</span>he post men­tioned at the be­gin­ning<span class="push-c"></span> <span class="pull-c">c</span>on­firms this. In ad­di­tion, the<span class="push-c"></span> <span class="pull-c">c</span>om­ments un­der that post also sug­gests a patched<span class="push-v"></span> <span class="pull-v">v</span>er­sion<span class="push-o"></span> <span class="pull-o">o</span>f <code>unzip</code>, namely <code>unzip-iconv</code>,<span class="push-w"></span> <span class="pull-w">w</span>hich adds back the <code>-O</code> <span class="push-o"></span><span class="pull-o">o</span>p­tion.</p>
+
     </article>
     <footer>
-        <div class="float-right"><a href="/page/2/">Next Page &raquo;</a></div>
+        <div class="float-right"><a href="/posts/inflight-texting-issue-solved">In-flight Texting Issue Solved &raquo;</a></div>
     </footer>
 </body>
 

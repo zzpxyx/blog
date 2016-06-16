@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0">
-    <meta name="description" content="A blog of technical memos for weird issues">
-    <title>zzpxyx</title>
+    <title>Cleaning pacman Cache | zzpxyx</title>
     <link href="/styles/index.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500%7CRoboto+Slab%7CRoboto+Mono" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/solarized_light.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -23,40 +23,23 @@
         </nav>
     </header>
     <article>
-        <h2><a href="/posts/small-caps-on-uppercase-in-css">Small Caps on Uppercase in CSS</a></h2>
+        <h2>Cleaning pacman Cache</h2>
         <h6>
-            Published <time>2016-02-17</time>
-            | <a href="/posts/small-caps-on-uppercase-in-css">Read More</a>
+            Published <time>2016-06-15</time>
+            | <a href="javascript:history.back()">Go Back</a>
         </h6>
-        <p>I just found<span class="push-o"></span> <span class="pull-o">o</span>ut how to ap­ply small<span class="push-c"></span> <span class="pull-c">c</span>aps to up­per­case let­ters us­ing <span class="small-caps">CSS</span>.</p>
-    </article>
-    <article>
-        <h2><a href="/posts/inline-svg-with-flex-layout">Inline SVG with Flex Layout</a></h2>
-        <h6>
-            Published <time>2016-02-08</time>
-            | <a href="/posts/inline-svg-with-flex-layout">Read More</a>
-        </h6>
-        <p>Be<span class="push-c"></span> <span class="pull-c">c</span>are­ful in set­ting the<span class="push-w"></span> <span class="pull-w">w</span>idth<span class="push-o"></span> <span class="pull-o">o</span>r height to<span class="push-double"></span> <span class="pull-double">“</span>auto”<span class="push-w"></span> <span class="pull-w">w</span>hen us­ing in­line <span class="small-caps">SVG</span> in <span class="small-caps">HTML</span>.</p>
-    </article>
-    <article>
-        <h2><a href="/posts/iframe-border-issue-solved">iframe Border Issue Solved</a></h2>
-        <h6>
-            Published <time>2016-02-05</time>
-            | <a href="/posts/iframe-border-issue-solved">Read More</a>
-        </h6>
-        <p>iOS Safari ren­ders the iframe tag<span class="push-w"></span> <span class="pull-w">w</span>ith an<span class="push-o"></span> <span class="pull-o">o</span>ld-fash­ioned bor­der even though I set the dis­play prop­erty to<span class="push-double"></span> <span class="pull-double">“</span>none”<span class="push-o"></span> <span class="pull-o">o</span>n that iframe tag. It took me a<span class="push-w"></span> <span class="pull-w">w</span>hile to re­al­ize<span class="push-w"></span> <span class="pull-w">w</span>hat<span class="push-w"></span> <span class="pull-w">w</span>as miss­ing.</p>
-    </article>
-    <article>
-        <h2><a href="/posts/highlightjs-on-cdn">highlight.js on CDN</a></h2>
-        <h6>
-            Published <time>2016-01-26</time>
-            | <a href="/posts/highlightjs-on-cdn">Read More</a>
-        </h6>
-        <p><a href="https://highlightjs.org/">high­light.js</a> is a pop­u­lar li­brary for syn­tax high­light­ing. I just fig­ured<span class="push-o"></span> <span class="pull-o">o</span>ut how to use its <span class="small-caps">CDN</span> <span class="push-v"></span><span class="pull-v">v</span>er­sion.</p>
+        <p>I just learned how to<span class="push-c"></span> <span class="pull-c">c</span>lean pac­man’s pack­age<span class="push-c"></span> <span class="pull-c">c</span>ache.</p>
+<p>I<span class="push-c"></span> <span class="pull-c">c</span>ame across this <a href="https://wiki.archlinux.org/index.php/pacman#Cleaning_the_package_cache"><span class="push-w"></span><span class="pull-w">w</span>iki page</a> <span class="push-w"></span><span class="pull-w">w</span>hen I<span class="push-w"></span> <span class="pull-w">w</span>as strug­gling<span class="push-w"></span> <span class="pull-w">w</span>ith disk space the<span class="push-o"></span> <span class="pull-o">o</span>ther day. It<span class="push-w"></span> <span class="pull-w">w</span>as then that I learned that pac­man<span class="push-w"></span> <span class="pull-w">w</span>ould keep <em>all</em> <span class="push-v"></span><span class="pull-v">v</span>er­sions<span class="push-o"></span> <span class="pull-o">o</span>f down­loaded pack­ages, no mat­ter<span class="push-w"></span> <span class="pull-w">w</span>hether the pack­age is in­stalled<span class="push-o"></span> <span class="pull-o">o</span>r not.<span class="push-C"></span> <span class="pull-C">C</span>leaning the<span class="push-c"></span> <span class="pull-c">c</span>ache is easy:</p>
+<pre><code class="hljs">paccache -r
+</code></pre>
+<p><span class="pull-T">T</span>his<span class="push-w"></span> <span class="pull-w">w</span>ill re­move all<span class="push-c"></span> <span class="pull-c">c</span>ached<span class="push-v"></span> <span class="pull-v">v</span>er­sions ex­cept the most re­cent 3.<span class="push-T"></span> <span class="pull-T">T</span>here are more ag­gres­sive<span class="push-o"></span> <span class="pull-o">o</span>p­tions as<span class="push-w"></span> <span class="pull-w">w</span>ell men­tioned in that<span class="push-w"></span> <span class="pull-w">w</span>iki page, such as:</p>
+<pre><code class="hljs">pacman -Sc
+</code></pre>
+<p><span class="pull-T">T</span>his<span class="push-w"></span> <span class="pull-w">w</span>ill keep<span class="push-o"></span> <span class="pull-o">o</span>nly the lat­est<span class="push-v"></span> <span class="pull-v">v</span>er­sion for<span class="push-c"></span> <span class="pull-c">c</span>ur­rently in­stalled pack­ages.<span class="push-O"></span> <span class="pull-O">O</span>lder<span class="push-v"></span> <span class="pull-v">v</span>er­sions and unin­stalled pack­ages<span class="push-w"></span> <span class="pull-w">w</span>ill be re­moved.<span class="push-O"></span> <span class="pull-O">O</span>f<span class="push-c"></span> <span class="pull-c">c</span>ourse, this is not rec­om­mended. However, as a fun fact, I used that<span class="push-c"></span> <span class="pull-c">c</span>om­mand to re­gain<span class="push-o"></span> <span class="pull-o">o</span>ver <span class="small-caps">22GB</span> disk space.</p>
+
     </article>
     <footer>
-        <div class="float-left"><a href="/">&laquo; Prev Page</a></div>
-        <div class="float-right"><a href="/page/3/">Next Page &raquo;</a></div>
+        <div class="float-right"><a href="/posts/list-unsubscribe-url-in-header">List-Unsubscribe URL in Header &raquo;</a></div>
     </footer>
 </body>
 

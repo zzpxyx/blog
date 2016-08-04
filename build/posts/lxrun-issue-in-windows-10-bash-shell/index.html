@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0">
-    <meta name="description" content="A blog of technical memos for weird issues">
-    <title>Archive | zzpxyx</title>
+    <title>LxRun Issue in Windows 10 Bash Shell | zzpxyx</title>
     <link href="/styles/index.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500%7CRoboto+Slab%7CRoboto+Mono" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/solarized_light.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -23,21 +23,29 @@
         </nav>
     </header>
     <article>
-        <h3>2016</h3>
-        <ul class="archive">
-            <li><time>2016-08-03</time><a href="/posts/lxrun-issue-in-windows-10-bash-shell">LxRun Issue in Windows 10 Bash Shell</a></li>
-            <li><time>2016-08-02</time><a href="/posts/windows-10-on-acer-6935g">Windows 10 on Acer 6935G</a></li>
-            <li><time>2016-06-15</time><a href="/posts/cleaning-pacman-cache">Cleaning pacman Cache</a></li>
-            <li><time>2016-04-10</time><a href="/posts/list-unsubscribe-url-in-header">List-Unsubscribe URL in Header</a></li>
-            <li><time>2016-03-06</time><a href="/posts/unzipping-chinese-filenames">Unzipping Chinese Filenames</a></li>
-            <li><time>2016-02-28</time><a href="/posts/inflight-texting-issue-solved">In-flight Texting Issue Solved</a></li>
-            <li><time>2016-02-17</time><a href="/posts/small-caps-on-uppercase-in-css">Small Caps on Uppercase in CSS</a></li>
-            <li><time>2016-02-08</time><a href="/posts/inline-svg-with-flex-layout">Inline SVG with Flex Layout</a></li>
-            <li><time>2016-02-05</time><a href="/posts/iframe-border-issue-solved">iframe Border Issue Solved</a></li>
-            <li><time>2016-01-26</time><a href="/posts/highlightjs-on-cdn">highlight.js on CDN</a></li>
-            <li><time>2016-01-20</time><a href="/posts/gvim-menu-issue-solved">gVim Menu Issue Solved</a></li>
-        </ul>
+        <h2>LxRun Issue in Windows 10 Bash Shell</h2>
+        <h6>
+            Published <time>2016-08-03</time>
+            | <a href="javascript:history.back()">Go Back</a>
+        </h6>
+        <p>I’ve just found a<span class="push-w"></span> <span class="pull-w">w</span>orkaround for an is­sue<span class="push-o"></span> <span class="pull-o">o</span>f set­ting the de­fault user in<span class="push-W"></span> <span class="pull-W">W</span>indows 10 Bash shell.</p>
+<p>During in­stal­la­tion<span class="push-o"></span> <span class="pull-o">o</span>f<span class="push-W"></span> <span class="pull-W">W</span>indows 10 Bash shell, there is a step to set<span class="push-o"></span> <span class="pull-o">o</span>r<span class="push-c"></span> <span class="pull-c">c</span>re­ate the de­fault user. It’s equiv­a­lent to ex­e­cut­ing the fol­low­ing<span class="push-c"></span> <span class="pull-c">c</span>om­mand:</p>
+<pre><code class="hljs">LxRun.exe /setdefaultuser &lt;username&gt;
+</code></pre>
+<p>If the<span class="push-T"></span> <span class="pull-T">T</span>emp folder is not ac­ces­si­ble, ei­ther be­cause<span class="push-o"></span> <span class="pull-o">o</span>f priv­i­lege<span class="push-o"></span> <span class="pull-o">o</span>r un­sup­ported file sys­tems like <span class="small-caps">RAM</span> disk, an er­ror mes­sage<span class="push-w"></span> <span class="pull-w">w</span>ill ap­pear:</p>
+<pre><code class="hljs">/bin/bash: /mnt/d/TEMP/uid.txt: No such file or directory
+</code></pre>
+<p><span class="pull-O">O</span>r</p>
+<pre><code class="hljs">/bin/bash: /mnt/c/WINDOWS/TEMP/uid.txt: No such file or directory
+</code></pre>
+<p><span class="pull-T">T</span>he first er­ror mes­sage ap­pears<span class="push-w"></span> <span class="pull-w">w</span>hen my<span class="push-T"></span> <span class="pull-T">T</span>emp folder is<span class="push-o"></span> <span class="pull-o">o</span>n a <span class="small-caps">RAM</span> disk, and the sec­ond ap­pears<span class="push-w"></span> <span class="pull-w">w</span>hen I’m us­ing the sys­tem-level<span class="push-T"></span> <span class="pull-T">T</span>emp folder (<code>C:\Windows\Temp</code>).</p>
+<p><span class="pull-T">T</span>he<span class="push-w"></span> <span class="pull-w">w</span>orkaround is fairly sim­ple. Just move the<span class="push-T"></span> <span class="pull-T">T</span>emp folder to some­where ac­ces­si­ble, such as <code>%USERPROFILE%\AppData\Local\Temp</code>.</p>
+<p>By the<span class="push-w"></span> <span class="pull-w">w</span>ay, I’ve sub­mit­ted an <a href="https://github.com/Microsoft/BashOnWindows/issues/752">is­sue</a> for this<span class="push-o"></span> <span class="pull-o">o</span>n GitHub.</p>
+
     </article>
+    <footer>
+        <div class="float-right"><a href="/posts/windows-10-on-acer-6935g">Windows 10 on Acer 6935G &raquo;</a></div>
+    </footer>
 </body>
 
 </html>

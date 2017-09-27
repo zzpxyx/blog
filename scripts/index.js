@@ -1,4 +1,4 @@
-function initOnLoad() {
+(function initOnLoad() {
     document.addEventListener('DOMContentLoaded', function() {
         var anchorList = document.getElementsByTagName('a');
         var lastAnchor = anchorList[anchorList.length - 1];
@@ -32,4 +32,4 @@ function initOnLoad() {
             }
         });
     });
-}
+})();

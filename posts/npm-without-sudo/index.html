@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0">
-    <meta name="description" content="A blog of technical memos for weird issues">
-    <title>zzpxyx</title>
+    <title>npm Without Sudo | zzpxyx</title>
     <link href="/styles/index.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500%7CRoboto+Slab%7CRoboto+Mono" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/solarized_light.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -24,39 +24,34 @@
         </nav>
     </header>
     <article>
-        <h2><a href="/posts/npm-without-sudo">npm Without Sudo</a></h2>
+        <h2>npm Without Sudo</h2>
         <h6>
             Published <time>2017-12-05</time>
-            | <a href="/posts/npm-without-sudo">Read More</a>
+            | <a href="javascript:history.back()">Go Back</a>
         </h6>
         <p>Recently, I have to re­in­stall npm. It’s a good time to jot down how to in­stall npm lo­cally so that no sudo is re­quired<span class="push-w"></span> <span class="pull-w">w</span>hen us­ing npm.</p>
-    </article>
-    <article>
-        <h2><a href="/posts/sdl2-renderer-error">SDL2 Renderer Error</a></h2>
-        <h6>
-            Published <time>2017-09-05</time>
-            | <a href="/posts/sdl2-renderer-error">Read More</a>
-        </h6>
-        <p>Long story short, re­mem­ber to re­boot af­ter up­dat­ing the graph­ics dri­ver, es­pe­cially be­fore do­ing de­vel­op­ment in <span class="small-caps">SDL2</span>.</p>
-    </article>
-    <article>
-        <h2><a href="/posts/upgrading-tex-live">Upgrading Tex Live</a></h2>
-        <h6>
-            Published <time>2017-06-29</time>
-            | <a href="/posts/upgrading-tex-live">Read More</a>
-        </h6>
-        <p>Here is a memo for up­grad­ing<span class="push-T"></span> <span class="pull-T">T</span>ex Live.</p>
-    </article>
-    <article>
-        <h2><a href="/posts/icon-size-in-xfce-4-window-buttons">Icon Size in Xfce 4 Window Buttons</a></h2>
-        <h6>
-            Published <time>2017-04-08</time>
-            | <a href="/posts/icon-size-in-xfce-4-window-buttons">Read More</a>
-        </h6>
-        <p>I’ve just fig­ured<span class="push-o"></span> <span class="pull-o">o</span>ut how to<span class="push-c"></span> <span class="pull-c">c</span>hange the icon size for Xfce 4<span class="push-w"></span> <span class="pull-w">w</span>in­dow but­tons in task list.</p>
+<p><span class="pull-T">T</span>he<span class="push-w"></span> <span class="pull-w">w</span>hole story be­gins<span class="push-w"></span> <span class="pull-w">w</span>ith this <a href="https://github.com/npm/npm/issues/19019">is­sue</a>. Basically,<span class="push-o"></span> <span class="pull-o">o</span>n my ma­chine, npm 5.5.1<span class="push-c"></span> <span class="pull-c">c</span>rashes every time<span class="push-w"></span> <span class="pull-w">w</span>hen I try to up­date<span class="push-o"></span> <span class="pull-o">o</span>r in­stall pack­ages for Node.js 9.2.0.<span class="push-T"></span> <span class="pull-T">T</span>he so­lu­tion is to unin­stall npm and re­in­stall it<span class="push-w"></span> <span class="pull-w">w</span>ith a higher<span class="push-v"></span> <span class="pull-v">v</span>er­sion like 5.6.0.</p>
+<p>It’s de­bat­able<span class="push-w"></span> <span class="pull-w">w</span>hether npm should be in­stalled lo­cally in the user home di­rec­tory<span class="push-o"></span> <span class="pull-o">o</span>r at the sys­tem level. Personally, I pre­fer not us­ing sudo for npm.</p>
+<p>Here is the main <a href="https://stackoverflow.com/questions/10081293/install-npm-into-home-directory-with-distribution-nodejs-package-ubuntu/13021677#13021677">ref­er­ence</a> <span class="push-o"></span><span class="pull-o">o</span>n how to do this. For me, I did the fol­low­ing steps:</p>
+<ol>
+<li><span class="pull-A">A</span>dd <code>prefix=~/.npm-packages</code> to <code>~/.npmrc</code>.</li>
+<li><span class="pull-A">A</span>dd the fol­low­ing lines to <code>~/.xprofile</code>:<pre><code class="hljs"><span class="hljs-comment"># Tell npm about the packages:</span>
+<span class="hljs-built_in">export</span> NPM_PACKAGES=<span class="hljs-string">"<span class="hljs-variable">$HOME</span>/.npm-packages"</span>
+<span class="hljs-comment"># Tell Node.js about the packages:</span>
+<span class="hljs-built_in">export</span> NODE_PATH=<span class="hljs-string">"<span class="hljs-variable">$NPM_PACKAGES</span>/lib/node_modules"</span>
+<span class="hljs-built_in">export</span> PATH=<span class="hljs-string">"<span class="hljs-variable">$NPM_PACKAGES</span>/bin:<span class="hljs-variable">$PATH</span>"</span>
+<span class="hljs-built_in">export</span> MANPATH=<span class="hljs-string">"<span class="hljs-variable">$NPM_PACKAGES</span>/share/man:<span class="hljs-variable">$MANPATH</span>"</span>
+</code></pre>
+</li>
+<li>Reboot so that the new en­vi­ron­ment<span class="push-v"></span> <span class="pull-v">v</span>ari­ables take ef­fect.</li>
+<li>Download the npm mod­ule from <a href="https://docs.npmjs.com/getting-started/installing-node">here</a>.</li>
+<li>Install npm us­ing the nor­mal<span class="push-w"></span> <span class="pull-w">w</span>ay: <code>./configure</code>, <code>make</code>, and <code>make install</code>.</li>
+</ol>
+<p>Note that the en­vi­ron­ment<span class="push-v"></span> <span class="pull-v">v</span>ari­able set­tings and<span class="push-w"></span> <span class="pull-w">w</span>here to put them are spe­cific to my ma­chine.<span class="push-Y"></span> <span class="pull-Y">Y</span>ou might have to<span class="push-c"></span> <span class="pull-c">c</span>hange them to fit in your sys­tem.</p>
+
     </article>
     <footer>
-        <div class="float-right"><a href="/page/2/">Next Page &raquo;</a></div>
+        <div class="float-right"><a href="/posts/sdl2-renderer-error">SDL2 Renderer Error &raquo;</a></div>
     </footer>
 </body>
 

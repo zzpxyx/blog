@@ -8,11 +8,10 @@ layout: about.hbs
 - Static site generator: [Metalsmith](http://www.metalsmith.io/)
 - Code highlighting: [highlight.js](https://highlightjs.org/)
 - Google Fonts: [Roboto](https://www.google.com/fonts/specimen/Roboto), [Roboto Slab](https://www.google.com/fonts/specimen/Roboto+Slab), and [Roboto Mono](https://www.google.com/fonts/specimen/Roboto+Mono)
-- Mail hide: [reCAPTCHA](https://www.google.com/recaptcha/admin#mailhide)
 - Hosting: [GitHub Pages](https://pages.github.com/)
 
 ### Licenses
 Code of this blog is licensed under [MIT](https://opensource.org/licenses/MIT/), while content is under [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/). For third-party libraries, please refer to their own licenses.
 
 ### Contact
-[Show me the email](http://www.google.com/recaptcha/mailhide/d?k=01BMz6chkSsvCuT4o0Cq_80Q==&c=VuaJX8eRMFU_BWXaYBeY2g==).
+Keep calm and say hello. Put together the second and the last words from the previous sentence, and now you have the local-part of my email address. The domain is zzpxyx.com. [A bit help from Wikipedia.](https://en.wikipedia.org/wiki/Email_address#Syntax)

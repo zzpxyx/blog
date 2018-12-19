@@ -29,13 +29,13 @@
             Published <time>2017-12-05</time>
             | <a href="javascript:history.back()">Go Back</a>
         </h6>
-        <p>Recently, I have to re­in­stall npm. It’s a good time to jot down how to in­stall npm lo­cally so that no sudo is re­quired<span class="push-w"></span> <span class="pull-w">w</span>hen us­ing npm.</p>
-<p><span class="pull-T">T</span>he<span class="push-w"></span> <span class="pull-w">w</span>hole story be­gins<span class="push-w"></span> <span class="pull-w">w</span>ith this <a href="https://github.com/npm/npm/issues/19019">is­sue</a>. Basically,<span class="push-o"></span> <span class="pull-o">o</span>n my ma­chine, npm 5.5.1<span class="push-c"></span> <span class="pull-c">c</span>rashes every time<span class="push-w"></span> <span class="pull-w">w</span>hen I try to up­date<span class="push-o"></span> <span class="pull-o">o</span>r in­stall pack­ages for Node.js 9.2.0.<span class="push-T"></span> <span class="pull-T">T</span>he so­lu­tion is to unin­stall npm and re­in­stall it<span class="push-w"></span> <span class="pull-w">w</span>ith a higher<span class="push-v"></span> <span class="pull-v">v</span>er­sion like 5.6.0.</p>
-<p>It’s de­bat­able<span class="push-w"></span> <span class="pull-w">w</span>hether npm should be in­stalled lo­cally in the user home di­rec­tory<span class="push-o"></span> <span class="pull-o">o</span>r at the sys­tem level. Personally, I pre­fer not us­ing sudo for npm.</p>
-<p>Here is the main <a href="https://stackoverflow.com/questions/10081293/install-npm-into-home-directory-with-distribution-nodejs-package-ubuntu/13021677#13021677">ref­er­ence</a> <span class="push-o"></span><span class="pull-o">o</span>n how to do this. For me, I did the fol­low­ing steps:</p>
+        <p>Recently, I have to re­in­stall npm. It’s a good time to jot down how to in­stall npm lo­cally so that no sudo is re­quired when us­ing npm.</p>
+<p>The whole story be­gins with this <a href="https://github.com/npm/npm/issues/19019">is­sue</a>. Basically, on my ma­chine, npm 5.5.1 crashes every time when I try to up­date or in­stall pack­ages for Node.js 9.2.0. The so­lu­tion is to unin­stall npm and re­in­stall it with a higher ver­sion like 5.6.0.</p>
+<p>It’s de­bat­able whether npm should be in­stalled lo­cally in the user home di­rec­tory or at the sys­tem level. Personally, I pre­fer not us­ing sudo for npm.</p>
+<p>Here is the main <a href="https://stackoverflow.com/questions/10081293/install-npm-into-home-directory-with-distribution-nodejs-package-ubuntu/13021677#13021677">ref­er­ence</a> on how to do this. For me, I did the fol­low­ing steps:</p>
 <ol>
-<li><span class="pull-A">A</span>dd <code>prefix=~/.npm-packages</code> to <code>~/.npmrc</code>.</li>
-<li><span class="pull-A">A</span>dd the fol­low­ing lines to <code>~/.xprofile</code>:<pre><code class="hljs"><span class="hljs-comment"># Tell npm about the packages:</span>
+<li>Add <code>prefix=~/.npm-packages</code> to <code>~/.npmrc</code>.</li>
+<li>Add the fol­low­ing lines to <code>~/.xprofile</code>:<pre><code class="hljs"><span class="hljs-comment"># Tell npm about the packages:</span>
 <span class="hljs-built_in">export</span> NPM_PACKAGES=<span class="hljs-string">"<span class="hljs-variable">$HOME</span>/.npm-packages"</span>
 <span class="hljs-comment"># Tell Node.js about the packages:</span>
 <span class="hljs-built_in">export</span> NODE_PATH=<span class="hljs-string">"<span class="hljs-variable">$NPM_PACKAGES</span>/lib/node_modules"</span>
@@ -43,11 +43,11 @@
 <span class="hljs-built_in">export</span> MANPATH=<span class="hljs-string">"<span class="hljs-variable">$NPM_PACKAGES</span>/share/man:<span class="hljs-variable">$MANPATH</span>"</span>
 </code></pre>
 </li>
-<li>Reboot so that the new en­vi­ron­ment<span class="push-v"></span> <span class="pull-v">v</span>ari­ables take ef­fect.</li>
+<li>Reboot so that the new en­vi­ron­ment vari­ables take ef­fect.</li>
 <li>Download the npm mod­ule from <a href="https://docs.npmjs.com/getting-started/installing-node">here</a>.</li>
-<li>Install npm us­ing the nor­mal<span class="push-w"></span> <span class="pull-w">w</span>ay: <code>./configure</code>, <code>make</code>, and <code>make install</code>.</li>
+<li>Install npm us­ing the nor­mal way: <code>./configure</code>, <code>make</code>, and <code>make install</code>.</li>
 </ol>
-<p>Note that the en­vi­ron­ment<span class="push-v"></span> <span class="pull-v">v</span>ari­able set­tings and<span class="push-w"></span> <span class="pull-w">w</span>here to put them are spe­cific to my ma­chine.<span class="push-Y"></span> <span class="pull-Y">Y</span>ou might have to<span class="push-c"></span> <span class="pull-c">c</span>hange them to fit in your sys­tem.</p>
+<p>Note that the en­vi­ron­ment vari­able set­tings and where to put them are spe­cific to my ma­chine. You might have to change them to fit in your sys­tem.</p>
 
     </article>
     <footer>

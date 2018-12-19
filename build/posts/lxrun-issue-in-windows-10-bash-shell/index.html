@@ -29,19 +29,19 @@
             Published <time>2016-08-03</time>
             | <a href="javascript:history.back()">Go Back</a>
         </h6>
-        <p>I’ve just found a<span class="push-w"></span> <span class="pull-w">w</span>orkaround for an is­sue<span class="push-o"></span> <span class="pull-o">o</span>f set­ting the de­fault user in<span class="push-W"></span> <span class="pull-W">W</span>indows 10 Bash shell.</p>
-<p>During in­stal­la­tion<span class="push-o"></span> <span class="pull-o">o</span>f<span class="push-W"></span> <span class="pull-W">W</span>indows 10 Bash shell, there is a step to set<span class="push-o"></span> <span class="pull-o">o</span>r<span class="push-c"></span> <span class="pull-c">c</span>re­ate the de­fault user. It’s equiv­a­lent to ex­e­cut­ing the fol­low­ing<span class="push-c"></span> <span class="pull-c">c</span>om­mand:</p>
+        <p>I’ve just found a workaround for an is­sue of set­ting the de­fault user in Windows 10 Bash shell.</p>
+<p>During in­stal­la­tion of Windows 10 Bash shell, there is a step to set or cre­ate the de­fault user. It’s equiv­a­lent to ex­e­cut­ing the fol­low­ing com­mand:</p>
 <pre><code class="hljs">LxRun.exe /setdefaultuser &lt;username&gt;
 </code></pre>
-<p>If the<span class="push-T"></span> <span class="pull-T">T</span>emp folder is not ac­ces­si­ble, ei­ther be­cause<span class="push-o"></span> <span class="pull-o">o</span>f priv­i­lege<span class="push-o"></span> <span class="pull-o">o</span>r un­sup­ported file sys­tems like <span class="small-caps">RAM</span> disk, an er­ror mes­sage<span class="push-w"></span> <span class="pull-w">w</span>ill ap­pear:</p>
+<p>If the Temp folder is not ac­ces­si­ble, ei­ther be­cause of priv­i­lege or un­sup­ported file sys­tems like <span class="small-caps">RAM</span> disk, an er­ror mes­sage will ap­pear:</p>
 <pre><code class="hljs">/bin/bash: /mnt/d/TEMP/uid.txt: No such file or directory
 </code></pre>
-<p><span class="pull-O">O</span>r</p>
+<p>Or</p>
 <pre><code class="hljs">/bin/bash: /mnt/c/WINDOWS/TEMP/uid.txt: No such file or directory
 </code></pre>
-<p><span class="pull-T">T</span>he first er­ror mes­sage ap­pears<span class="push-w"></span> <span class="pull-w">w</span>hen my<span class="push-T"></span> <span class="pull-T">T</span>emp folder is<span class="push-o"></span> <span class="pull-o">o</span>n a <span class="small-caps">RAM</span> disk, and the sec­ond ap­pears<span class="push-w"></span> <span class="pull-w">w</span>hen I’m us­ing the sys­tem-level<span class="push-T"></span> <span class="pull-T">T</span>emp folder (<code>C:\Windows\Temp</code>).</p>
-<p><span class="pull-T">T</span>he<span class="push-w"></span> <span class="pull-w">w</span>orkaround is fairly sim­ple. Just move the<span class="push-T"></span> <span class="pull-T">T</span>emp folder to some­where ac­ces­si­ble, such as <code>%USERPROFILE%\AppData\Local\Temp</code>.</p>
-<p>By the<span class="push-w"></span> <span class="pull-w">w</span>ay, I’ve sub­mit­ted an <a href="https://github.com/Microsoft/BashOnWindows/issues/752">is­sue</a> for this<span class="push-o"></span> <span class="pull-o">o</span>n GitHub.</p>
+<p>The first er­ror mes­sage ap­pears when my Temp folder is on a <span class="small-caps">RAM</span> disk, and the sec­ond ap­pears when I’m us­ing the sys­tem-level Temp folder (<code>C:\Windows\Temp</code>).</p>
+<p>The workaround is fairly sim­ple. Just move the Temp folder to some­where ac­ces­si­ble, such as <code>%USERPROFILE%\AppData\Local\Temp</code>.</p>
+<p>By the way, I’ve sub­mit­ted an <a href="https://github.com/Microsoft/BashOnWindows/issues/752">is­sue</a> for this on GitHub.</p>
 
     </article>
     <footer>

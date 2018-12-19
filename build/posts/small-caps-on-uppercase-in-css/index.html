@@ -29,19 +29,19 @@
             Published <time>2016-02-17</time>
             | <a href="javascript:history.back()">Go Back</a>
         </h6>
-        <p>I just found<span class="push-o"></span> <span class="pull-o">o</span>ut how to ap­ply small<span class="push-c"></span> <span class="pull-c">c</span>aps to up­per­case let­ters us­ing <span class="small-caps">CSS</span>.</p>
-<p><span class="pull-A">A</span>s a new­bie in<span class="push-w"></span> <span class="pull-w">w</span>eb de­sign and ty­pog­ra­phy, I<span class="push-w"></span> <span class="pull-w">w</span>as try­ing to ap­ply small<span class="push-c"></span> <span class="pull-c">c</span>aps to ab­bre­vi­a­tions in the texts. I knew the fol­low­ing<span class="push-c"></span> <span class="pull-c">c</span>ode:</p>
+        <p>I just found out how to ap­ply small caps to up­per­case let­ters us­ing <span class="small-caps">CSS</span>.</p>
+<p>As a new­bie in web de­sign and ty­pog­ra­phy, I was try­ing to ap­ply small caps to ab­bre­vi­a­tions in the texts. I knew the fol­low­ing code:</p>
 <pre><code class="hljs"><span class="hljs-selector-class">.small-caps</span> {
     <span class="hljs-attribute">font-variant</span>: small-caps;
 }
 </code></pre>
-<p>However, it did­n’t<span class="push-w"></span> <span class="pull-w">w</span>ork for the ab­bre­vi­a­tions<span class="push-w"></span> <span class="pull-w">w</span>hich are all up­per­case let­ters. I thought it<span class="push-w"></span> <span class="pull-w">w</span>as<span class="push-c"></span> <span class="pull-c">c</span>aused by the font since I<span class="push-c"></span> <span class="pull-c">c</span>ould ap­ply small<span class="push-c"></span> <span class="pull-c">c</span>aps to the nav­i­ga­tion bar, but<span class="push-c"></span> <span class="pull-c">c</span>hang­ing the font for the texts<span class="push-w"></span> <span class="pull-w">w</span>as not help­ful.<span class="push-A"></span> <span class="pull-A">A</span>fter some dig­ging around I found that I need to trans­form the up­per­case let­ters into low­er­case first. In<span class="push-o"></span> <span class="pull-o">o</span>ther<span class="push-w"></span> <span class="pull-w">w</span>ords, I need:</p>
+<p>However, it did­n’t work for the ab­bre­vi­a­tions which are all up­per­case let­ters. I thought it was caused by the font since I could ap­ply small caps to the nav­i­ga­tion bar, but chang­ing the font for the texts was not help­ful. After some dig­ging around I found that I need to trans­form the up­per­case let­ters into low­er­case first. In other words, I need:</p>
 <pre><code class="hljs"><span class="hljs-selector-class">.small-caps</span> {
     <span class="hljs-attribute">text-transform</span>: lowercase;
     <span class="hljs-attribute">font-variant</span>: small-caps;
 }
 </code></pre>
-<p>By the<span class="push-w"></span> <span class="pull-w">w</span>ay, I did­n’t use small<span class="push-c"></span> <span class="pull-c">c</span>aps<span class="push-o"></span> <span class="pull-o">o</span>n ab­bre­vi­a­tions in the end. It felt un­nat­ural. I think the best<span class="push-o"></span> <span class="pull-o">o</span>p­tion<span class="push-w"></span> <span class="pull-w">w</span>ould be us­ing a na­tive small<span class="push-c"></span> <span class="pull-c">c</span>aps font in­stead, but a match­ing<span class="push-o"></span> <span class="pull-o">o</span>ne has to be found first.</p>
+<p>By the way, I did­n’t use small caps on ab­bre­vi­a­tions in the end. It felt un­nat­ural. I think the best op­tion would be us­ing a na­tive small caps font in­stead, but a match­ing one has to be found first.</p>
 
     </article>
     <footer>

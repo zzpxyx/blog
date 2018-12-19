@@ -12,13 +12,13 @@
     {{> header}}
     {{#each pagination.files}}
     <article>
-        <h2><a href="/{{path}}">{{title}}</a></h2>
+        <h2><a href="/{{path}}/">{{title}}</a></h2>
         <h6>
             Published <time>{{formatDate publishDate}}</time>
             {{#if modifyDate}}
             | Updated <time>{{formatDate modifyDate}}</time>
             {{/if}}
-            | <a href="/{{path}}">Read More</a>
+            | <a href="/{{path}}/">Read More</a>
         </h6>
         {{&excerpt}}
     </article>

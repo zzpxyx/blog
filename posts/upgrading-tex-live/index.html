@@ -31,20 +31,20 @@
         </h6>
         <p>Here is a memo for up­grad­ing Tex Live.</p>
 <p>It is the time of the year again&thinsp;&mdash;&thinsp;up­grad­ing Tex Live. Until we have a true rolling-re­leased Tex Live, up­grad­ing it will al­ways mean re­in­stalling it. Below are some tips and point­ers hop­ing to make the process less painful. Note that the memo is based on my per­sonal pref­er­ences, so please take with a grain of salt.</p>
-<h1>Uninstall</h1>
+<h3>Uninstall</h3>
 <p>First things first. <code>tlmgr</code> can ac­tu­ally han­dle the unin­stal­la­tion with just one line:</p>
 <pre><code class="hljs">tlmgr uninstall
 </code></pre>
 <p>There may be some left­over fold­ers here and there, but it should­n’t af­fect the re­in­stalling process.</p>
-<h1>Install</h1>
+<h3>Install</h3>
 <p>Download the <a href="https://www.tug.org/texlive/acquire-netinstall.html">in­stall script</a> <code>install-tl</code> and ex­e­cute it. Personally, I would start with the medium scheme and drop un­wanted col­lec­tions like var­i­ous lan­guages and util­i­ties. I should keep LuaTex. Also re­mem­ber to use let­ter size by de­fault.</p>
-<h1>Post-install</h1>
+<h3>Post-install</h3>
 <p>At the end of the script, it will men­tion that some en­vi­ron­ment vari­ables con­tain the string<span class="push-double"></span> <span class="pull-double">“</span>tex”. That is ex­pected since unin­stalling Tex Live will not change the en­vi­ron­ment vari­ables. Simply up­date the paths in <code>~/.bashrc</code> to con­tain the cor­rect Tex Live ver­sion.</p>
-<h1>Additional Packages</h1>
+<h3>Additional Packages</h3>
 <p>I also need some ad­di­tional pack­ages: <code>fontawesome</code>, <code>gillius</code>, <code>titlesec</code>, and <code>enumitem</code>. They can be in­stalled via:</p>
 <pre><code class="hljs">tlmgr install &lt;package&gt;
 </code></pre>
-<h1>Test</h1>
+<h3>Test</h3>
 <p>Test the newly in­stalled Tex Live through pre­vi­ously type­set doc­u­ments. Make sure that there is no er­ror and the out­put should be al­most iden­ti­cal as be­fore.</p>
 
     </article>

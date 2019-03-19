@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[zzpxyx]]></title><description><![CDATA[zzpxyx]]></description><link>www.zzpxyx.com</link><generator>metalsmith-feed</generator><lastBuildDate>Wed, 19 Dec 2018 05:42:48 GMT</lastBuildDate><atom:link href="rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Turn It Off and On Again]]></title><description><![CDATA[<p>Turning it off and on again can solve nu­mer­ous prob­lems. Here is an on-go­ing col­lec­tion of such is­sues.</p>
-<h1><span class="small-caps">SDL2</span></h1>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[zzpxyx]]></title><description><![CDATA[zzpxyx]]></description><link>www.zzpxyx.com</link><generator>metalsmith-feed</generator><lastBuildDate>Tue, 19 Mar 2019 02:59:06 GMT</lastBuildDate><atom:link href="rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Turn It Off and On Again]]></title><description><![CDATA[<p>Turning it off and on again can solve nu­mer­ous prob­lems. Here is an on-go­ing col­lec­tion of such is­sues.</p>
+<h3><span class="small-caps">SDL2</span></h3>
 <p><a href="/posts/sdl2-renderer-error/">As men­tioned pre­vi­ously</a>, <span class="small-caps">SDL2</span> may give some er­rors af­ter up­dat­ing the dis­play dri­ver with­out a re­boot.</p>
-<h1><span class="small-caps">VPN</span></h1>
+<h3><span class="small-caps">VPN</span></h3>
 <p>Updating VPN-related pack­ages with­out a re­boot may give er­rors like:</p>
 <pre><code class="hljs">mkdir: cannot create directory <span class="hljs-string">'/var/run/vpnc'</span>: Permission denied
 </code></pre>
 <p>Or</p>
 <pre><code class="hljs">Failed to open tun device: No such device
 </code></pre>
-<h1>Monitor</h1>
+<h3>Monitor</h3>
 <p>Recently, I’ve also en­coun­tered a weird is­sue on the <span class="small-caps">ASUS</span> <span class="small-caps">MX279H</span> mon­i­tor. It just turned on with a blank black screen, turned off im­me­di­ately, and then re­peated. I tried man­u­ally turn­ing it off and on with the touch power but­ton, but it did­n’t help. Finally, I had to un­plug the power cord and re-plug it again. This time the mon­i­tor went back to nor­mal.</p>
 ]]></description><link>posts/turn-it-off-and-on-again</link><guid isPermaLink="true">posts/turn-it-off-and-on-again</guid></item><item><title><![CDATA[Display Chinese in Pure Text Terminal]]></title><description><![CDATA[<p>Fbterm is the old tool I newly found for dis­play­ing Chinese char­ac­ters in pure text ter­mi­nal.</p>
 <p>I had some dis­play dri­ver is­sues the other day and I could­n’t launch the graph­i­cal in­ter­face on my desk­top ma­chine. I had to work un­der the pure text ter­mi­nal. It does­n’t sup­port dou­ble width char­ac­ters like Chinese, which hap­pens to be my de­fault dis­play­ing lan­guage. As a re­sult, some com­mand out­puts just showed gib­ber­ish di­a­mond char­ac­ters. I had to change the lan­guage en­vi­ron­ment vari­able tem­porar­ily so that the out­put was switched to English. Out of cu­rios­ity, I started look­ing for a so­lu­tion for dis­play­ing Chinese char­ac­ters in pure text ter­mi­nal.</p>
@@ -38,20 +38,20 @@
 <p>I have an <span class="small-caps">SDL2</span> demo pro­gram that worked well yes­ter­day, but it sud­denly stops work­ing to­day. <code>SDL_GetError()</code> shows an er­ror of<span class="push-double"></span> <span class="pull-double">“</span>Couldn’t find match­ing ren­der dri­ver” in <code>SDL_CreateRenderer()</code>. Online search­ing shows some sug­ges­tions about check­ing the graph­ics dri­ver. I did­n’t make any change in my graph­ics dri­ver to­day, did I? Well, let’s see. <code>pacman</code> log shows that I did up­date the nVIDIA dri­ver pack­age. After re­boot­ing, the demo pro­gram works again. I’m not sure why but up­dat­ing the dri­ver pack­age makes <span class="small-caps">SDL2</span> think that I don’t have a proper dri­ver that sup­ports hard­ware ac­cel­er­a­tion, al­though I’m us­ing my win­dow man­ager and other stuff just fine. Maybe this is a spe­cial one-time case, but I’ll just jot it down here for memo.</p>
 ]]></description><link>posts/sdl2-renderer-error</link><guid isPermaLink="true">posts/sdl2-renderer-error</guid></item><item><title><![CDATA[Upgrading Tex Live]]></title><description><![CDATA[<p>Here is a memo for up­grad­ing Tex Live.</p>
 <p>It is the time of the year again&thinsp;&mdash;&thinsp;up­grad­ing Tex Live. Until we have a true rolling-re­leased Tex Live, up­grad­ing it will al­ways mean re­in­stalling it. Below are some tips and point­ers hop­ing to make the process less painful. Note that the memo is based on my per­sonal pref­er­ences, so please take with a grain of salt.</p>
-<h1>Uninstall</h1>
+<h3>Uninstall</h3>
 <p>First things first. <code>tlmgr</code> can ac­tu­ally han­dle the unin­stal­la­tion with just one line:</p>
 <pre><code class="hljs">tlmgr uninstall
 </code></pre>
 <p>There may be some left­over fold­ers here and there, but it should­n’t af­fect the re­in­stalling process.</p>
-<h1>Install</h1>
+<h3>Install</h3>
 <p>Download the <a href="https://www.tug.org/texlive/acquire-netinstall.html">in­stall script</a> <code>install-tl</code> and ex­e­cute it. Personally, I would start with the medium scheme and drop un­wanted col­lec­tions like var­i­ous lan­guages and util­i­ties. I should keep LuaTex. Also re­mem­ber to use let­ter size by de­fault.</p>
-<h1>Post-install</h1>
+<h3>Post-install</h3>
 <p>At the end of the script, it will men­tion that some en­vi­ron­ment vari­ables con­tain the string<span class="push-double"></span> <span class="pull-double">“</span>tex”. That is ex­pected since unin­stalling Tex Live will not change the en­vi­ron­ment vari­ables. Simply up­date the paths in <code>~/.bashrc</code> to con­tain the cor­rect Tex Live ver­sion.</p>
-<h1>Additional Packages</h1>
+<h3>Additional Packages</h3>
 <p>I also need some ad­di­tional pack­ages: <code>fontawesome</code>, <code>gillius</code>, <code>titlesec</code>, and <code>enumitem</code>. They can be in­stalled via:</p>
 <pre><code class="hljs">tlmgr install &lt;package&gt;
 </code></pre>
-<h1>Test</h1>
+<h3>Test</h3>
 <p>Test the newly in­stalled Tex Live through pre­vi­ously type­set doc­u­ments. Make sure that there is no er­ror and the out­put should be al­most iden­ti­cal as be­fore.</p>
 ]]></description><link>posts/upgrading-tex-live</link><guid isPermaLink="true">posts/upgrading-tex-live</guid></item><item><title><![CDATA[Icon Size in Xfce 4 Window Buttons]]></title><description><![CDATA[<p>I’ve just fig­ured out how to change the icon size for Xfce 4 win­dow but­tons in task list.</p>
 <p>I’m us­ing the Arc Darker theme. I’ve con­fig­ured the task list to only show win­dow but­tons so that they take less space in the top-right cor­ner of the screen and play well with the ti­tle bar when a win­dow is max­i­mized. I al­ways feel that the icons in the win­dow but­tons are too small.</p>

@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[zzpxyx]]></title><description><![CDATA[zzpxyx]]></description><link>www.zzpxyx.com</link><generator>metalsmith-feed</generator><lastBuildDate>Tue, 19 Mar 2019 02:59:06 GMT</lastBuildDate><atom:link href="rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Turn It Off and On Again]]></title><description><![CDATA[<p>Turning it off and on again can solve nu­mer­ous prob­lems. Here is an on-go­ing col­lec­tion of such is­sues.</p>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[zzpxyx]]></title><description><![CDATA[zzpxyx]]></description><link>www.zzpxyx.com</link><generator>metalsmith-feed</generator><lastBuildDate>Sat, 14 Dec 2019 23:44:16 GMT</lastBuildDate><atom:link href="rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[YAML Schema for Organizing Data]]></title><description><![CDATA[<p>I have an idea about us­ing <span class="small-caps">YAML</span> Schema to or­ga­nize data.</p>
+<p>I came to this idea the other day when I was asked whether I had a cer­tain vac­cine in the past. All of a sud­den, I wish I had or­ga­nized my per­sonal med­ical data in a struc­tured way so that I could eas­ily look it up. For eas­ier dis­cus­sion, let’s use per­sonal med­ical data as an ex­am­ple here.</p>
+<p>First of all, I choose texts rather than data­base or any bi­nary for­mat be­cause I want it to be read­able and easy to main­tain. I also want it to be or­ga­nized, so I choose the <span class="small-caps">YAML</span> for­mat where it’s kind of both hu­man- and ma­chine-read­able, yet does­n’t re­quire a lot of skele­ton char­ac­ters like <span class="small-caps">JSON</span>. On top of that, I add <span class="small-caps">YAML</span> Schema so that the data <span class="small-caps">YAML</span> file can be val­i­dated. It’s also use­ful for auto-com­ple­tion in ed­i­tors that sup­ports it. <span class="small-caps">YAML</span> Schema is based on <span class="small-caps">JSON</span> Schema, which is still work in progress. <span class="small-caps">YAML</span> Schema is also writ­ten in <span class="small-caps">JSON</span> at this mo­ment.</p>
+<p>Here is a snip­pet of <span class="small-caps">YAML</span> Schema that I use to or­ga­nize my im­mu­niza­tion his­tory:</p>
+<pre><code class="hljs"><span class="hljs-string">"immunization"</span>: {
+  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Immunization history."</span>,
+  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"array"</span>,
+  <span class="hljs-attr">"items"</span>: {
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"object"</span>,
+    <span class="hljs-attr">"properties"</span>: {
+      <span class="hljs-attr">"date"</span>: {
+        <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Date of the immunization."</span>,
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>
+      },
+      <span class="hljs-attr">"name"</span>: {
+        <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Immunization name."</span>,
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>
+      }
+    },
+    <span class="hljs-attr">"required"</span>: [<span class="hljs-string">"date"</span>, <span class="hljs-string">"name"</span>]
+  },
+  <span class="hljs-attr">"uniqueItems"</span>: <span class="hljs-literal">true</span>
+}
+</code></pre>
+<p>Basically, I’m defin­ing an ar­ray named <code>immunization</code>. Each el­e­ment of the ar­ray is an ob­ject that has two prop­er­ties, <code>date</code> and <code>name</code>, which are both strings. I don’t think we have date-time type at the mo­ment, so I have to use strings for dates. I’m also de­clar­ing that the el­e­ments should be unique in the ar­ray.</p>
+<p>With the above schema, I can add and val­i­date the fol­low­ing sec­tion in my data <span class="small-caps">YAML</span> file:</p>
+<pre><code class="hljs"><span class="hljs-attr">immunization:</span>
+<span class="hljs-attr">  - date:</span> <span class="hljs-number">2019</span><span class="hljs-string">/12/13</span>
+<span class="hljs-attr">    name:</span> <span class="hljs-string">some</span> <span class="hljs-string">vaccine</span> <span class="hljs-number">1</span>
+<span class="hljs-attr">  - date:</span> <span class="hljs-number">2019</span><span class="hljs-string">/12/14</span>
+<span class="hljs-attr">    name:</span> <span class="hljs-string">some</span> <span class="hljs-string">vaccine</span> <span class="hljs-number">2</span>
+</code></pre>
+<p>Similarly, I can add de­f­i­n­i­tions for surgery his­tory and other med­ical in­for­ma­tion. For com­plete syn­tax about <span class="small-caps">YAML</span> Schema and <span class="small-caps">JSON</span> Schema, see <a href="https://json-schema-everywhere.github.io/yaml">here</a>.</p>
+<p>I’m us­ing <span class="small-caps">VS</span> Code with the <span class="small-caps">YAML</span> plu­gin. It takes a bit of time to con­fig­ure, but af­ter that, I get the auto-com­ple­tion when I’m edit­ing the data <span class="small-caps">YAML</span> file.</p>
+<p>Finally, it’s worth point­ing out that al­though the ex­am­ple here is for per­sonal med­ical data, the idea of us­ing <span class="small-caps">YAML</span> Schema can be ap­plied to other struc­tured data as well.</p>
+]]></description><link>posts/yaml-schema-for-organizing-data</link><guid isPermaLink="true">posts/yaml-schema-for-organizing-data</guid></item><item><title><![CDATA[Turn It Off and On Again]]></title><description><![CDATA[<p>Turning it off and on again can solve nu­mer­ous prob­lems. Here is an on-go­ing col­lec­tion of such is­sues.</p>
 <h3><span class="small-caps">SDL2</span></h3>
 <p><a href="/posts/sdl2-renderer-error/">As men­tioned pre­vi­ously</a>, <span class="small-caps">SDL2</span> may give some er­rors af­ter up­dat­ing the dis­play dri­ver with­out a re­boot.</p>
 <h3><span class="small-caps">VPN</span></h3>

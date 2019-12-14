@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/zzpxyx/blog#readme",
   "devDependencies": {
-    "handlebars": "^4.0.12",
+    "handlebars": "^4.1.2",
     "highlight.js": "^9.13.1",
     "metalsmith": "^2.3.0",
     "metalsmith-archive": "^0.1.1",

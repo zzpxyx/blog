@@ -56,10 +56,10 @@
 <p>Basically, I’m defin­ing an ar­ray named <code>immunization</code>. Each el­e­ment of the ar­ray is an ob­ject that has two prop­er­ties, <code>date</code> and <code>name</code>, which are both strings. I don’t think we have date-time type at the mo­ment, so I have to use strings for dates. I’m also de­clar­ing that the el­e­ments should be unique in the ar­ray.</p>
 <p>With the above schema, I can add and val­i­date the fol­low­ing sec­tion in my data <span class="small-caps">YAML</span> file:</p>
 <pre><code class="hljs"><span class="hljs-attr">immunization:</span>
-<span class="hljs-attr">  - date:</span> <span class="hljs-number">2019</span><span class="hljs-string">/12/13</span>
-<span class="hljs-attr">    name:</span> <span class="hljs-string">some</span> <span class="hljs-string">vaccine</span> <span class="hljs-number">1</span>
-<span class="hljs-attr">  - date:</span> <span class="hljs-number">2019</span><span class="hljs-string">/12/14</span>
-<span class="hljs-attr">    name:</span> <span class="hljs-string">some</span> <span class="hljs-string">vaccine</span> <span class="hljs-number">2</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">date:</span> <span class="hljs-number">2019</span><span class="hljs-string">/12/13</span>
+    <span class="hljs-attr">name:</span> <span class="hljs-string">some</span> <span class="hljs-string">vaccine</span> <span class="hljs-number">1</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-attr">date:</span> <span class="hljs-number">2019</span><span class="hljs-string">/12/14</span>
+    <span class="hljs-attr">name:</span> <span class="hljs-string">some</span> <span class="hljs-string">vaccine</span> <span class="hljs-number">2</span>
 </code></pre>
 <p>Similarly, I can add de­f­i­n­i­tions for surgery his­tory and other med­ical in­for­ma­tion. For com­plete syn­tax about <span class="small-caps">YAML</span> Schema and <span class="small-caps">JSON</span> Schema, see <a href="https://json-schema-everywhere.github.io/yaml">here</a>.</p>
 <p>I’m us­ing <span class="small-caps">VS</span> Code with the <span class="small-caps">YAML</span> plu­gin. It takes a bit of time to con­fig­ure, but af­ter that, I get the auto-com­ple­tion when I’m edit­ing the data <span class="small-caps">YAML</span> file.</p>

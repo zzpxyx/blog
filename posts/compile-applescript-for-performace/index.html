@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0">
-    <meta name="description" content="A blog of technical memos for weird issues">
-    <title>zzpxyx</title>
+    <title>Compile AppleScript for Performance | zzpxyx</title>
     <link href="/styles/index.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500%7CRoboto+Slab%7CRoboto+Mono" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/solarized-light.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -24,23 +24,20 @@
         </nav>
     </header>
     <article>
-        <h2><a href="/posts/highlightjs-on-cdn/">highlight.js on CDN</a></h2>
+        <h2>Compile AppleScript for Performance</h2>
         <h6>
-            Published <time>2016-01-26</time>
-            | <a href="/posts/highlightjs-on-cdn/">Read More</a>
+            Published <time>2020-01-25</time>
+            | <a href="javascript:history.back()">Go Back</a>
         </h6>
-        <p><a href="https://highlightjs.org/">high&#xAD;light.js</a> is a pop&#xAD;u&#xAD;lar li&#xAD;brary for syn&#xAD;tax high&#xAD;light&#xAD;ing. I just fig&#xAD;ured out how to use its <span class="small-caps">CDN</span> ver&#xAD;sion.</p>
-    </article>
-    <article>
-        <h2><a href="/posts/gvim-menu-issue-solved/">gVim Menu Issue Solved</a></h2>
-        <h6>
-            Published <time>2016-01-20</time>
-            | <a href="/posts/gvim-menu-issue-solved/">Read More</a>
-        </h6>
-        <p>Something has been wrong with my gVim&#x2019;s menus for quite some time. Finally, I found a workaround yes&#xAD;ter&#xAD;day.</p>
+        <p>Recently, I’ve found that com­pil­ing an AppleScript file may help with its per­for­mance.</p>
+<p>I have this ar­guably weird work­flow on a Mac where I can press Command+2 and Command+3 to switch to spe­cific ap­pli­ca­tions. I did­n’t find any open source so­lu­tion for it, so I had to cre­ate some cus­tom AppleScripts and bind them to global hotkeys in Karabiner-Elements. The setup worked for me un­til I up­graded to ma­cOS Catalina, where the per­for­mance of the scripts was no­tice­ably de­graded. I had to wait for a few sec­onds be­fore the ap­pli­ca­tion switch­ing to the fore­ground.</p>
+<p>I have to use the com­mand <code>osascript</code> to run my cus­tom AppleScript when the des­ig­nated hotkey is trig­gered. I was read­ing its man­ual for some in­spi­ra­tions, and I ac­tu­ally found one at the bot­tom of the man page: <code>osacompile</code>, which can com­pile AppleScripts. I gave it a try us­ing <code>osacompile -x</code> which is said to save the re­sult­ing script as ex­e­cute only.  It did­n’t let me down. The ex­e­cu­tion per­for­mance of my script was im­proved dras­ti­cally.</p>
+<p>This is not the end of the story though. I’ve no­ticed that al­though the per­for­mance is im­proved in gen­eral, it does­n’t elim­i­nate the prob­lem. Sometimes I still have to wait for a while for the script to fin­ish. My guess is that some­thing about AppleScript is changed in ma­cOS Catalina, like the script in­ter­pre­tor or the built-in script func­tions. Maybe some­thing about in­ter­cept­ing key­board in­puts is also changed so that Karabiner-Elements is slowed down.</p>
+<p>That said, the gen­eral idea here may be help­ful in cer­tain cases. Maybe the next time when I’m deal­ing with scripts, I’ll re­mem­ber to check if there is a way to com­pile them.</p>
+
     </article>
     <footer>
-        <div class="float-left"><a href="/page/5/">&laquo; Prev Page</a></div>
+        <div class="float-right"><a href="/posts/switching-to-arch-linux-tex-live/">Switching to Arch Linux TeX Live &raquo;</a></div>
     </footer>
 </body>
 

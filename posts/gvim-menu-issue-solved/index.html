@@ -32,7 +32,7 @@
         <p>Something has been wrong with my gVim’s menus for quite some time. Finally, I found a workaround yes­ter­day.</p>
 <p>I’m not sure when and how the prob­lem oc­curred, but one day I found that most of my gVim’s menus were<span class="push-double"></span> <span class="pull-double">“</span>missing”. Technically they were there, but all char­ac­ters in the menu cap­tions and items were miss­ing. There were two strange things though. One was that the Solarized theme menu was dis­play­ing cor­rectly. The other was that all menu items were show­ing the cor­re­spond­ing gVim com­mands cor­rectly.</p>
 <p>After search­ing around on the Internet and some trial and er­ror, I fi­nally found a workaround. Let’s take a step back and re­think about those two strange things. Actually they were say­ing that only <em>some</em> char­ac­ters in menu cap­tions and items were miss­ing. In my case, all those Chinese char­ac­ters were not show­ing up. Now it’s more clear that some­thing might be wrong with the menu lan­guage. After man­u­ally set­ting the menu lan­guage to Chinese us­ing the fol­low­ing line in my&nbsp;.vimrc, the prob­lem was solved.</p>
-<pre><code class="hljs"><span class="hljs-keyword">set</span> langmenu=<span class="hljs-string">"zh_CN.UTF-8"</span>
+<pre><code class="hljs"><span class="hljs-keyword">set</span> langmenu=<span class="hljs-string">&quot;zh_CN.UTF-8&quot;</span>
 </code></pre>
 <p>I call this a workaround since I’m still not sure what caused this is­sue.</p>
 <p>By the way, I’m us­ing Arch Linux with Xfce. It seems that this gVim menu is­sue only hap­pens in cer­tain cases, like mine.</p>

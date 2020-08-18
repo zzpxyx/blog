@@ -37,7 +37,7 @@
 </code></pre>
 <p>Looking at the con­tent of the file, it in­cludes other theme files. One of them is <code>panel.rc</code>, which seems promis­ing.</p>
 <p>At the end of <code>panel.rc</code>, there is a line that says</p>
-<pre><code class="hljs">widget "*XfceTasklist*" style "panelbuttons"
+<pre><code class="hljs">widget &quot;*XfceTasklist*&quot; style &quot;panelbuttons&quot;
 </code></pre>
 <p>I think this is what we need. Looking at the <code>panelButtons</code> style in the same file, <code>xthickness</code> is set to 4. I’m not ex­actly sure what this prop­erty means, but it seems that it is used for cal­cu­lat­ing var­i­ous padding spaces. I change it to 2, and the icons im­me­di­ately ap­pear larger af­ter switch­ing to an­other theme and back. The smaller that value is, the larger the icons will be.</p>
 <p>This so­lu­tion has many draw­backs. For ex­am­ple, the mod­i­fi­ca­tion may be over­rid­den if I up­date the Arc theme pack­age. For now, that’s good enough for me.</p>

@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0">
-    <meta name="description" content="A blog of technical memos for weird issues">
-    <title>zzpxyx</title>
+    <title>Ignoring Local Packages in Upgrade | zzpxyx</title>
     <link href="/styles/index.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500%7CRoboto+Slab%7CRoboto+Mono" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/solarized-light.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -24,39 +24,22 @@
         </nav>
     </header>
     <article>
-        <h2><a href="/posts/ignoring-local-packages-in-upgrade/">Ignoring Local Packages in Upgrade</a></h2>
+        <h2>Ignoring Local Packages in Upgrade</h2>
         <h6>
             Published <time>2020-08-18</time>
-            | <a href="/posts/ignoring-local-packages-in-upgrade/">Read More</a>
+            | <a href="javascript:history.back()">Go Back</a>
         </h6>
-        <p>I&#x2019;ve just found a way to ig&#xAD;nore lo&#xAD;cal pack&#xAD;ages when up&#xAD;grad&#xAD;ing pack&#xAD;ages us&#xAD;ing Yay in Arch Linux.</p>
-    </article>
-    <article>
-        <h2><a href="/posts/compile-applescript-for-performace/">Compile AppleScript for Performance</a></h2>
-        <h6>
-            Published <time>2020-01-25</time>
-            | <a href="/posts/compile-applescript-for-performace/">Read More</a>
-        </h6>
-        <p>Recently, I&#x2019;ve found that com&#xAD;pil&#xAD;ing an AppleScript file may help with its per&#xAD;for&#xAD;mance.</p>
-    </article>
-    <article>
-        <h2><a href="/posts/switching-to-arch-linux-tex-live/">Switching to Arch Linux TeX Live</a></h2>
-        <h6>
-            Published <time>2020-01-05</time>
-            | <a href="/posts/switching-to-arch-linux-tex-live/">Read More</a>
-        </h6>
-        <p>I&#x2019;ve just switched my TeX Live dis&#xAD;tri&#xAD;b&#xAD;u&#xAD;tion from the of&#xAD;fi&#xAD;cial one to the one on the Arch Linux repos&#xAD;i&#xAD;tory.</p>
-    </article>
-    <article>
-        <h2><a href="/posts/reviving-an-old-mp3-player/">Reviving an Old MP3 Player</a></h2>
-        <h6>
-            Published <time>2019-12-31</time>
-            | <a href="/posts/reviving-an-old-mp3-player/">Read More</a>
-        </h6>
-        <p>I&#x2019;ve fi&#xAD;nally had the chance to jot down my ad&#xAD;ven&#xAD;ture in re&#xAD;viv&#xAD;ing a very old <span class="small-caps">MP3</span> player.</p>
+        <p>I’ve just found a way to ig­nore lo­cal pack­ages when up­grad­ing pack­ages us­ing Yay in Arch Linux.</p>
+<p>I use Yay for man­ag­ing pack­ages on Arch Linux. As men­tioned in <a href="https://www.zzpxyx.com/posts/switching-to-arch-linux-tex-live/">this post</a>, I use <code>tllocalmgr</code> to man­u­ally in­stall some <span class="small-caps">CTAN</span> pack­ages, mostly fonts. The con­se­quence is that these pack­ages only ex­ist on my lo­cal ma­chine. Every time I up­grade pack­ages in Yay, it will prompt me that those pack­ages don’t have cor­re­spond­ing <span class="small-caps">AUR</span> pack­ages. That is­n’t nec­es­sar­ily a bad thing, but I just want to hide it.</p>
+<p>I came across <a href="https://github.com/Jguer/yay/issues/780">this is­sue</a> the other day. This af­ter­noon, I fi­nally de­cided to give it a try. All I did was to un­com­ment the <code>IgnorePkg</code> set­ting in <code>/etc/pacman.conf</code>, and added a pack­age name pat­tern, so that it looked like this:</p>
+<pre><code class="hljs"><span class="hljs-attr">IgnorePkg</span> = <span class="hljs-string">texlive-local-*</span>
+</code></pre>
+<p>It worked like a charm. Now, Yay no longer prompts miss­ing <span class="small-caps">AUR</span> pack­ages. Fortunately, we don’t have of­fi­cial or <span class="small-caps">AUR</span> pack­ages star­ing with <code>texlive-local-</code> at the mo­ment.</p>
+<p>This post is more like a memo to me as I know one day I will won­der where or how I did this.</p>
+
     </article>
     <footer>
-        <div class="float-right"><a href="/page/2/">Next Page &raquo;</a></div>
+        <div class="float-right"><a href="/posts/compile-applescript-for-performace/">Compile AppleScript for Performance &raquo;</a></div>
     </footer>
 </body>
 

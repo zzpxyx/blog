@@ -36,11 +36,11 @@
 <ol>
 <li>Add <code>prefix=~/.npm-packages</code> to <code>~/.npmrc</code>.</li>
 <li>Add the fol­low­ing lines to <code>~/.xprofile</code>:<pre><code class="hljs"><span class="hljs-comment"># Tell npm about the packages:</span>
-<span class="hljs-built_in">export</span> NPM_PACKAGES=<span class="hljs-string">"<span class="hljs-variable">$HOME</span>/.npm-packages"</span>
+<span class="hljs-built_in">export</span> NPM_PACKAGES=<span class="hljs-string">&quot;<span class="hljs-variable">$HOME</span>/.npm-packages&quot;</span>
 <span class="hljs-comment"># Tell Node.js about the packages:</span>
-<span class="hljs-built_in">export</span> NODE_PATH=<span class="hljs-string">"<span class="hljs-variable">$NPM_PACKAGES</span>/lib/node_modules"</span>
-<span class="hljs-built_in">export</span> PATH=<span class="hljs-string">"<span class="hljs-variable">$NPM_PACKAGES</span>/bin:<span class="hljs-variable">$PATH</span>"</span>
-<span class="hljs-built_in">export</span> MANPATH=<span class="hljs-string">"<span class="hljs-variable">$NPM_PACKAGES</span>/share/man:<span class="hljs-variable">$MANPATH</span>"</span>
+<span class="hljs-built_in">export</span> NODE_PATH=<span class="hljs-string">&quot;<span class="hljs-variable">$NPM_PACKAGES</span>/lib/node_modules&quot;</span>
+<span class="hljs-built_in">export</span> PATH=<span class="hljs-string">&quot;<span class="hljs-variable">$NPM_PACKAGES</span>/bin:<span class="hljs-variable">$PATH</span>&quot;</span>
+<span class="hljs-built_in">export</span> MANPATH=<span class="hljs-string">&quot;<span class="hljs-variable">$NPM_PACKAGES</span>/share/man:<span class="hljs-variable">$MANPATH</span>&quot;</span>
 </code></pre>
 </li>
 <li>Reboot so that the new en­vi­ron­ment vari­ables take ef­fect.</li>

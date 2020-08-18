@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[zzpxyx]]></title><description><![CDATA[zzpxyx]]></description><link>www.zzpxyx.com</link><generator>metalsmith-feed</generator><lastBuildDate>Tue, 18 Aug 2020 22:24:19 GMT</lastBuildDate><atom:link href="rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Compile AppleScript for Performance]]></title><description><![CDATA[<p>Recently, I’ve found that com­pil­ing an AppleScript file may help with its per­for­mance.</p>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[zzpxyx]]></title><description><![CDATA[zzpxyx]]></description><link>www.zzpxyx.com</link><generator>metalsmith-feed</generator><lastBuildDate>Tue, 18 Aug 2020 22:31:23 GMT</lastBuildDate><atom:link href="rss.xml" rel="self" type="application/rss+xml"/><item><title><![CDATA[Compile AppleScript for Performance]]></title><description><![CDATA[<p>Recently, I’ve found that com­pil­ing an AppleScript file may help with its per­for­mance.</p>
 <p>I have this ar­guably weird work­flow on a Mac where I can press Command+2 and Command+3 to switch to spe­cific ap­pli­ca­tions. I did­n’t find any open source so­lu­tion for it, so I had to cre­ate some cus­tom AppleScripts and bind them to global hotkeys in Karabiner-Elements. The setup worked for me un­til I up­graded to ma­cOS Catalina, where the per­for­mance of the scripts was no­tice­ably de­graded. I had to wait for a few sec­onds be­fore the ap­pli­ca­tion switch­ing to the fore­ground.</p>
 <p>I have to use the com­mand <code>osascript</code> to run my cus­tom AppleScript when the des­ig­nated hotkey is trig­gered. I was read­ing its man­ual for some in­spi­ra­tions, and I ac­tu­ally found one at the bot­tom of the man page: <code>osacompile</code>, which can com­pile AppleScripts. I gave it a try us­ing <code>osacompile -x</code> which is said to save the re­sult­ing script as ex­e­cute only.  It did­n’t let me down. The ex­e­cu­tion per­for­mance of my script was im­proved dras­ti­cally.</p>
 <p>This is not the end of the story though. I’ve no­ticed that al­though the per­for­mance is im­proved in gen­eral, it does­n’t elim­i­nate the prob­lem. Sometimes I still have to wait for a while for the script to fin­ish. My guess is that some­thing about AppleScript is changed in ma­cOS Catalina, like the script in­ter­pre­tor or the built-in script func­tions. Maybe some­thing about in­ter­cept­ing key­board in­puts is also changed so that Karabiner-Elements is slowed down.</p>
@@ -30,24 +30,24 @@ updmap-sys --enable Map=fontawesome.map
 <p>I came to this idea the other day when I was asked whether I had a cer­tain vac­cine in the past. All of a sud­den, I wish I had or­ga­nized my per­sonal med­ical data in a struc­tured way so that I could eas­ily look it up. For eas­ier dis­cus­sion, let’s use per­sonal med­ical data as an ex­am­ple here.</p>
 <p>First of all, I choose texts rather than data­base or any bi­nary for­mat be­cause I want it to be read­able and easy to main­tain. I also want it to be or­ga­nized, so I choose the <span class="small-caps">YAML</span> for­mat where it’s kind of both hu­man- and ma­chine-read­able, yet does­n’t re­quire a lot of skele­ton char­ac­ters like <span class="small-caps">JSON</span>. On top of that, I add <span class="small-caps">YAML</span> Schema so that the data <span class="small-caps">YAML</span> file can be val­i­dated. It’s also use­ful for auto-com­ple­tion in ed­i­tors that sup­ports it. <span class="small-caps">YAML</span> Schema is based on <span class="small-caps">JSON</span> Schema, which is still work in progress. <span class="small-caps">YAML</span> Schema is also writ­ten in <span class="small-caps">JSON</span> at this mo­ment.</p>
 <p>Here is a snip­pet of <span class="small-caps">YAML</span> Schema that I use to or­ga­nize my im­mu­niza­tion his­tory:</p>
-<pre><code class="hljs"><span class="hljs-string">"immunization"</span>: {
-  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Immunization history."</span>,
-  <span class="hljs-attr">"type"</span>: <span class="hljs-string">"array"</span>,
-  <span class="hljs-attr">"items"</span>: {
-    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"object"</span>,
-    <span class="hljs-attr">"properties"</span>: {
-      <span class="hljs-attr">"date"</span>: {
-        <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Date of the immunization."</span>,
-        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>
+<pre><code class="hljs"><span class="hljs-string">&quot;immunization&quot;</span>: {
+  <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;Immunization history.&quot;</span>,
+  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;array&quot;</span>,
+  <span class="hljs-attr">&quot;items&quot;</span>: {
+    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+    <span class="hljs-attr">&quot;properties&quot;</span>: {
+      <span class="hljs-attr">&quot;date&quot;</span>: {
+        <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;Date of the immunization.&quot;</span>,
+        <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
       },
-      <span class="hljs-attr">"name"</span>: {
-        <span class="hljs-attr">"description"</span>: <span class="hljs-string">"Immunization name."</span>,
-        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"string"</span>
+      <span class="hljs-attr">&quot;name&quot;</span>: {
+        <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;Immunization name.&quot;</span>,
+        <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
       }
     },
-    <span class="hljs-attr">"required"</span>: [<span class="hljs-string">"date"</span>, <span class="hljs-string">"name"</span>]
+    <span class="hljs-attr">&quot;required&quot;</span>: [<span class="hljs-string">&quot;date&quot;</span>, <span class="hljs-string">&quot;name&quot;</span>]
   },
-  <span class="hljs-attr">"uniqueItems"</span>: <span class="hljs-literal">true</span>
+  <span class="hljs-attr">&quot;uniqueItems&quot;</span>: <span class="hljs-literal">true</span>
 }
 </code></pre>
 <p>Basically, I’m defin­ing an ar­ray named <code>immunization</code>. Each el­e­ment of the ar­ray is an ob­ject that has two prop­er­ties, <code>date</code> and <code>name</code>, which are both strings. I don’t think we have date-time type at the mo­ment, so I have to use strings for dates. I’m also de­clar­ing that the el­e­ments should be unique in the ar­ray.</p>
@@ -66,7 +66,7 @@ updmap-sys --enable Map=fontawesome.map
 <p><a href="/posts/sdl2-renderer-error/">As men­tioned pre­vi­ously</a>, <span class="small-caps">SDL2</span> may give some er­rors af­ter up­dat­ing the dis­play dri­ver with­out a re­boot.</p>
 <h3><span class="small-caps">VPN</span></h3>
 <p>Updating VPN-related pack­ages with­out a re­boot may give er­rors like:</p>
-<pre><code class="hljs">mkdir: cannot create directory <span class="hljs-string">'/var/run/vpnc'</span>: Permission denied
+<pre><code class="hljs">mkdir: cannot create directory <span class="hljs-string">&#x27;/var/run/vpnc&#x27;</span>: Permission denied
 </code></pre>
 <p>Or</p>
 <pre><code class="hljs">Failed to open tun device: No such device
@@ -85,11 +85,11 @@ updmap-sys --enable Map=fontawesome.map
 <ol>
 <li>Add <code>prefix=~/.npm-packages</code> to <code>~/.npmrc</code>.</li>
 <li>Add the fol­low­ing lines to <code>~/.xprofile</code>:<pre><code class="hljs"><span class="hljs-comment"># Tell npm about the packages:</span>
-<span class="hljs-built_in">export</span> NPM_PACKAGES=<span class="hljs-string">"<span class="hljs-variable">$HOME</span>/.npm-packages"</span>
+<span class="hljs-built_in">export</span> NPM_PACKAGES=<span class="hljs-string">&quot;<span class="hljs-variable">$HOME</span>/.npm-packages&quot;</span>
 <span class="hljs-comment"># Tell Node.js about the packages:</span>
-<span class="hljs-built_in">export</span> NODE_PATH=<span class="hljs-string">"<span class="hljs-variable">$NPM_PACKAGES</span>/lib/node_modules"</span>
-<span class="hljs-built_in">export</span> PATH=<span class="hljs-string">"<span class="hljs-variable">$NPM_PACKAGES</span>/bin:<span class="hljs-variable">$PATH</span>"</span>
-<span class="hljs-built_in">export</span> MANPATH=<span class="hljs-string">"<span class="hljs-variable">$NPM_PACKAGES</span>/share/man:<span class="hljs-variable">$MANPATH</span>"</span>
+<span class="hljs-built_in">export</span> NODE_PATH=<span class="hljs-string">&quot;<span class="hljs-variable">$NPM_PACKAGES</span>/lib/node_modules&quot;</span>
+<span class="hljs-built_in">export</span> PATH=<span class="hljs-string">&quot;<span class="hljs-variable">$NPM_PACKAGES</span>/bin:<span class="hljs-variable">$PATH</span>&quot;</span>
+<span class="hljs-built_in">export</span> MANPATH=<span class="hljs-string">&quot;<span class="hljs-variable">$NPM_PACKAGES</span>/share/man:<span class="hljs-variable">$MANPATH</span>&quot;</span>
 </code></pre>
 </li>
 <li>Reboot so that the new en­vi­ron­ment vari­ables take ef­fect.</li>
@@ -124,7 +124,7 @@ updmap-sys --enable Map=fontawesome.map
 </code></pre>
 <p>Looking at the con­tent of the file, it in­cludes other theme files. One of them is <code>panel.rc</code>, which seems promis­ing.</p>
 <p>At the end of <code>panel.rc</code>, there is a line that says</p>
-<pre><code class="hljs">widget "*XfceTasklist*" style "panelbuttons"
+<pre><code class="hljs">widget &quot;*XfceTasklist*&quot; style &quot;panelbuttons&quot;
 </code></pre>
 <p>I think this is what we need. Looking at the <code>panelButtons</code> style in the same file, <code>xthickness</code> is set to 4. I’m not ex­actly sure what this prop­erty means, but it seems that it is used for cal­cu­lat­ing var­i­ous padding spaces. I change it to 2, and the icons im­me­di­ately ap­pear larger af­ter switch­ing to an­other theme and back. The smaller that value is, the larger the icons will be.</p>
 <p>This so­lu­tion has many draw­backs. For ex­am­ple, the mod­i­fi­ca­tion may be over­rid­den if I up­date the Arc theme pack­age. For now, that’s good enough for me.</p>

@@ -63,6 +63,11 @@ metalsmith(__dirname)
     })
   )
   .use(
+    feed({
+      collection: "posts"
+    })
+  )
+  .use(
     typeset({
       disable: ["ligatures"]
     })
@@ -73,11 +78,6 @@ metalsmith(__dirname)
     })
   )
   .use(archive())
-  .use(
-    feed({
-      collection: "posts"
-    })
-  )
   .use(excerpts())
   .use(
     pagination({

@@ -63,6 +63,11 @@ metalsmith(__dirname)
     })
   )
   .use(
+    permalinks({
+      relative: false
+    })
+  )
+  .use(
     feed({
       collection: "posts"
     })
@@ -70,11 +75,6 @@ metalsmith(__dirname)
   .use(
     typeset({
       disable: ["ligatures"]
-    })
-  )
-  .use(
-    permalinks({
-      relative: false
     })
   )
   .use(archive())

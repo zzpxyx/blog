@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0">
-    <meta name="description" content="A blog of technical memos for weird issues">
-    <title>zzpxyx</title>
+    <title>Converting Markdown Files | zzpxyx</title>
     <link href="/styles/index.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500%7CRoboto+Slab%7CRoboto+Mono" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/solarized-light.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -24,40 +24,19 @@
         </nav>
     </header>
     <article>
-        <h2><a href="/posts/bbm-font-in-tex-live/">bbm Font in TeX Live</a></h2>
+        <h2>Converting Markdown Files</h2>
         <h6>
-            Published <time>2017-01-22</time>
-            | <a href="/posts/bbm-font-in-tex-live/">Read More</a>
+            Published <time>2021-02-21</time>
+            | <a href="javascript:history.back()">Go Back</a>
         </h6>
-        <p>As a new&#xAD;bie in LaTeX, I just found that bbm and bbm-macros pack&#xAD;ages should be in&#xAD;stalled to&#xAD;gether.</p>
-    </article>
-    <article>
-        <h2><a href="/posts/lxrun-issue-in-windows-10-bash-shell/">LxRun Issue in Windows 10 Bash Shell</a></h2>
-        <h6>
-            Published <time>2016-08-03</time>
-            | <a href="/posts/lxrun-issue-in-windows-10-bash-shell/">Read More</a>
-        </h6>
-        <p>I&#x2019;ve just found a workaround for an is&#xAD;sue of set&#xAD;ting the de&#xAD;fault user in Windows 10 Bash shell.</p>
-    </article>
-    <article>
-        <h2><a href="/posts/windows-10-on-acer-6935g/">Windows 10 on Acer 6935G</a></h2>
-        <h6>
-            Published <time>2016-08-02</time>
-            | <a href="/posts/windows-10-on-acer-6935g/">Read More</a>
-        </h6>
-        <p>Finally, I man&#xAD;aged to up&#xAD;grade to Windows 10 for my <em>8-year-old</em> lap&#xAD;top. I know, I know, I&#x2019;m ask&#xAD;ing for trou&#xAD;ble.</p>
-    </article>
-    <article>
-        <h2><a href="/posts/cleaning-pacman-cache/">Cleaning pacman Cache</a></h2>
-        <h6>
-            Published <time>2016-06-15</time>
-            | <a href="/posts/cleaning-pacman-cache/">Read More</a>
-        </h6>
-        <p>I just learned how to clean pac&#xAD;man&#x2019;s pack&#xAD;age cache.</p>
+        <p>Recently, I’ve found an ac­cept­able work­flow for con­vert­ing a mark­down file to a non-mark­down-fash­ioned doc­u­ment.</p>
+<p>I’ve been us­ing mark­down for­mat for writ­ing doc­u­ments lately. I use head­ing level one for ti­tle and level two for<span class="push-double"></span> <span class="pull-double">“</span>the top-level sec­tions”. One prob­lem is that some­times I need to con­vert the doc­u­ment to a non-mark­down-fash­ioned for­mat like Google Doc. I tried ren­der­ing the mark­down file in styled <span class="small-caps">HTML</span> and then copy-past­ing the re­sult in Google Doc di­rectly. The re­sult looks <span class="small-caps">OK</span>, but the ma­jor prob­lem is that the head­ing lev­els are off by one, and I have to man­u­ally change them.</p>
+<p>Then I found <code>pandoc</code>. It is not rarely known per se, but I found a very use­ful op­tion called <code>--shift-heading-level-by=-1</code>. This solves my prob­lem men­tioned above ex­actly. All head­ing lev­els are shifted by one, and the head­ing level one used as the ti­tle in my mark­down doc­u­ment is re­moved.</p>
+<p>Now my work­flow looks like this. I write in mark­down for­mat, use <code>pandoc</code> to con­vert it to raw <span class="small-caps">HTML</span> for­mat with head­ings shifted by one, and fi­nally copy-paste the <span class="small-caps">HTML</span> from browser to Google Doc. Google Doc can rec­og­nize and match most of the <span class="small-caps">HTML</span> tags to its built-in styles, ex­cept for the code style. This is to­tally ac­cept­able for me be­fore I en­counter bet­ter so­lu­tions.</p>
+
     </article>
     <footer>
-        <div class="float-left"><a href="/page/3/">&laquo; Prev Page</a></div>
-        <div class="float-right"><a href="/page/5/">Next Page &raquo;</a></div>
+        <div class="float-right"><a href="/posts/ignoring-local-packages-in-upgrade/">Ignoring Local Packages in Upgrade &raquo;</a></div>
     </footer>
 </body>
 

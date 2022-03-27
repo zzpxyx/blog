@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0">
-    <meta name="description" content="A blog of technical memos for weird issues">
-    <title>zzpxyx</title>
+    <title>Downgrading Arch Linux Kernel | zzpxyx</title>
     <link href="/styles/index.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/solarized-light.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -23,23 +23,20 @@
         </nav>
     </header>
     <article>
-        <h2><a href="/posts/highlightjs-on-cdn/">highlight.js on CDN</a></h2>
+        <h2>Downgrading Arch Linux Kernel</h2>
         <h6>
-            Published <time>2016-01-26</time>
-            | <a href="/posts/highlightjs-on-cdn/">Read More</a>
+            Published <time>2022-03-27</time>
+            | <a href="javascript:history.back()">Go Back</a>
         </h6>
-        <p><a href="https://highlightjs.org/">high&#xAD;light.js</a> is a pop&#xAD;u&#xAD;lar li&#xAD;brary for syn&#xAD;tax high&#xAD;light&#xAD;ing. I just fig&#xAD;ured out how to use its <span class="small-caps">CDN</span> ver&#xAD;sion.</p>
-    </article>
-    <article>
-        <h2><a href="/posts/gvim-menu-issue-solved/">gVim Menu Issue Solved</a></h2>
-        <h6>
-            Published <time>2016-01-20</time>
-            | <a href="/posts/gvim-menu-issue-solved/">Read More</a>
-        </h6>
-        <p>Something has been wrong with my gVim&#x2019;s menus for quite some time. Finally, I found a workaround yes&#xAD;ter&#xAD;day.</p>
+        <p>Yesterday, I had to match the ker­nel and the dis­play dri­ver ver­sions when down­grad­ing the Arch Linux ker­nel. Now I’m jot­ting it down as a memo.</p>
+<p>I did a sys­tem up­grade yes­ter­day on my Arch Linux in­stall. The ker­nel was up­dated to ver­sion 5.16.16. After re­boot­ing the ma­chine, I no­ticed that the WiFi con­nec­tion kept drop­ping and re­con­nect­ing, and it was very hard for me to open any web­site. I looked it up on my phone and found that there was <a href="https://bugzilla.kernel.org/show_bug.cgi?id=215703">this bug</a> in re­cent ker­nel changes. Versions 5.16.14 and be­low seem un­af­fected.</p>
+<p>After down­grad­ing the <code>linux</code> pack­age to 5.16.14, I could­n’t see the graph­i­cal lo­gin screen. This is not a sur­prise for me. I’ve seen this dur­ing my pre­vi­ous ker­nel up­grad­ing, and re­in­stalling the nVidia dis­play dri­ver worked. I did that, but this time it did­n’t work. Now I’m a bit sur­prised. I vaguely re­mem­ber that the ker­nel ver­sion and the dis­play dri­ver ver­sion need to be<span class="push-double"></span> <span class="pull-double">“</span>compatible”, al­though the ex­act rea­son has al­ways been a puz­zle for me. Let me down­grade <code>nvidia-*</code> pack­ages to an ar­bi­trary pre­vi­ous ver­sion. Uh, no luck.</p>
+<p>I tried look­ing at var­i­ous logs, but I could­n’t find a proper workaround. Now it’s time to roll back to the ex­act ver­sions be­fore the sys­tem up­grade. I looked at the pac­man log at <code>/var/log/pacman.log</code>, and wrote down the ver­sions for pack­ages <code>linux</code>, <code>nvidia</code>, <code>nvidia-utils</code>, and <code>nvidia-settings</code>. Then I used <code>downgrade</code> to in­stall those ex­act ver­sions. It’s nice that <code>downgrade</code> can use lo­cal cached pack­ages, and it also shows which ver­sions were in­stalled pre­vi­ously. This time it fi­nally worked.</p>
+<p>As a side note, I think the <span class="small-caps">DKMS</span> ver­sion of the nVidia dis­play dri­ver <em>may not</em> have this<span class="push-double"></span> <span class="pull-double">“</span>compatible ver­sion” is­sue. That said, I switched away from it a long time ago, and I for­got why.</p>
+
     </article>
     <footer>
-        <div class="float-left"><a href="/page/6/">&laquo; Prev Page</a></div>
+        <div class="float-right"><a href="/posts/my-mac-productivity-setup/">My Mac Productivity Setup &raquo;</a></div>
     </footer>
 </body>
 

@@ -6,7 +6,7 @@
     <meta name="viewport" content="initial-scale=1.0">
     <title>Switching to Arch Linux TeX Live | zzpxyx</title>
     <link href="/styles/index.css" rel="stylesheet" type="text/css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/solarized-light.min.css" rel="stylesheet" type="text/css">
+    <link href="/styles/solarized-light.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -32,10 +32,10 @@
 <p>I was just up­dat­ing the pack­ages rou­tinely on Arch Linux, and I no­ticed that Texmaker now re­quires <code>texlive-core</code>, which in turn re­quires <code>texlive-bin</code>. This was prob­lem­atic for me since I had al­ready in­stalled the of­fi­cial TeX Live dis­tri­b­u­tion. This not only took more disk space, but also broke the func­tion­al­ity. For ex­am­ple, I was no longer able to com­pile my re­sume. My guess was that the new in­stall some­how af­fected the TeX Live file tree and some style files were con­sid­ered miss­ing.</p>
 <p>Up to this point, I had two op­tions. I could unin­stall Texmaker and its TeX Live de­pen­den­cies, then re­in­stall Texmaker from an­other source and use it with the ex­ist­ing of­fi­cial TeX Live dis­tri­b­u­tion on my ma­chine. Alternatively, I could unin­stall the of­fi­cial dis­tri­b­u­tion and switch to the Arch Linux pack­aged ver­sion of TeX Live. Either op­tion should work. I was just cu­ri­ous about the lat­ter op­tion, so I chose to give it a try. In ad­di­tion, I had al­ready changed my re­sume tem­plate to <a href="https://github.com/zzpxyx/two-column-resume">my cus­tom one</a> long time ago, and it no longer needed un­of­fi­cial fonts or stuff, so switch­ing to an­other TeX Live dis­tri­b­u­tion would only re­quire in­stalling miss­ing <span class="small-caps">CTAN</span> pack­ages.</p>
 <p>First of all, I unin­stalled the of­fi­cial dis­tri­b­u­tion by:</p>
-<pre><code class="hljs">tlmgr uninstall --all
+<pre><code class="hljs language-shell">tlmgr uninstall --all
 </code></pre>
 <p>There were some er­rors about write per­mis­sion, but I did some quick check and the er­rors seemed be­nign. Then I in­stalled <code>texlive-latexextra</code> for some com­monly used LaTeX pack­ages. After that, I tried to com­pile my re­sume and saw that some fonts were miss­ing as ex­pected. A quick search showed that I should in­stall <code>texlive-fontsextra</code>. It would take over 1 <span class="small-caps">GB</span> of disk space since it in­cluded tons of fonts. I’m not a fan of this, so I chose to use <a href="https://wiki.archlinux.org/index.php/TeX_Live#tllocalmgr">tl­lo­calmgr</a> to man­u­ally in­stall miss­ing <span class="small-caps">CTAN</span> pack­ages. After some trial and er­ror, I ended up with in­stalling these <span class="small-caps">CTAN</span> pack­ages: <code>raleway</code>, <code>mweights</code>, <code>droid</code>, <code>fontawesome</code>, and <code>ly1</code>. However, no <span class="small-caps">PDF</span> file was gen­er­ated at the end of com­pile, and Texmaker did­n’t re­port any ob­vi­ous er­ror. The log did show that some fonts were miss­ing. <code>tllocalmgr</code> men­tioned that I should check its log and mod­ify the <code>updmap.cfg</code> file as needed. After some trial and er­ror again, I found that I would need to add the font maps like be­low for the fonts men­tioned in the <code>tllocalmgr</code> log file.</p>
-<pre><code class="hljs">updmap-sys --enable Map=Raleway.map
+<pre><code class="hljs language-shell">updmap-sys --enable Map=Raleway.map
 updmap-sys --enable Map=droidsans.map
 updmap-sys --enable Map=droidsansmono.map
 updmap-sys --enable Map=droidserif.map

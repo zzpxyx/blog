@@ -6,7 +6,7 @@
     <meta name="viewport" content="initial-scale=1.0">
     <title>bbm Font in TeX Live | zzpxyx</title>
     <link href="/styles/index.css" rel="stylesheet" type="text/css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/solarized-light.min.css" rel="stylesheet" type="text/css">
+    <link href="/styles/solarized-light.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -32,10 +32,10 @@
 <p>I was try­ing to com­pile a LaTeX doc­u­ment us­ing a cus­tomized TeX Live 2016. There was an er­ror mes­sage about miss­ing <code>bbm.sty</code>. Naively, I thought in­stalling the bbm pack­age would solve the prob­lem. I tried, but the same er­ror mes­sage ap­peared again.</p>
 <p>After search­ing around, I got a hint about the bbm-macros pack­age. I gave it a try by sim­ply in­stalling it, and it worked per­fectly. It seems that the bbm pack­age in­cludes the fonts, and the bbm-macros pack­age is for LaTeX sup­port.</p>
 <p>Another les­son learned is about the search op­tions in TeX Live Manager. I was us­ing the fol­low­ing line to search for bbm-re­lated pack­ages af­ter in­stalling the bbm pack­age, and the re­sult only showed bbm.</p>
-<pre><code class="hljs">tlmgr search bbm
+<pre><code class="hljs language-bash">tlmgr search bbm
 </code></pre>
 <p>Later I learned that this would only search for the <em>in­stalled</em> pack­ages. To also search for unin­stalled pack­ages, I should have used this:</p>
-<pre><code class="hljs">tlmgr search bbm --global
+<pre><code class="hljs language-bash">tlmgr search bbm --global
 </code></pre>
 
     </article>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="initial-scale=1.0">
     <title>My Mac Productivity Setup | zzpxyx</title>
     <link href="/styles/index.css" rel="stylesheet" type="text/css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/solarized-light.min.css" rel="stylesheet" type="text/css">
+    <link href="/styles/solarized-light.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -45,11 +45,11 @@
 </ul>
 <h3>Notes and Todo List (and <span class="small-caps">CPU</span> Temperature)</h3>
 <p>I use FSNotes for all my notes, in­clud­ing a spe­cial text file named <code>Todo.txt</code>. This file is a list of my todo tasks. I’ve writ­ten a sim­ple SwiftBar plu­gin to show the num­ber of lines in that file, in­di­cat­ing how many tasks are un­fin­ished. If the plu­gin re­freshes every 15 sec­onds, why not let it col­lect other data as well? So the ac­tual plu­gin I use also cap­tures the <span class="small-caps">CPU</span> tem­per­a­ture through <a href="https://github.com/Chris911/iStats">iS­tats</a>. The plu­gin looks like this:</p>
-<pre><code class="hljs"><span class="hljs-meta">#!/bin/bash</span>
+<pre><code class="hljs language-bash"><span class="hljs-meta">#!/bin/bash</span>
 
 <span class="hljs-built_in">export</span> GEM_HOME=~/.gem
 temp=$(<span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;%.0f&quot;</span> `<span class="hljs-variable">$GEM_HOME</span>/bin/istats cpu temp --value-only`)
-speed=$(<span class="hljs-variable">$GEM_HOME</span>/bin/istats fan speed --no-graphs --no-labels | head -n 1)
+speed=$(<span class="hljs-variable">$GEM_HOME</span>/bin/istats fan speed --no-graphs --no-labels | <span class="hljs-built_in">head</span> -n 1)
 
 unread=`awk <span class="hljs-string">&#x27;END{print NR}&#x27;</span> ~/path/to/Todo.txt`
 <span class="hljs-keyword">if</span> [ <span class="hljs-variable">$unread</span> -gt 0 ]
@@ -67,7 +67,7 @@ unread=`awk <span class="hljs-string">&#x27;END{print NR}&#x27;</span> ~/path/to
 <h3>Global Hotkeys</h3>
 <p>I like to de­fine some global hotkeys so that I can switch to spe­cific ap­pli­ca­tions quickly. For ex­am­ple, I want to press Command+3 to switch to Gmail Desktop. I did­n’t find a good open source app to set global hotkeys on a Mac, so I used AppleScript and Karabiner-Elements as a workaround.</p>
 <p>First of all, I use the fol­low­ing script to show and hide a spe­cific ap­pli­ca­tion. Note that it will launch the ap­pli­ca­tion if it’s not al­ready launched.</p>
-<pre><code class="hljs"><span class="hljs-keyword">tell</span> <span class="hljs-built_in">application</span> <span class="hljs-string">&quot;System Events&quot;</span>
+<pre><code class="hljs language-AppleScript"><span class="hljs-keyword">tell</span> <span class="hljs-built_in">application</span> <span class="hljs-string">&quot;System Events&quot;</span>
     <span class="hljs-keyword">set</span> names <span class="hljs-keyword">to</span> <span class="hljs-built_in">name</span> <span class="hljs-keyword">of</span> <span class="hljs-built_in">application</span> processes
     <span class="hljs-keyword">if</span> names <span class="hljs-keyword">contains</span> <span class="hljs-string">&quot;Gmail Desktop&quot;</span> <span class="hljs-keyword">then</span>
         <span class="hljs-keyword">tell</span> <span class="hljs-built_in">application</span> process <span class="hljs-string">&quot;Gmail Desktop&quot;</span>
@@ -83,32 +83,32 @@ unread=`awk <span class="hljs-string">&#x27;END{print NR}&#x27;</span> ~/path/to
 <span class="hljs-keyword">end</span> <span class="hljs-keyword">tell</span>
 </code></pre>
 <p>Then I de­fine some<span class="push-double"></span> <span class="pull-double">“</span><a href="https://karabiner-elements.pqrs.org/docs/manual/configuration/configure-complex-modifications/">com­plex rules</a><span class="push-double"></span><span class="pull-double">”</span> in Karabiner-Elements:</p>
-<pre><code class="hljs">{
-    <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;Global Hotkey&quot;</span>,
-    <span class="hljs-attr">&quot;rules&quot;</span>: [
-        {
-            <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;Global hotkeys to launch applications&quot;</span>,
-            <span class="hljs-attr">&quot;manipulators&quot;</span>: [
-                {
-                    <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;basic&quot;</span>,
-                    <span class="hljs-attr">&quot;from&quot;</span>: {
-                        <span class="hljs-attr">&quot;key_code&quot;</span>: <span class="hljs-string">&quot;3&quot;</span>,
-                        <span class="hljs-attr">&quot;modifiers&quot;</span>: {
-                            <span class="hljs-attr">&quot;mandatory&quot;</span>: [
+<pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Global Hotkey&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;rules&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-punctuation">{</span>
+            <span class="hljs-attr">&quot;description&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Global hotkeys to launch applications&quot;</span><span class="hljs-punctuation">,</span>
+            <span class="hljs-attr">&quot;manipulators&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                <span class="hljs-punctuation">{</span>
+                    <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;basic&quot;</span><span class="hljs-punctuation">,</span>
+                    <span class="hljs-attr">&quot;from&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+                        <span class="hljs-attr">&quot;key_code&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;3&quot;</span><span class="hljs-punctuation">,</span>
+                        <span class="hljs-attr">&quot;modifiers&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+                            <span class="hljs-attr">&quot;mandatory&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
                                 <span class="hljs-string">&quot;command&quot;</span>
-                            ]
-                        }
-                    },
-                    <span class="hljs-attr">&quot;to&quot;</span>: [
-                        {
-                            <span class="hljs-attr">&quot;shell_command&quot;</span>: <span class="hljs-string">&quot;osascript ~/path/to/above.scpt&quot;</span>
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
-}
+                            <span class="hljs-punctuation">]</span>
+                        <span class="hljs-punctuation">}</span>
+                    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+                    <span class="hljs-attr">&quot;to&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+                        <span class="hljs-punctuation">{</span>
+                            <span class="hljs-attr">&quot;shell_command&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;osascript ~/path/to/above.scpt&quot;</span>
+                        <span class="hljs-punctuation">}</span>
+                    <span class="hljs-punctuation">]</span>
+                <span class="hljs-punctuation">}</span>
+            <span class="hljs-punctuation">]</span>
+        <span class="hljs-punctuation">}</span>
+    <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span>
 </code></pre>
 <p>Note that the script file here is the com­piled one, as <a href="/posts/compile-applescript-for-performace">men­tioned pre­vi­ously</a>.</p>
 

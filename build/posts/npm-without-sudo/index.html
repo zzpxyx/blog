@@ -6,7 +6,7 @@
     <meta name="viewport" content="initial-scale=1.0">
     <title>npm Without Sudo | zzpxyx</title>
     <link href="/styles/index.css" rel="stylesheet" type="text/css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/solarized-light.min.css" rel="stylesheet" type="text/css">
+    <link href="/styles/solarized-light.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -34,7 +34,7 @@
 <p>Here is the main <a href="https://stackoverflow.com/questions/10081293/install-npm-into-home-directory-with-distribution-nodejs-package-ubuntu/13021677#13021677">ref­er­ence</a> on how to do this. For me, I did the fol­low­ing steps:</p>
 <ol>
 <li>Add <code>prefix=~/.npm-packages</code> to <code>~/.npmrc</code>.</li>
-<li>Add the fol­low­ing lines to <code>~/.xprofile</code>:<pre><code class="hljs"><span class="hljs-comment"># Tell npm about the packages:</span>
+<li>Add the fol­low­ing lines to <code>~/.xprofile</code>:<pre><code class="hljs language-bash"><span class="hljs-comment"># Tell npm about the packages:</span>
 <span class="hljs-built_in">export</span> NPM_PACKAGES=<span class="hljs-string">&quot;<span class="hljs-variable">$HOME</span>/.npm-packages&quot;</span>
 <span class="hljs-comment"># Tell Node.js about the packages:</span>
 <span class="hljs-built_in">export</span> NODE_PATH=<span class="hljs-string">&quot;<span class="hljs-variable">$NPM_PACKAGES</span>/lib/node_modules&quot;</span>

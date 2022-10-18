@@ -6,7 +6,7 @@
     <meta name="viewport" content="initial-scale=1.0">
     <title>Quick File Transfer in Private Network | zzpxyx</title>
     <link href="/styles/index.css" rel="stylesheet" type="text/css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/solarized-light.min.css" rel="stylesheet" type="text/css">
+    <link href="/styles/solarized-light.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -30,7 +30,7 @@
         </h6>
         <p>Recently, I’ve re­al­ized a quick way to trans­fer some files within a pri­vate net­work.</p>
 <p>Occasionally, I need to trans­fer some files from a MacBook to a Linux/Windows desk­top. They are in the same pri­vate net­work. I al­ways used a <span class="small-caps">USB</span> flash drive, and it worked just fine. The other day, I sud­denly re­al­ized that a sim­ple <span class="small-caps">HTTP</span> server could help since its di­rec­tory list­ing is prob­a­bly turned on by de­fault. In other words, I can start an <span class="small-caps">HTTP</span> server at a cer­tain di­rec­tory on the MacBook, and then I can browser that di­rec­to­ry’s con­tent us­ing the MacBook’s <span class="small-caps">IP</span> ad­dress in the desk­top’s browser. The fastest way I could think of start­ing such an <span class="small-caps">HTTP</span> server was to use the Python built-in one:</p>
-<pre><code class="hljs">python3 -m http.server
+<pre><code class="hljs language-bash">python3 -m http.server
 </code></pre>
 <p>It worked pretty well. If I need to trans­fer mul­ti­ple files, I can al­ways com­press them into a sin­gle file first so that I don’t have to down­load them one by one.</p>
 <p>The same idea can be ap­plied to other lan­guages and run­time en­vi­ron­ments as long as there is an easy-to-start <span class="small-caps">HTTP</span> server and it can ac­cess lo­cal files.</p>

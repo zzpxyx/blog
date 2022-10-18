@@ -6,7 +6,7 @@
     <meta name="viewport" content="initial-scale=1.0">
     <title>LxRun Issue in Windows 10 Bash Shell | zzpxyx</title>
     <link href="/styles/index.css" rel="stylesheet" type="text/css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/solarized-light.min.css" rel="stylesheet" type="text/css">
+    <link href="/styles/solarized-light.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -30,13 +30,13 @@
         </h6>
         <p>I’ve just found a workaround for an is­sue of set­ting the de­fault user in Windows 10 Bash shell.</p>
 <p>During in­stal­la­tion of Windows 10 Bash shell, there is a step to set or cre­ate the de­fault user. It’s equiv­a­lent to ex­e­cut­ing the fol­low­ing com­mand:</p>
-<pre><code class="hljs">LxRun.exe /setdefaultuser &lt;username&gt;
+<pre><code class="hljs language-Bash">LxRun.exe /setdefaultuser &lt;username&gt;
 </code></pre>
 <p>If the Temp folder is not ac­ces­si­ble, ei­ther be­cause of priv­i­lege or un­sup­ported file sys­tems like <span class="small-caps">RAM</span> disk, an er­ror mes­sage will ap­pear:</p>
-<pre><code class="hljs">/bin/bash: /mnt/d/TEMP/uid.txt: No such file or directory
+<pre><code class="hljs language-Bash">/bin/bash: /mnt/d/TEMP/uid.txt: No such file or directory
 </code></pre>
 <p>Or</p>
-<pre><code class="hljs">/bin/bash: /mnt/c/WINDOWS/TEMP/uid.txt: No such file or directory
+<pre><code class="hljs language-Bash">/bin/bash: /mnt/c/WINDOWS/TEMP/uid.txt: No such file or directory
 </code></pre>
 <p>The first er­ror mes­sage ap­pears when my Temp folder is on a <span class="small-caps">RAM</span> disk, and the sec­ond ap­pears when I’m us­ing the sys­tem-level Temp folder (<code>C:\Windows\Temp</code>).</p>
 <p>The workaround is fairly sim­ple. Just move the Temp folder to some­where ac­ces­si­ble, such as <code>%USERPROFILE%\AppData\Local\Temp</code>.</p>

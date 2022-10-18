@@ -1,9 +1,9 @@
-var metalsmith = require("metalsmith"),
-  markdown = require("metalsmith-markdownit"),
-  permalinks = require("metalsmith-permalinks"),
-  collections = require("metalsmith-collections"),
-  layouts = require("metalsmith-layouts"),
-  excerpts = require("metalsmith-excerpts"),
+const metalsmith = require("metalsmith"),
+  markdown = require("@metalsmith/markdown"),
+  permalinks = require("@metalsmith/permalinks"),
+  collections = require("@metalsmith/collections"),
+  layouts = require("@metalsmith/layouts"),
+  excerpts = require("@metalsmith/excerpts"),
   feed = require("metalsmith-feed"),
   typeset = require("metalsmith-typeset"),
   archive = require("metalsmith-archive"),
@@ -15,12 +15,12 @@ var metalsmith = require("metalsmith"),
   hljs = require("highlight.js"),
   discoverPartials = require("metalsmith-discover-partials");
 
-handlebars.registerHelper("formatDate", function(date) {
+handlebars.registerHelper("formatDate", function (date) {
   return moment.utc(date).format("YYYY-MM-DD");
 });
 
-handlebars.registerHelper("shortenPath", function(path) {
-  var pos = path.lastIndexOf("index.html");
+handlebars.registerHelper("shortenPath", function (path) {
+  const pos = path.lastIndexOf("index.html");
   return path.substring(0, pos);
 });
 
@@ -53,13 +53,13 @@ metalsmith(__dirname)
   )
   .use(
     markdown({
-      highlight: function(str, lang) {
+      highlight: function (code, lang) {
         return (
-          '<pre><code class="hljs">' +
-          hljs.highlight(lang, str, true).value +
-          "</code></pre>"
+          hljs.highlight(code, { language: lang }).value
         );
-      }
+      },
+      headerIds: false,
+      langPrefix: "hljs language-"
     })
   )
   .use(
@@ -95,6 +95,6 @@ metalsmith(__dirname)
     })
   )
   .use(layouts())
-  .build(function(err) {
+  .build(function (err) {
     if (err) throw err;
   });

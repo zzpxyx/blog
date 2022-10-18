@@ -5,7 +5,7 @@
     {{> meta}}
     <title>{{pageTitle}}</title>
     {{> css}}
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/solarized-light.min.css" rel="stylesheet" type="text/css">
+    <link href="/styles/solarized-light.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -22,11 +22,11 @@
         {{&contents}}
     </article>
     <footer>
-        {{#if previous}}
-        <div class="float-left"><a href="/{{previous.path}}/">&laquo; {{previous.title}}</a></div>
-        {{/if}}
         {{#if next}}
-        <div class="float-right"><a href="/{{next.path}}/">{{next.title}} &raquo;</a></div>
+        <div class="float-left"><a href="/{{next.path}}/">&laquo; {{next.title}}</a></div>
+        {{/if}}
+        {{#if previous}}
+        <div class="float-right"><a href="/{{previous.path}}/">{{previous.title}} &raquo;</a></div>
         {{/if}}
     </footer>
 </body>

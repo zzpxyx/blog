@@ -6,7 +6,7 @@
     <meta name="viewport" content="initial-scale=1.0">
     <title>Icon Size in Xfce 4 Window Buttons | zzpxyx</title>
     <link href="/styles/index.css" rel="stylesheet" type="text/css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/solarized-light.min.css" rel="stylesheet" type="text/css">
+    <link href="/styles/solarized-light.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -32,11 +32,11 @@
 <p>I’m us­ing the Arc Darker theme. I’ve con­fig­ured the task list to only show win­dow but­tons so that they take less space in the top-right cor­ner of the screen and play well with the ti­tle bar when a win­dow is max­i­mized. I al­ways feel that the icons in the win­dow but­tons are too small.</p>
 <p>The key to solve this prob­lem is to fig­ure out which style is ap­plied to the win­dow but­tons. I know lit­tle about <span class="small-caps">GTK</span> themes, so here is my guess­ing and ob­ser­va­tions through trial and er­ror.</p>
 <p>For the Arc Darker theme, the base theme file on my Arch Linux is</p>
-<pre><code class="hljs">/usr/share/themes/Arc-Darker/gtk-2.0/gtkrc
+<pre><code class="hljs language-bash">/usr/share/themes/Arc-Darker/gtk-2.0/gtkrc
 </code></pre>
 <p>Looking at the con­tent of the file, it in­cludes other theme files. One of them is <code>panel.rc</code>, which seems promis­ing.</p>
 <p>At the end of <code>panel.rc</code>, there is a line that says</p>
-<pre><code class="hljs">widget &quot;*XfceTasklist*&quot; style &quot;panelbuttons&quot;
+<pre><code class="hljs language-html">widget &quot;*XfceTasklist*&quot; style &quot;panelbuttons&quot;
 </code></pre>
 <p>I think this is what we need. Looking at the <code>panelButtons</code> style in the same file, <code>xthickness</code> is set to 4. I’m not ex­actly sure what this prop­erty means, but it seems that it is used for cal­cu­lat­ing var­i­ous padding spaces. I change it to 2, and the icons im­me­di­ately ap­pear larger af­ter switch­ing to an­other theme and back. The smaller that value is, the larger the icons will be.</p>
 <p>This so­lu­tion has many draw­backs. For ex­am­ple, the mod­i­fi­ca­tion may be over­rid­den if I up­date the Arc theme pack­age. For now, that’s good enough for me.</p>

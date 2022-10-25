@@ -1,33 +1,33 @@
 @font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/roboto-v20-latin-regular.woff2') format('woff2')
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/roboto-v20-latin-regular.woff2') format('woff2')
 }
 
 @font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('../fonts/roboto-v20-latin-500.woff2') format('woff2')
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('../fonts/roboto-v20-latin-500.woff2') format('woff2')
 }
 
 @font-face {
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/roboto-slab-v13-latin-regular.woff2') format('woff2')
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/roboto-slab-v13-latin-regular.woff2') format('woff2')
 }
 
 @font-face {
-  font-family: 'Roboto Mono';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/roboto-mono-v13-latin-regular.woff2') format('woff2')
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/roboto-mono-v13-latin-regular.woff2') format('woff2')
 }
 
 html,
@@ -194,7 +194,6 @@ ol {
     font-size: 20px;
     font-weight: 400;
     line-height: 1.5em;
-    text-align: justify;
     margin-bottom: 1em;
 }
 
@@ -264,59 +263,4 @@ a:hover {
 
 .float-right {
     float: right;
-}
-
-
-/* typeset.js */
-
-.pull-double {
-    margin-left: -0.32em
-}
-
-.push-double {
-    margin-right: 0.32em
-}
-
-.pull-single {
-    margin-left: -0.15em
-}
-
-.push-single {
-    margin-right: 0.15em
-}
-
-.pull-T,
-.pull-V,
-.pull-W,
-.pull-Y {
-    margin-left: -0.07em
-}
-
-.push-T,
-.push-V,
-.push-W,
-.push-Y {
-    margin-right: 0.07em
-}
-
-.pull-O,
-.pull-C,
-.pull-o,
-.pull-c {
-    margin-left: -0.05em
-}
-
-.push-O,
-.push-C,
-.push-o,
-.push-c {
-    margin-right: 0.05em
-}
-
-.pull-A {
-    margin-left: -0.03em
-}
-
-.push-A {
-    margin-right: 0.03em
 }

@@ -5,7 +5,6 @@ const metalsmith = require("metalsmith"),
   layouts = require("@metalsmith/layouts"),
   excerpts = require("@metalsmith/excerpts"),
   feed = require("metalsmith-feed"),
-  typeset = require("metalsmith-typeset"),
   archive = require("metalsmith-archive"),
   pagination = require("metalsmith-pagination"),
   filemetadata = require("metalsmith-filemetadata"),
@@ -59,7 +58,8 @@ metalsmith(__dirname)
         );
       },
       headerIds: false,
-      langPrefix: "hljs language-"
+      langPrefix: "hljs language-",
+      smartypants: true
     })
   )
   .use(
@@ -70,11 +70,6 @@ metalsmith(__dirname)
   .use(
     feed({
       collection: "posts"
-    })
-  )
-  .use(
-    typeset({
-      disable: ["ligatures"]
     })
   )
   .use(archive())

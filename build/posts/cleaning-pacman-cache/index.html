@@ -28,14 +28,14 @@
             Published <time>2016-06-15</time>
             | <a href="javascript:history.back()">Go Back</a>
         </h6>
-        <p>I just learned how to clean pac­man’s pack­age cache.</p>
-<p>I came across this <a href="https://wiki.archlinux.org/index.php/pacman#Cleaning_the_package_cache">wiki page</a> when I was strug­gling with disk space the other day. It was then that I learned that pac­man would keep <em>all</em> ver­sions of down­loaded pack­ages, no mat­ter whether the pack­age is in­stalled or not. Cleaning the cache is easy:</p>
+        <p>I just learned how to clean pacman’s package cache.</p>
+<p>I came across this <a href="https://wiki.archlinux.org/index.php/pacman#Cleaning_the_package_cache">wiki page</a> when I was struggling with disk space the other day. It was then that I learned that pacman would keep <em>all</em> versions of downloaded packages, no matter whether the package is installed or not. Cleaning the cache is easy:</p>
 <pre><code class="hljs language-bash">paccache -r
 </code></pre>
-<p>This will re­move all cached ver­sions ex­cept the most re­cent 3. There are more ag­gres­sive op­tions as well men­tioned in that wiki page, such as:</p>
+<p>This will remove all cached versions except the most recent 3. There are more aggressive options as well mentioned in that wiki page, such as:</p>
 <pre><code class="hljs language-bash">pacman -Sc
 </code></pre>
-<p>This will keep only the lat­est ver­sion for cur­rently in­stalled pack­ages. Older ver­sions and unin­stalled pack­ages will be re­moved. Of course, this is not rec­om­mended. However, as a fun fact, I used that com­mand to re­gain over <span class="small-caps">22GB</span> disk space.</p>
+<p>This will keep only the latest version for currently installed packages. Older versions and uninstalled packages will be removed. Of course, this is not recommended. However, as a fun fact, I used that command to regain over 22GB disk space.</p>
 
     </article>
     <footer>

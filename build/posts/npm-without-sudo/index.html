@@ -28,13 +28,13 @@
             Published <time>2017-12-05</time>
             | <a href="javascript:history.back()">Go Back</a>
         </h6>
-        <p>Recently, I have to re­in­stall npm. It’s a good time to jot down how to in­stall npm lo­cally so that no sudo is re­quired when us­ing npm.</p>
-<p>The whole story be­gins with this <a href="https://github.com/npm/npm/issues/19019">is­sue</a>. Basically, on my ma­chine, npm 5.5.1 crashes every time when I try to up­date or in­stall pack­ages for Node.js 9.2.0. The so­lu­tion is to unin­stall npm and re­in­stall it with a higher ver­sion like 5.6.0.</p>
-<p>It’s de­bat­able whether npm should be in­stalled lo­cally in the user home di­rec­tory or at the sys­tem level. Personally, I pre­fer not us­ing sudo for npm.</p>
-<p>Here is the main <a href="https://stackoverflow.com/questions/10081293/install-npm-into-home-directory-with-distribution-nodejs-package-ubuntu/13021677#13021677">ref­er­ence</a> on how to do this. For me, I did the fol­low­ing steps:</p>
+        <p>Recently, I have to reinstall npm. It’s a good time to jot down how to install npm locally so that no sudo is required when using npm.</p>
+<p>The whole story begins with this <a href="https://github.com/npm/npm/issues/19019">issue</a>. Basically, on my machine, npm 5.5.1 crashes every time when I try to update or install packages for Node.js 9.2.0. The solution is to uninstall npm and reinstall it with a higher version like 5.6.0.</p>
+<p>It’s debatable whether npm should be installed locally in the user home directory or at the system level. Personally, I prefer not using sudo for npm.</p>
+<p>Here is the main <a href="https://stackoverflow.com/questions/10081293/install-npm-into-home-directory-with-distribution-nodejs-package-ubuntu/13021677#13021677">reference</a> on how to do this. For me, I did the following steps:</p>
 <ol>
 <li>Add <code>prefix=~/.npm-packages</code> to <code>~/.npmrc</code>.</li>
-<li>Add the fol­low­ing lines to <code>~/.xprofile</code>:<pre><code class="hljs language-bash"><span class="hljs-comment"># Tell npm about the packages:</span>
+<li>Add the following lines to <code>~/.xprofile</code>:<pre><code class="hljs language-bash"><span class="hljs-comment"># Tell npm about the packages:</span>
 <span class="hljs-built_in">export</span> NPM_PACKAGES=<span class="hljs-string">&quot;<span class="hljs-variable">$HOME</span>/.npm-packages&quot;</span>
 <span class="hljs-comment"># Tell Node.js about the packages:</span>
 <span class="hljs-built_in">export</span> NODE_PATH=<span class="hljs-string">&quot;<span class="hljs-variable">$NPM_PACKAGES</span>/lib/node_modules&quot;</span>
@@ -42,11 +42,11 @@
 <span class="hljs-built_in">export</span> MANPATH=<span class="hljs-string">&quot;<span class="hljs-variable">$NPM_PACKAGES</span>/share/man:<span class="hljs-variable">$MANPATH</span>&quot;</span>
 </code></pre>
 </li>
-<li>Reboot so that the new en­vi­ron­ment vari­ables take ef­fect.</li>
-<li>Download the npm mod­ule from <a href="https://docs.npmjs.com/getting-started/installing-node">here</a>.</li>
-<li>Install npm us­ing the nor­mal way: <code>./configure</code>, <code>make</code>, and <code>make install</code>.</li>
+<li>Reboot so that the new environment variables take effect.</li>
+<li>Download the npm module from <a href="https://docs.npmjs.com/getting-started/installing-node">here</a>.</li>
+<li>Install npm using the normal way: <code>./configure</code>, <code>make</code>, and <code>make install</code>.</li>
 </ol>
-<p>Note that the en­vi­ron­ment vari­able set­tings and where to put them are spe­cific to my ma­chine. You might have to change them to fit in your sys­tem.</p>
+<p>Note that the environment variable settings and where to put them are specific to my machine. You might have to change them to fit in your system.</p>
 
     </article>
     <footer>

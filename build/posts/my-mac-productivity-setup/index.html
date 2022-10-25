@@ -28,23 +28,23 @@
             Published <time>2021-07-07</time>
             | <a href="javascript:history.back()">Go Back</a>
         </h6>
-        <p>Here is my pro­duc­tiv­ity setup on a Mac. It is just a per­sonal memo, not an en­dorse­ment or an ad­ver­tise­ment.</p>
+        <p>Here is my productivity setup on a Mac. It is just a personal memo, not an endorsement or an advertisement.</p>
 <h3>Tools and Apps</h3>
-<p>Here is a brief list of some pro­duc­tiv­ity tools. Further sec­tions will dis­cuss com­bin­ing them to achieve pow­er­ful work­flows and se­tups.</p>
+<p>Here is a brief list of some productivity tools. Further sections will discuss combining them to achieve powerful workflows and setups.</p>
 <ul>
 <li><a href="https://github.com/timche/gmail-desktop">Gmail Desktop</a>: a third-party Gmail client.</li>
-<li><a href="https://github.com/rxhanson/Rectangle">Rectangle</a>: re­size win­dows us­ing key­board short­cuts.</li>
-<li><a href="https://github.com/pqrs-org/Karabiner-Elements">Karabiner-Elements</a>: key­board cus­tomiza­tion, es­pe­cially use­ful for remap­ping keys and de­fine global hotkeys.</li>
-<li><a href="https://github.com/swiftbar/SwiftBar">SwiftBar</a>: menu bar cus­tomiza­tion tool, sim­i­lar to <a href="https://github.com/matryer/xbar">BitBar</a>.</li>
-<li><a href="https://github.com/archagon/sensible-side-buttons">SensibleSideButtons</a>: en­able sys­tem-wide nav­i­ga­tion for mouse side but­tons.</li>
-<li><a href="https://github.com/glushchenko/fsnotes">FSNotes</a>: notes man­ager, sim­i­lar to <a href="https://notational.net/">Notational Velocity</a> and <a href="https://brettterpstra.com/projects/nvalt/">nvALT</a>.</li>
+<li><a href="https://github.com/rxhanson/Rectangle">Rectangle</a>: resize windows using keyboard shortcuts.</li>
+<li><a href="https://github.com/pqrs-org/Karabiner-Elements">Karabiner-Elements</a>: keyboard customization, especially useful for remapping keys and define global hotkeys.</li>
+<li><a href="https://github.com/swiftbar/SwiftBar">SwiftBar</a>: menu bar customization tool, similar to <a href="https://github.com/matryer/xbar">BitBar</a>.</li>
+<li><a href="https://github.com/archagon/sensible-side-buttons">SensibleSideButtons</a>: enable system-wide navigation for mouse side buttons.</li>
+<li><a href="https://github.com/glushchenko/fsnotes">FSNotes</a>: notes manager, similar to <a href="https://notational.net/">Notational Velocity</a> and <a href="https://brettterpstra.com/projects/nvalt/">nvALT</a>.</li>
 <li><a href="https://github.com/Mortennn/Dozer">Dozer</a>: hide menu bar icons.</li>
-<li><a href="https://github.com/Clipy/Clipy">Clipy</a>: clip­board man­ager.</li>
+<li><a href="https://github.com/Clipy/Clipy">Clipy</a>: clipboard manager.</li>
 <li><a href="https://github.com/Caldis/Mos">Mos</a>: smooth scrolling.</li>
-<li><a href="https://github.com/sfsam/Itsycal">Itsycal</a>: menu bar cal­en­dar.</li>
+<li><a href="https://github.com/sfsam/Itsycal">Itsycal</a>: menu bar calendar.</li>
 </ul>
-<h3>Notes and Todo List (and <span class="small-caps">CPU</span> Temperature)</h3>
-<p>I use FSNotes for all my notes, in­clud­ing a spe­cial text file named <code>Todo.txt</code>. This file is a list of my todo tasks. I’ve writ­ten a sim­ple SwiftBar plu­gin to show the num­ber of lines in that file, in­di­cat­ing how many tasks are un­fin­ished. If the plu­gin re­freshes every 15 sec­onds, why not let it col­lect other data as well? So the ac­tual plu­gin I use also cap­tures the <span class="small-caps">CPU</span> tem­per­a­ture through <a href="https://github.com/Chris911/iStats">iS­tats</a>. The plu­gin looks like this:</p>
+<h3>Notes and Todo List (and CPU Temperature)</h3>
+<p>I use FSNotes for all my notes, including a special text file named <code>Todo.txt</code>. This file is a list of my todo tasks. I’ve written a simple SwiftBar plugin to show the number of lines in that file, indicating how many tasks are unfinished. If the plugin refreshes every 15 seconds, why not let it collect other data as well? So the actual plugin I use also captures the CPU temperature through <a href="https://github.com/Chris911/iStats">iStats</a>. The plugin looks like this:</p>
 <pre><code class="hljs language-bash"><span class="hljs-meta">#!/bin/bash</span>
 
 <span class="hljs-built_in">export</span> GEM_HOME=~/.gem
@@ -63,10 +63,10 @@ unread=`awk <span class="hljs-string">&#x27;END{print NR}&#x27;</span> ~/path/to
 <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;---&quot;</span>
 <span class="hljs-built_in">echo</span> <span class="hljs-variable">$speed</span>
 </code></pre>
-<p>Note that those colon-wrapped words like <code>:checkmark.square:</code> are re­fer­ring to <a href="https://developer.apple.com/sf-symbols/"><span class="small-caps">SF</span> Symbols</a>, as men­tioned in SwiftBar <a href="https://github.com/swiftbar/SwiftBar#parameters">doc­u­men­ta­tion</a>.</p>
+<p>Note that those colon-wrapped words like <code>:checkmark.square:</code> are referring to <a href="https://developer.apple.com/sf-symbols/">SF Symbols</a>, as mentioned in SwiftBar <a href="https://github.com/swiftbar/SwiftBar#parameters">documentation</a>.</p>
 <h3>Global Hotkeys</h3>
-<p>I like to de­fine some global hotkeys so that I can switch to spe­cific ap­pli­ca­tions quickly. For ex­am­ple, I want to press Command+3 to switch to Gmail Desktop. I did­n’t find a good open source app to set global hotkeys on a Mac, so I used AppleScript and Karabiner-Elements as a workaround.</p>
-<p>First of all, I use the fol­low­ing script to show and hide a spe­cific ap­pli­ca­tion. Note that it will launch the ap­pli­ca­tion if it’s not al­ready launched.</p>
+<p>I like to define some global hotkeys so that I can switch to specific applications quickly. For example, I want to press Command+3 to switch to Gmail Desktop. I didn’t find a good open source app to set global hotkeys on a Mac, so I used AppleScript and Karabiner-Elements as a workaround.</p>
+<p>First of all, I use the following script to show and hide a specific application. Note that it will launch the application if it’s not already launched.</p>
 <pre><code class="hljs language-AppleScript"><span class="hljs-keyword">tell</span> <span class="hljs-built_in">application</span> <span class="hljs-string">&quot;System Events&quot;</span>
     <span class="hljs-keyword">set</span> names <span class="hljs-keyword">to</span> <span class="hljs-built_in">name</span> <span class="hljs-keyword">of</span> <span class="hljs-built_in">application</span> processes
     <span class="hljs-keyword">if</span> names <span class="hljs-keyword">contains</span> <span class="hljs-string">&quot;Gmail Desktop&quot;</span> <span class="hljs-keyword">then</span>
@@ -82,7 +82,7 @@ unread=`awk <span class="hljs-string">&#x27;END{print NR}&#x27;</span> ~/path/to
     <span class="hljs-keyword">end</span> <span class="hljs-keyword">if</span>
 <span class="hljs-keyword">end</span> <span class="hljs-keyword">tell</span>
 </code></pre>
-<p>Then I de­fine some<span class="push-double"></span> <span class="pull-double">“</span><a href="https://karabiner-elements.pqrs.org/docs/manual/configuration/configure-complex-modifications/">com­plex rules</a><span class="push-double"></span><span class="pull-double">”</span> in Karabiner-Elements:</p>
+<p>Then I define some “<a href="https://karabiner-elements.pqrs.org/docs/manual/configuration/configure-complex-modifications/">complex rules</a>“ in Karabiner-Elements:</p>
 <pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
     <span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Global Hotkey&quot;</span><span class="hljs-punctuation">,</span>
     <span class="hljs-attr">&quot;rules&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
@@ -110,7 +110,7 @@ unread=`awk <span class="hljs-string">&#x27;END{print NR}&#x27;</span> ~/path/to
     <span class="hljs-punctuation">]</span>
 <span class="hljs-punctuation">}</span>
 </code></pre>
-<p>Note that the script file here is the com­piled one, as <a href="/posts/compile-applescript-for-performace">men­tioned pre­vi­ously</a>.</p>
+<p>Note that the script file here is the compiled one, as <a href="/posts/compile-applescript-for-performace">mentioned previously</a>.</p>
 
     </article>
     <footer>

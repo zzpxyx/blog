@@ -28,9 +28,9 @@
             Published <time>2016-01-26</time>
             | <a href="javascript:history.back()">Go Back</a>
         </h6>
-        <p><a href="https://highlightjs.org/">high­light.js</a> is a pop­u­lar li­brary for syn­tax high­light­ing. I just fig­ured out how to use its <span class="small-caps">CDN</span> ver­sion.</p>
-<p>According to the <a href="https://highlightjs.org/download/">down­load in­struc­tions</a>, there is a hosted ver­sion of high­light.js. It is a pre­built ver­sion with 23 com­monly used lan­guages. I was try­ing to high­light Vim script, which was not in­cluded. After search­ing on the Internet, I found it on <a href="https://cdnjs.com/libraries/highlight.js/">cd­njs</a>. Every sup­port­ing lan­guage was listed, so I down­loaded the one for Vim script (languages/vim.min.js) im­me­di­ately and started test­ing. It was not work­ing be­cause<span class="push-double"></span> <span class="pull-double">“</span>hljs” was not de­fined.</p>
-<p>It took me a while to re­al­ize the struc­ture of those js files. The one I down­loaded for Vim script was merely an ad­don. In other words, I still needed the file high­light.min.js as a base. After ref­er­enc­ing both of them, Vim script high­light­ing fi­nally worked.</p>
+        <p><a href="https://highlightjs.org/">highlight.js</a> is a popular library for syntax highlighting. I just figured out how to use its CDN version.</p>
+<p>According to the <a href="https://highlightjs.org/download/">download instructions</a>, there is a hosted version of highlight.js. It is a prebuilt version with 23 commonly used languages. I was trying to highlight Vim script, which was not included. After searching on the Internet, I found it on <a href="https://cdnjs.com/libraries/highlight.js/">cdnjs</a>. Every supporting language was listed, so I downloaded the one for Vim script (languages/vim.min.js) immediately and started testing. It was not working because “hljs” was not defined.</p>
+<p>It took me a while to realize the structure of those js files. The one I downloaded for Vim script was merely an addon. In other words, I still needed the file highlight.min.js as a base. After referencing both of them, Vim script highlighting finally worked.</p>
 
     </article>
     <footer>

@@ -28,12 +28,12 @@
             Published <time>2022-10-17</time>
             | <a href="javascript:history.back()">Go Back</a>
         </h6>
-        <p>Recently, I’ve re­al­ized a quick way to trans­fer some files within a pri­vate net­work.</p>
-<p>Occasionally, I need to trans­fer some files from a MacBook to a Linux/Windows desk­top. They are in the same pri­vate net­work. I al­ways used a <span class="small-caps">USB</span> flash drive, and it worked just fine. The other day, I sud­denly re­al­ized that a sim­ple <span class="small-caps">HTTP</span> server could help since its di­rec­tory list­ing is prob­a­bly turned on by de­fault. In other words, I can start an <span class="small-caps">HTTP</span> server at a cer­tain di­rec­tory on the MacBook, and then I can browser that di­rec­to­ry’s con­tent us­ing the MacBook’s <span class="small-caps">IP</span> ad­dress in the desk­top’s browser. The fastest way I could think of start­ing such an <span class="small-caps">HTTP</span> server was to use the Python built-in one:</p>
+        <p>Recently, I’ve realized a quick way to transfer some files within a private network.</p>
+<p>Occasionally, I need to transfer some files from a MacBook to a Linux/Windows desktop. They are in the same private network. I always used a USB flash drive, and it worked just fine. The other day, I suddenly realized that a simple HTTP server could help since its directory listing is probably turned on by default. In other words, I can start an HTTP server at a certain directory on the MacBook, and then I can browser that directory’s content using the MacBook’s IP address in the desktop’s browser. The fastest way I could think of starting such an HTTP server was to use the Python built-in one:</p>
 <pre><code class="hljs language-bash">python3 -m http.server
 </code></pre>
-<p>It worked pretty well. If I need to trans­fer mul­ti­ple files, I can al­ways com­press them into a sin­gle file first so that I don’t have to down­load them one by one.</p>
-<p>The same idea can be ap­plied to other lan­guages and run­time en­vi­ron­ments as long as there is an easy-to-start <span class="small-caps">HTTP</span> server and it can ac­cess lo­cal files.</p>
+<p>It worked pretty well. If I need to transfer multiple files, I can always compress them into a single file first so that I don’t have to download them one by one.</p>
+<p>The same idea can be applied to other languages and runtime environments as long as there is an easy-to-start HTTP server and it can access local files.</p>
 
     </article>
     <footer>

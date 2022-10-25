@@ -28,19 +28,19 @@
             Published <time>2016-08-03</time>
             | <a href="javascript:history.back()">Go Back</a>
         </h6>
-        <p>I’ve just found a workaround for an is­sue of set­ting the de­fault user in Windows 10 Bash shell.</p>
-<p>During in­stal­la­tion of Windows 10 Bash shell, there is a step to set or cre­ate the de­fault user. It’s equiv­a­lent to ex­e­cut­ing the fol­low­ing com­mand:</p>
+        <p>I’ve just found a workaround for an issue of setting the default user in Windows 10 Bash shell.</p>
+<p>During installation of Windows 10 Bash shell, there is a step to set or create the default user. It’s equivalent to executing the following command:</p>
 <pre><code class="hljs language-Bash">LxRun.exe /setdefaultuser &lt;username&gt;
 </code></pre>
-<p>If the Temp folder is not ac­ces­si­ble, ei­ther be­cause of priv­i­lege or un­sup­ported file sys­tems like <span class="small-caps">RAM</span> disk, an er­ror mes­sage will ap­pear:</p>
+<p>If the Temp folder is not accessible, either because of privilege or unsupported file systems like RAM disk, an error message will appear:</p>
 <pre><code class="hljs language-Bash">/bin/bash: /mnt/d/TEMP/uid.txt: No such file or directory
 </code></pre>
 <p>Or</p>
 <pre><code class="hljs language-Bash">/bin/bash: /mnt/c/WINDOWS/TEMP/uid.txt: No such file or directory
 </code></pre>
-<p>The first er­ror mes­sage ap­pears when my Temp folder is on a <span class="small-caps">RAM</span> disk, and the sec­ond ap­pears when I’m us­ing the sys­tem-level Temp folder (<code>C:\Windows\Temp</code>).</p>
-<p>The workaround is fairly sim­ple. Just move the Temp folder to some­where ac­ces­si­ble, such as <code>%USERPROFILE%\AppData\Local\Temp</code>.</p>
-<p>By the way, I’ve sub­mit­ted an <a href="https://github.com/Microsoft/BashOnWindows/issues/752">is­sue</a> for this on GitHub.</p>
+<p>The first error message appears when my Temp folder is on a RAM disk, and the second appears when I’m using the system-level Temp folder (<code>C:\Windows\Temp</code>).</p>
+<p>The workaround is fairly simple. Just move the Temp folder to somewhere accessible, such as <code>%USERPROFILE%\AppData\Local\Temp</code>.</p>
+<p>By the way, I’ve submitted an <a href="https://github.com/Microsoft/BashOnWindows/issues/752">issue</a> for this on GitHub.</p>
 
     </article>
     <footer>

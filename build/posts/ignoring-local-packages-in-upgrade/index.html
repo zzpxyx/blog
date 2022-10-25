@@ -28,13 +28,13 @@
             Published <time>2020-08-18</time>
             | <a href="javascript:history.back()">Go Back</a>
         </h6>
-        <p>I’ve just found a way to ig­nore lo­cal pack­ages when up­grad­ing pack­ages us­ing Yay in Arch Linux.</p>
-<p>I use Yay for man­ag­ing pack­ages on Arch Linux. As men­tioned in <a href="https://www.zzpxyx.com/posts/switching-to-arch-linux-tex-live/">this post</a>, I use <code>tllocalmgr</code> to man­u­ally in­stall some <span class="small-caps">CTAN</span> pack­ages, mostly fonts. The con­se­quence is that these pack­ages only ex­ist on my lo­cal ma­chine. Every time I up­grade pack­ages in Yay, it will prompt me that those pack­ages don’t have cor­re­spond­ing <span class="small-caps">AUR</span> pack­ages. That is­n’t nec­es­sar­ily a bad thing, but I just want to hide it.</p>
-<p>I came across <a href="https://github.com/Jguer/yay/issues/780">this is­sue</a> the other day. This af­ter­noon, I fi­nally de­cided to give it a try. All I did was to un­com­ment the <code>IgnorePkg</code> set­ting in <code>/etc/pacman.conf</code>, and added a pack­age name pat­tern, so that it looked like this:</p>
+        <p>I’ve just found a way to ignore local packages when upgrading packages using Yay in Arch Linux.</p>
+<p>I use Yay for managing packages on Arch Linux. As mentioned in <a href="https://www.zzpxyx.com/posts/switching-to-arch-linux-tex-live/">this post</a>, I use <code>tllocalmgr</code> to manually install some CTAN packages, mostly fonts. The consequence is that these packages only exist on my local machine. Every time I upgrade packages in Yay, it will prompt me that those packages don’t have corresponding AUR packages. That isn’t necessarily a bad thing, but I just want to hide it.</p>
+<p>I came across <a href="https://github.com/Jguer/yay/issues/780">this issue</a> the other day. This afternoon, I finally decided to give it a try. All I did was to uncomment the <code>IgnorePkg</code> setting in <code>/etc/pacman.conf</code>, and added a package name pattern, so that it looked like this:</p>
 <pre><code class="hljs language-properties"><span class="hljs-attr">IgnorePkg</span> = <span class="hljs-string">texlive-local-*</span>
 </code></pre>
-<p>It worked like a charm. Now, Yay no longer prompts miss­ing <span class="small-caps">AUR</span> pack­ages. Fortunately, we don’t have of­fi­cial or <span class="small-caps">AUR</span> pack­ages star­ing with <code>texlive-local-</code> at the mo­ment.</p>
-<p>This post is more like a memo to me as I know one day I will won­der where or how I did this.</p>
+<p>It worked like a charm. Now, Yay no longer prompts missing AUR packages. Fortunately, we don’t have official or AUR packages staring with <code>texlive-local-</code> at the moment.</p>
+<p>This post is more like a memo to me as I know one day I will wonder where or how I did this.</p>
 
     </article>
     <footer>

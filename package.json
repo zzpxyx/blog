@@ -32,7 +32,6 @@
     "metalsmith-filemetadata": "^3.0.0",
     "metalsmith-page-titles": "^1.0.2",
     "metalsmith-pagination": "^1.5.0",
-    "metalsmith-typeset": "0.0.2",
     "moment": "^2.29.4"
   }
 }

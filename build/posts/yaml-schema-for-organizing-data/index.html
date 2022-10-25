@@ -28,10 +28,10 @@
             Published <time>2019-12-14</time>
             | <a href="javascript:history.back()">Go Back</a>
         </h6>
-        <p>I have an idea about us­ing <span class="small-caps">YAML</span> Schema to or­ga­nize data.</p>
-<p>I came to this idea the other day when I was asked whether I had a cer­tain vac­cine in the past. All of a sud­den, I wish I had or­ga­nized my per­sonal med­ical data in a struc­tured way so that I could eas­ily look it up. For eas­ier dis­cus­sion, let’s use per­sonal med­ical data as an ex­am­ple here.</p>
-<p>First of all, I choose texts rather than data­base or any bi­nary for­mat be­cause I want it to be read­able and easy to main­tain. I also want it to be or­ga­nized, so I choose the <span class="small-caps">YAML</span> for­mat where it’s kind of both hu­man- and ma­chine-read­able, yet does­n’t re­quire a lot of skele­ton char­ac­ters like <span class="small-caps">JSON</span>. On top of that, I add <span class="small-caps">YAML</span> Schema so that the data <span class="small-caps">YAML</span> file can be val­i­dated. It’s also use­ful for auto-com­ple­tion in ed­i­tors that sup­ports it. <span class="small-caps">YAML</span> Schema is based on <span class="small-caps">JSON</span> Schema, which is still work in progress. <span class="small-caps">YAML</span> Schema is also writ­ten in <span class="small-caps">JSON</span> at this mo­ment.</p>
-<p>Here is a snip­pet of <span class="small-caps">YAML</span> Schema that I use to or­ga­nize my im­mu­niza­tion his­tory:</p>
+        <p>I have an idea about using YAML Schema to organize data.</p>
+<p>I came to this idea the other day when I was asked whether I had a certain vaccine in the past. All of a sudden, I wish I had organized my personal medical data in a structured way so that I could easily look it up. For easier discussion, let’s use personal medical data as an example here.</p>
+<p>First of all, I choose texts rather than database or any binary format because I want it to be readable and easy to maintain. I also want it to be organized, so I choose the YAML format where it’s kind of both human- and machine-readable, yet doesn’t require a lot of skeleton characters like JSON. On top of that, I add YAML Schema so that the data YAML file can be validated. It’s also useful for auto-completion in editors that supports it. YAML Schema is based on JSON Schema, which is still work in progress. YAML Schema is also written in JSON at this moment.</p>
+<p>Here is a snippet of YAML Schema that I use to organize my immunization history:</p>
 <pre><code class="hljs language-JSON"><span class="hljs-attr">&quot;immunization&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
   <span class="hljs-attr">&quot;description&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Immunization history.&quot;</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;array&quot;</span><span class="hljs-punctuation">,</span>
@@ -52,17 +52,17 @@
   <span class="hljs-attr">&quot;uniqueItems&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">true</span></span>
 <span class="hljs-punctuation">}</span>
 </code></pre>
-<p>Basically, I’m defin­ing an ar­ray named <code>immunization</code>. Each el­e­ment of the ar­ray is an ob­ject that has two prop­er­ties, <code>date</code> and <code>name</code>, which are both strings. I don’t think we have date-time type at the mo­ment, so I have to use strings for dates. I’m also de­clar­ing that the el­e­ments should be unique in the ar­ray.</p>
-<p>With the above schema, I can add and val­i­date the fol­low­ing sec­tion in my data <span class="small-caps">YAML</span> file:</p>
+<p>Basically, I’m defining an array named <code>immunization</code>. Each element of the array is an object that has two properties, <code>date</code> and <code>name</code>, which are both strings. I don’t think we have date-time type at the moment, so I have to use strings for dates. I’m also declaring that the elements should be unique in the array.</p>
+<p>With the above schema, I can add and validate the following section in my data YAML file:</p>
 <pre><code class="hljs language-YAML"><span class="hljs-attr">immunization:</span>
   <span class="hljs-bullet">-</span> <span class="hljs-attr">date:</span> <span class="hljs-number">2019</span><span class="hljs-string">/12/13</span>
     <span class="hljs-attr">name:</span> <span class="hljs-string">some</span> <span class="hljs-string">vaccine</span> <span class="hljs-number">1</span>
   <span class="hljs-bullet">-</span> <span class="hljs-attr">date:</span> <span class="hljs-number">2019</span><span class="hljs-string">/12/14</span>
     <span class="hljs-attr">name:</span> <span class="hljs-string">some</span> <span class="hljs-string">vaccine</span> <span class="hljs-number">2</span>
 </code></pre>
-<p>Similarly, I can add de­f­i­n­i­tions for surgery his­tory and other med­ical in­for­ma­tion. For com­plete syn­tax about <span class="small-caps">YAML</span> Schema and <span class="small-caps">JSON</span> Schema, see <a href="https://json-schema-everywhere.github.io/yaml">here</a>.</p>
-<p>I’m us­ing <span class="small-caps">VS</span> Code with the <span class="small-caps">YAML</span> plu­gin. It takes a bit of time to con­fig­ure, but af­ter that, I get the auto-com­ple­tion when I’m edit­ing the data <span class="small-caps">YAML</span> file.</p>
-<p>Finally, it’s worth point­ing out that al­though the ex­am­ple here is for per­sonal med­ical data, the idea of us­ing <span class="small-caps">YAML</span> Schema can be ap­plied to other struc­tured data as well.</p>
+<p>Similarly, I can add definitions for surgery history and other medical information. For complete syntax about YAML Schema and JSON Schema, see <a href="https://json-schema-everywhere.github.io/yaml">here</a>.</p>
+<p>I’m using VS Code with the YAML plugin. It takes a bit of time to configure, but after that, I get the auto-completion when I’m editing the data YAML file.</p>
+<p>Finally, it’s worth pointing out that although the example here is for personal medical data, the idea of using YAML Schema can be applied to other structured data as well.</p>
 
     </article>
     <footer>

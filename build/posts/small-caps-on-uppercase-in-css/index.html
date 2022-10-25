@@ -28,19 +28,19 @@
             Published <time>2016-02-17</time>
             | <a href="javascript:history.back()">Go Back</a>
         </h6>
-        <p>I just found out how to ap­ply small caps to up­per­case let­ters us­ing <span class="small-caps">CSS</span>.</p>
-<p>As a new­bie in web de­sign and ty­pog­ra­phy, I was try­ing to ap­ply small caps to ab­bre­vi­a­tions in the texts. I knew the fol­low­ing code:</p>
+        <p>I just found out how to apply small caps to uppercase letters using CSS.</p>
+<p>As a newbie in web design and typography, I was trying to apply small caps to abbreviations in the texts. I knew the following code:</p>
 <pre><code class="hljs language-CSS"><span class="hljs-selector-class">.small-caps</span> {
     <span class="hljs-attribute">font-variant</span>: small-caps;
 }
 </code></pre>
-<p>However, it did­n’t work for the ab­bre­vi­a­tions which are all up­per­case let­ters. I thought it was caused by the font since I could ap­ply small caps to the nav­i­ga­tion bar, but chang­ing the font for the texts was not help­ful. After some dig­ging around I found that I need to trans­form the up­per­case let­ters into low­er­case first. In other words, I need:</p>
+<p>However, it didn’t work for the abbreviations which are all uppercase letters. I thought it was caused by the font since I could apply small caps to the navigation bar, but changing the font for the texts was not helpful. After some digging around I found that I need to transform the uppercase letters into lowercase first. In other words, I need:</p>
 <pre><code class="hljs language-CSS"><span class="hljs-selector-class">.small-caps</span> {
     <span class="hljs-attribute">text-transform</span>: lowercase;
     <span class="hljs-attribute">font-variant</span>: small-caps;
 }
 </code></pre>
-<p>By the way, I did­n’t use small caps on ab­bre­vi­a­tions in the end. It felt un­nat­ural. I think the best op­tion would be us­ing a na­tive small caps font in­stead, but a match­ing one has to be found first.</p>
+<p>By the way, I didn’t use small caps on abbreviations in the end. It felt unnatural. I think the best option would be using a native small caps font instead, but a matching one has to be found first.</p>
 
     </article>
     <footer>

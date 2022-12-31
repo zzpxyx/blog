@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0">
-    <meta name="description" content="A blog of technical memos and tips.">
-    <title>zzpxyx</title>
+    <title>Poppler Utilities for Manipulating PDF | zzpxyx</title>
     <link href="/styles/index.css" rel="stylesheet" type="text/css">
+    <link href="/styles/solarized-light.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -23,39 +23,25 @@
         </nav>
     </header>
     <article>
-        <h2><a href="/posts/poppler-utilities-for-manipulating-pdf/">Poppler Utilities for Manipulating PDF</a></h2>
+        <h2>Poppler Utilities for Manipulating PDF</h2>
         <h6>
             Published <time>2022-12-31</time>
-            | <a href="/posts/poppler-utilities-for-manipulating-pdf/">Read More</a>
+            | <a href="javascript:history.back()">Go Back</a>
         </h6>
         <p>I’ve just realized that <a href="https://poppler.freedesktop.org/">Poppler</a> has command line utilities and they are perfect for manipulating PDF files.</p>
-    </article>
-    <article>
-        <h2><a href="/posts/quick-file-transfor-in-private-network/">Quick File Transfer in Private Network</a></h2>
-        <h6>
-            Published <time>2022-10-17</time>
-            | <a href="/posts/quick-file-transfor-in-private-network/">Read More</a>
-        </h6>
-        <p>Recently, I’ve realized a quick way to transfer some files within a private network.</p>
-    </article>
-    <article>
-        <h2><a href="/posts/downgrading-kernel/">Downgrading Arch Linux Kernel</a></h2>
-        <h6>
-            Published <time>2022-03-27</time>
-            | <a href="/posts/downgrading-kernel/">Read More</a>
-        </h6>
-        <p>Yesterday, I had to match the kernel and the display driver versions when downgrading the Arch Linux kernel. Now I’m jotting it down as a memo.</p>
-    </article>
-    <article>
-        <h2><a href="/posts/my-mac-productivity-setup/">My Mac Productivity Setup</a></h2>
-        <h6>
-            Published <time>2021-07-07</time>
-            | <a href="/posts/my-mac-productivity-setup/">Read More</a>
-        </h6>
-        <p>Here is my productivity setup on a Mac. It is just a personal memo, not an endorsement or an advertisement.</p>
+<p>I was trying to extract a few pages from various PDF documents and combine them into a single file for easier double-sided printing. I had used <a href="https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/">PDFtk</a> before, so I typed in <code>pdf</code> hoping that the shell autocompletion can remind me what the executable is. Several candidates popped out without anything that looked like PDFtk. However, I noticed one named <code>pdfseparate</code>. Looking at its help information, apparently, it’s part of the Poppler library. I’ve always considered Poppler as a PDF generation library due to my usage of PDFLaTex, but now I see that it has command line utilities as well. It’s a pleasant surprise that the utilities are very easy to use.</p>
+<p>For example, I used the following command to extract the second page from a PDF document. Note that <code>-f</code> and <code>-l</code> indicate first and last pages to extract, inclusively.</p>
+<pre><code class="hljs language-bash">pdfseparate -f 2 -l 2 input.pdf output.pdf
+</code></pre>
+<p>Similarly, I used the following command to combine the extracted pages into a single PDF file:</p>
+<pre><code class="hljs language-bash">pdfunite input1.pdf input2.pdf input3.pdf output.pdf
+</code></pre>
+<p>Later, I found a <a href="https://en.wikipedia.org/wiki/Poppler_(software)#poppler-utils">wiki page</a> for brief descriptions on all the Poppler utilities.</p>
+<p>I wish that I had known this earlier, but better late than never.</p>
+
     </article>
     <footer>
-        <div class="float-right"><a href="/page/2/">Next Page &raquo;</a></div>
+        <div class="float-right"><a href="/posts/quick-file-transfor-in-private-network/">Quick File Transfer in Private Network &raquo;</a></div>
     </footer>
 </body>
 

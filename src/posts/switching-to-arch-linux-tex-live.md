@@ -1,6 +1,7 @@
 ---
 title: Switching to Arch Linux TeX Live
 publishDate: 2020-01-05
+updateDate: 2023-06-19
 ---
 
 I've just switched my TeX Live distribution from the official one to the one on the Arch Linux repository.
@@ -28,3 +29,5 @@ updmap-sys --enable Map=fontawesome.map
 I'm still a newbie for TeX Live, so what I did here may not be the best practice. After that, the compile worked and generated a PDF file.
 
 I used [diff-pdf-visually](https://pypi.org/project/diff-pdf-visually/) to compare the two PDF files from the two TeX Live distributions, and the tool reported no visual difference. I would take this as a sign of victory. If I'm understanding it correctly, I would no long need to upgrade TeX Live like [my previous post](../upgrading-tex-live).
+
+**Updates on 2023-06-19:** The TeX Live packages on Arch Linux have been [reorganized](https://archlinux.org/news/tex-live-package-reorganization/), and `tllocalmgr` no longer works. At this time, I'm using the `tlmgr` fix in the [ArchWiki](https://wiki.archlinux.org/title/TeX_Live#tlmgr) for installing additional packages from CTAN.

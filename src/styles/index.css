@@ -246,8 +246,11 @@ code {
 p>code,
 li>code {
     font-family: "Roboto Mono", monospace;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
+    /* Solarized Light colors: */
+    color: #586E75;
+    background-color: #FDF6E3;
 }
 
 a {

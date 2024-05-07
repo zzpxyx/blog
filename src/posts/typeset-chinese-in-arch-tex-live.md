@@ -1,6 +1,7 @@
 ---
 title: Typeset Chinese in Arch TeX Live
 publishDate: 2024-04-22
+updateDate: 2024-05-07
 ---
 
 I've changed my TeX Live setup again to accommodate typesetting Chinese.
@@ -21,3 +22,5 @@ I started with the minimum number of Arch TeX Live packages. If I'm missing one 
 As part of the transition, I no longer need to use the modified `tlmgr` so I removed the alias that specified the user mode for it.
 
 Now, on one hand, I can use XeLaTeX plus the CTeX package to typeset a Chinese document. On the other hand, I can use pdfLaTeX to compile my resume. It's beyond my knowledge why I can't use XeLaTeX to build my resume. I guess it's because different TeX engines require different setups for fonts, but what do I know?
+
+**Updates on 2024-05-07:** Now, I recall something. The extra fonts like Raleway in the Arch TeX Live package didn't work out of the box in my case. It seemed to be caused by something in the user texmf tree from my previous install. I deleted `~/texmf` completely, and the issue was resolved. Maybe I also ran `sudo updmap-sys --syncwithtrees`? Just in case it helps.

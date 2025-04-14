@@ -12,13 +12,12 @@
     {{> header}}
     <article>
         <h2>{{title}}</h2>
-        <h6>
+        <div>
             Published <time>{{formatDate publishDate}}</time>
             {{#if updateDate}}
             | Updated <time>{{formatDate updateDate}}</time>
             {{/if}}
-            | <a href="javascript:history.back()">Go Back</a>
-        </h6>
+        </div>
         {{&contents}}
     </article>
     <footer>

@@ -13,13 +13,12 @@
     {{#each pagination.files}}
     <article>
         <h2><a href="/{{path}}/">{{title}}</a></h2>
-        <h6>
+        <div>
             Published <time>{{formatDate publishDate}}</time>
             {{#if updateDate}}
             | Updated <time>{{formatDate updateDate}}</time>
             {{/if}}
-            | <a href="/{{path}}/">Read More</a>
-        </h6>
+        </div>
         {{&excerpt}}
     </article>
     {{/each}}

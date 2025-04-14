@@ -39,7 +39,6 @@ footer,
 h2,
 h3,
 h4,
-h6,
 p,
 em,
 code,
@@ -125,7 +124,7 @@ nav>ul>li {
 }
 
 nav>ul>li>a {
-    color: #808080;
+    color: #505050;
     text-decoration: none;
     display: block;
 }
@@ -159,8 +158,8 @@ article>h4 {
     margin-top: 1em;
 }
 
-article>h6 {
-    color: #808080;
+article>div {
+    color: #505050;
     font-family: "Roboto", sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -168,8 +167,8 @@ article>h6 {
     margin-bottom: 0.5em;
 }
 
-article>h6>a {
-    color: #808080;
+article>div>a {
+    color: #505050;
 }
 
 article>ul,
@@ -178,7 +177,7 @@ article>ol {
 }
 
 footer>div {
-    color: #808080;
+    color: #505050;
     font-family: "Roboto", sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -187,7 +186,7 @@ footer>div {
 }
 
 footer>div>a {
-    color: #808080;
+    color: #505050;
 }
 
 p,
@@ -220,7 +219,7 @@ h4>a {
 }
 
 ul.archive>li>time {
-    color: #808080;
+    color: #505050;
     font-family: "Roboto", sans-serif;
     font-size: 14px;
     font-weight: 400;

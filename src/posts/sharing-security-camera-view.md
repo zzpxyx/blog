@@ -1,7 +1,7 @@
 ---
 title: Sharing Security Camera View
 publishDate: 2024-03-23
-updateDate: 2024-07-05
+updateDate: 2025-05-25
 ---
 
 I'm on my journey of finding the best way of sharing a security camera view. I have an acceptable solution at the moment.
@@ -105,3 +105,7 @@ Last but not the least, my setup does have some limitations and known issues. I 
 1. Remove the `-rtsp_transport tcp` argument for the FFmpeg command. I needed it previously, but now I'm seeing lags in the recordings. Getting rid of it fixed the issue. The issue might be due to a firmware upgrade on the security camera.
 2. Use `inotify-tools` instead of a cron job. I didn't expect to see `inotify-tools` on Termux for Android 6. My previous approach will upload premature files containing only the 48-byte MP4 header due to a race condition. Glad that I checked `inotify-tools` this time.
 3. And of course, fix a critical typo in one of the parameter names for the FFmpeg command.
+
+---
+
+**Updates on 2025-05-25:** See [this post](/posts/rclone-in-termux-on-android-6/) on lessons learned for running Rclone in Termux on Android 6.

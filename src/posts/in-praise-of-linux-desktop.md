@@ -1,5 +1,5 @@
 ---
-title: In Praise Of Linux Desktop
+title: In Praise of Linux Desktop
 publishDate: 2026-04-04
 ---
 

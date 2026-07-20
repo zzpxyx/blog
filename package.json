@@ -25,11 +25,11 @@
     "handlebars": "^4.7.9",
     "highlight.js": "^11.6.0",
     "jstransformer-handlebars": "^1.2.0",
-    "metalsmith": "^2.5.1",
+    "metalsmith": "^2.7.0",
     "metalsmith-archive": "^0.1.1",
     "metalsmith-discover-partials": "^0.1.2",
     "metalsmith-feed": "^1.0.0",
-    "metalsmith-filemetadata": "^3.0.0",
+    "metalsmith-filemetadata": "^6.0.0",
     "metalsmith-page-titles": "^1.0.2",
     "metalsmith-pagination": "^1.5.0",
     "moment": "^2.29.4"

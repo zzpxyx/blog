@@ -21,11 +21,11 @@
         {{&contents}}
     </article>
     <footer>
-        {{#if next}}
-        <div class="float-left"><a href="/{{next.path}}/">&laquo; {{next.title}}</a></div>
+        {{#if collection.posts.previous}}
+        <div class="float-left"><a href="/{{collection.posts.previous.permalink}}/">&laquo; {{collection.posts.previous.title}}</a></div>
         {{/if}}
-        {{#if previous}}
-        <div class="float-right"><a href="/{{previous.path}}/">{{previous.title}} &raquo;</a></div>
+        {{#if collection.posts.next}}
+        <div class="float-right"><a href="/{{collection.posts.next.permalink}}/">{{collection.posts.next.title}} &raquo;</a></div>
         {{/if}}
     </footer>
 </body>

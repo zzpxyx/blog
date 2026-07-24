@@ -27,50 +27,44 @@ metalsmith(__dirname)
   .metadata({
     site: {
       title: "zzpxyx",
-      url: "www.zzpxyx.com"
-    }
+      url: "www.zzpxyx.com",
+    },
   })
   .use(
     filemetadata([
       {
         pattern: "posts/*.md",
         metadata: {
-          layout: "post.hbs"
-        }
-      }
-    ])
+          layout: "post.hbs",
+        },
+      },
+    ]),
   )
   .use(pagetitles())
   .use(
-    collections({
-      posts: {
-        pattern: "posts/*.md",
-        sortBy: "publishDate",
-        reverse: true
-      }
-    })
-  )
-  .use(
     markdown({
       highlight: function (code, lang) {
-        return (
-          hljs.highlight(code, { language: lang }).value
-        );
+        return hljs.highlight(code, { language: lang }).value;
       },
       headerIds: false,
       langPrefix: "hljs language-",
-      smartypants: true
-    })
+      smartypants: true,
+    }),
   )
+  .use(permalinks())
   .use(
-    permalinks({
-      relative: false
-    })
+    collections({
+      posts: {
+        pattern: "posts/**/*.html",
+        sort: "publishDate:desc",
+      },
+    }),
   )
   .use(
     feed({
-      collection: "posts"
-    })
+      collection: "posts",
+      preprocess: (file) => ({ ...file, url: file.permalink }),
+    }),
   )
   .use(archive())
   .use(excerpts())
@@ -80,16 +74,16 @@ metalsmith(__dirname)
         perPage: 4,
         layout: "index.hbs",
         first: "index.html",
-        path: "page/:num/index.html"
-      }
-    })
+        path: "page/:num/index.html",
+      },
+    }),
   )
   .use(
     discoverPartials({
-      directory: "layouts/partials"
-    })
+      directory: "layouts/partials",
+    }),
   )
-  .use(layouts())
-  .build(function (err) {
+  .use(layouts({ transform: "handlebars", pattern: "**/*.html" }))
+  .build(function (err, files) {
     if (err) throw err;
   });
